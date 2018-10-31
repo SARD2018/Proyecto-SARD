@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+body {
+	background: #6B8E23;
+        background: #F0E68C;
+        background: -webkit-linear-gradient(to top, #6B8E23, #F0E68C);
+        background: linear-gradient(to top, #6B8E23, #F0E68C);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+}
+
+.Bloque-Login {
+	float: left;
+	width: 100%;
+	padding: 50px 0;
+}
+
+.Volver {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	color: #218838;
+	font-size: 30px;
+	text-decoration: none; 
+}
+
+.Carrusel{
+
+	background: url(../../Imagen/Img1.jpg) no-repeat left bottom;
+	background-size: cover;
+	min-height: 575px;
+	border-radius: 0 10px 10px 0;
+	padding: 0; 
+
+}
+
+.container {
+
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 15px 20px 0px rgba(0,0,0,0.1);
+
+}
+
+.carousel-inner {
+
+	border-radius: 0 10px 10px 0;
+
+}
+
+.carousel-caption {
+
+	text-align: left; 
+	left:5%;
+
+}
+
+.Ingreso {
+
+	padding: 50px 30px;
+	position: relative;
+
+}
+
+.Ingreso .Opciones {
+
+	position: absolute;
+	width: 80%;
+	bottom: 20px;
+	font-size: 13px;
+	text-align: center;
+
+}
+
+.Ingreso .Opciones a{
+
+	color: #218838;
+
+}
+
+.Ingreso h2 {
+
+	margin: 30px;
+	font-weight: 800;
+	font-size: 30px;
+	color: #218838;
+
+}
+
+.Ingreso h2:after {
+
+	content: " ";
+	width: 100px;
+	height: 5px;
+	background: #28a745;
+	display: block;
+	margin-top: 20px;
+	border-radius: 3px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.banner-text {
+
+	width: 70%;
+	position: absolute;
+	bottom: 40px;
+	padding-left: 20px;
+
+}
+
+.banner-text h2{
+
+	color: #fff;
+	font-weight: 600;
+
+}
+
+.banner-text h2:after {
+
+	content: " ";
+	width: 100px;
+	height: 5px;
+	background: #fff;
+	display: block;
+	margin-top: 20px;
+	border-radius: 3px;
+
+}
+
+.banner-text p {
+
+	color: #fff;
+
+}
+
+@media screen and (max-width: 763px){
+
+    .body {
+        background: #6B8E23;
+    }
+    
+    .Carrusel {
+	display: none;
+    }
+}
