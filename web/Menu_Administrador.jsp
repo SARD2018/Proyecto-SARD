@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
-        <script src="Estilos/JS/mainAdmi.js"></script>
+        <script src="Estilos/JS/MenuAdministrador.js"></script>
     </head>
     <body>
         <header>
@@ -47,7 +47,7 @@
 		</div>
             </div>
         </header>
-        <div class="DatosPerfil" id="DatosPerfil">
+        <div class="DatosPerfil">
             <a class="btn" href="">Perfil</a>
             <a class="btn" href="">Cerrar Session</a>
         </div>
