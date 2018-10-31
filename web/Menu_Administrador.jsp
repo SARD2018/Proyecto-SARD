@@ -18,18 +18,18 @@
     <body>
         <header>
             <div class="Logo_tipo">
-                    <div class="img1">
-                            <img style="width: 40px; height: 40px; float: left;" src="Imagenes/Logo.png">
-                            <h1>SARD</h1> 
-                    </div>
-                    <div class="img2">
-                            <img style="width: 90px; height: 70px;" src="Imagenes/Logo-2.png">
-                            <img class="Dos" style="width: 140px; height: 67px;" src="Imagenes/Otra.png">
-                    </div>
+                <div class="img1">
+                    <img src="Imagenes/logo.png">
+                    <h1>SARD</h1> 
+                </div>
+                <div class="img2">
+                    <img src="Imagenes/logo-2.png">
+                    <img class="Dos" src="Imagenes/Otra.png">
+                </div>
             </div>
             <div class="Barra-menu">
                 <div class="Boton-m">
-                        <a href="#"><span class="icon-menu"></span></a>
+                    <a href="#"><span class="icon-menu"></span></a>
                 </div>
                 <nav>
                     <ul class="Menu">
@@ -42,16 +42,17 @@
                     </ul>
                 </nav>
                 <div class="Perfil">
-                    <img src="../Imagen/Perfil.png">
+                    <img src="Imagenes/Perfil.png">
                     <h2>Yefrin Pacheco</h2>
 		</div>
             </div>
         </header>
         <div class="DatosPerfil" id="DatosPerfil">
-           
+            <a class="btn" href="">Perfil</a>
+            <a class="btn" href="">Cerrar Session</a>
         </div>
         <div class="Imagen">
-    </div>
+        </div>
     <div id="Denuncias" class="Container-1">
         <div class="Text-1">
                 <h2>Denuncias</h2>
