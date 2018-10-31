@@ -54,7 +54,7 @@
                             <label>Documento del Propietario: 
 				<select name="Duenno_M" required>
                                 <%
-                                    ArrayList<GS_Cliente> Datos_Cliente = new ArrayList<GS_Cliente>();
+                                    ArrayList<GS_Cliente> Datos_Cliente = new ArrayList<>();
                                     Cliente_M CM = new Cliente_M();
                                     Datos_Cliente = CM.Todo_Cliente();
                                     GS_Cliente GS = new GS_Cliente();
@@ -63,6 +63,9 @@
                                     
                                 %>
                                 <option value="<%=GS.getDocumento()%>"><%=GS.getDocumento()%></option>
+                                <%
+                                    }
+                                %>
 				</select>
                             </label>
                             <label>Foto: 
