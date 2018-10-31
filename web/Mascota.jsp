@@ -1,3 +1,7 @@
+<%@page import="Modelo.Cliente_M"%>
+<%@page import="Modelo.GS_Cliente"%>
+<%@page import="Modelo.GS_Mascota"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,15 +24,6 @@
 		<div class="Formulario">
                     <div class="Insertar">
 			<div class="Primero">
-                            <?php
-				$MM = new Metodos_Mascotas();
-				$res = $MM->Todo_Mascota();
-				$Codigo = 1;
-				while ($f=$res->fetch_row()) {
-                                    $Codigo = $f[0]+1;
-				}
-				echo "<label>Codigo de Mascota: <input type='text' value='".$Codigo."'' disabled></label>";
-                            ?>
                             <label>Tipo Mascota:
 				<select name="Tipo_Mascota" required>
                                     <option value="Perro">Perro</option>
@@ -58,14 +53,16 @@
                             </label>
                             <label>Documento del Propietario: 
 				<select name="Duenno_M" required>
-                                    <?php
-					$MM = new Metodos_Cliente();
-					$res = $MM->Todo_Cliente();
-					while ($f=$res->fetch_row()) {
-                                            $Codigo = $f[0]+1;
-                                            echo "<option value='".$f[0]."'>".$f[2]." ".$f[3]."</option>";
-					}
-                                    ?>
+                                <%
+                                    ArrayList<GS_Cliente> Datos_Cliente = new ArrayList<GS_Cliente>();
+                                    Cliente_M CM = new Cliente_M();
+                                    Datos_Cliente = CM.Todo_Cliente();
+                                    GS_Cliente GS = new GS_Cliente();
+                                    for (int i = 0; i < Datos_Cliente.size(); i++){
+                                        GS = Datos_Cliente.get(i);                                    
+                                    
+                                %>
+                                <option value="<%=GS.getDocumento()%>"><%=GS.getDocumento()%></option>
 				</select>
                             </label>
                             <label>Foto: 

@@ -1,4 +1,3 @@
-
 package Modelo;
 
 
@@ -15,6 +14,9 @@ public class GS_Cliente {
     private String Correo;
     private int Rol;
     private String Foto;
+
+    public GS_Cliente() {
+    }
 
     public GS_Cliente(String Documento, String Tipo_Documento, String Nombre, String Apellido, String Genero, String Fecha_Nacimiento, String Direccion, String Telefono, String Correo, int Rol, String Foto) {
         this.Documento = Documento;
