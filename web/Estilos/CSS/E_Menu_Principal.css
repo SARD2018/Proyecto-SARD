@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+} 
+header{
+	width: 100%;
+	background: white;
+}
+body{
+	background: #F6DD78;
+}
+.Logo_tipo{
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 15px 0;
+}
+.img2{
+	position: absolute;
+	right: 3%;
+	top: 0;
+}
+.Logo_tipo h1{
+	font-family: 'Ink Free';
+	font-weight: 400;
+	color: green;
+}
+.Barra-menu{
+	width: 100%;
+	border-color: #28a745;
+	background-color: #28a745;
+}
+.Menu .Derecha{
+	float: right;
+}
+.Barra-menu nav{
+	width: 90%;
+	max-width: 1200px;
+	max-height: 100%;
+	margin: auto;
+}
+.Boton-m{
+	display: none;
+}
+.Boton-m span{
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+}
+.Menu{
+	list-style: none;
+	width: 100%;
+}
+.Menu li{
+	display: inline-block;
+}
+.Menu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Courgette', cursive;
+	font-size: 18px;
+}
+.Menu li a:hover{
+	background: #218838;
+	border-color: #1e7e34;
+}
+
+.Container-1{
+	height: 100%;
+	z-index: 1;
+
+}
+.Text-1,
+.Text-2,
+.Text-3,
+.Text-4{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+}
+h2{
+	font-family: 'Courgette', cursive;
+}
+
+@media screen and (max-width: 770px){
+	.Boton-m{
+		width: 90%;
+		margin: auto;
+		display: block;
+		padding: 8px 0;
+	}
+	.Barra-menu nav{
+		position: absolute; 
+		left: -100%;
+		background: #28a745;
+		border-color: #28a745;
+		width: 200px;
+		height: 100%;
+	}
+	.Menu li{
+		display: block;
+	}
+	.Menu .Derecha {
+		float: left;
+		width: 100%;
+	}
+	.img2 .Dos{
+		display: none;
+	}
+	.Imagen img{
+		background-image: url('https://www.google.com.co/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiA7PDRsPfdAhUD26wKHcrHDlIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.webconsultas.com%2Fnoticias%2Fmascotas%2Fque-mascotas-prefieren-los-espanoles&psig=AOvVaw3KwL_SawXCWUR2CCCpZoZI&ust=1539106484709089');
+		width: 100%;
+	}
+}

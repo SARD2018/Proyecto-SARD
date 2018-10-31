@@ -1,0 +1,64 @@
+.Container {
+	box-sizing: border-box;
+	width: 99%;
+}
+.Acordeon_Mascota {
+	background-color: lightgreen;
+	text-align: center;
+}
+.Acordeon_Mascota .Boton{
+	opacity: 0;
+	width: 100%; 
+}
+.Insertar {
+	font-size: x-large;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Actualizar {
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Primero {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+.Primero input {
+	width: 40%;
+	float: right;
+}
+.Primero select {
+	width: 41%;
+	float: right;
+}
+.Segundo {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+.Segundo input {
+	width: 40%;
+	float: right;
+}
+.Segundo select {
+	width: 41%;
+	float: right;
+}
+.Tercero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-Insertar {
+	background: green;
+	border-radius: 5px;
+	height: 30px;
+	width: 10%;
+}

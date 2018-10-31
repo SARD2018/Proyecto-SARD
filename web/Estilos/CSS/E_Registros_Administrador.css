@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+h1{
+	font-family: 'Courgette', cursive;
+	font-size: 30px;
+}
+.Container{
+	padding: 20px 40px;
+    margin: auto;
+    font-family: 'Arial', cursive;
+	font-size: 16px;
+	background-color: #28a745;
+}
+.Volver {
+	color: #FBFF00;
+	font-size: 30px;
+	text-decoration: none; 
+}
