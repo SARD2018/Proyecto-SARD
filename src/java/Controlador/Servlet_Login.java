@@ -1,13 +1,18 @@
 
 package Controlador;
 
+import Modelo.GS_Login;
+import Modelo.Login_M;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Servlet_Login", urlPatterns = {"/Servlet_Login"})
 public class Servlet_Login extends HttpServlet {
 
+    private String Usuario1,Clave1;
+    private int Rol1;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,12 +42,62 @@ public class Servlet_Login extends HttpServlet {
         }
     }
     
-    protected void Validar_Login(HttpServletRequest request, HttpServletResponse response)
+     protected void Validar_Login(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
- 
+         
+        String Usuario,Clave;
+        Usuario=request.getParameter("Usuario");
+        Clave=request.getParameter("Clave");
+        GS_Login in = new GS_Login(Usuario, Clave);
+        Login_M log = new Login_M();
+        ArrayList<GS_Login> arreglo = new ArrayList<>();
+        arreglo=log.Validacion(in);
+        String Nombre=log.Nombre(in);
+        if(arreglo.size()>0){
+            
+            for (int i = 0; i < arreglo.size() ; i++) {
+                in=arreglo.get(i);
+                Usuario1=in.getUsuario();
+                Clave1=in.getClave();
+                Rol1=in.getRol_Ingreso();
+            }
+        
+        if((Usuario1.equals(Usuario)) && (Clave1.equals(Clave))){
+            
+            switch (Rol1){
+                case 1:
+                    JOptionPane.showMessageDialog(null, Nombre);
+                    response.sendRedirect("Menu_Administrador.jsp");
+                break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, Nombre);
+                    response.sendRedirect("Menu_Ambiente.jsp");
+                 break;
+                 case 3:
+                    JOptionPane.showMessageDialog(null, Nombre);
+                    response.sendRedirect("Menu_Salud.jsp");
+                 break;
+                 case 4:
+                    JOptionPane.showMessageDialog(null, Nombre);
+                    response.sendRedirect("Menu_Veterinaria.jsp");
+                 break;
+                 case 5:
+                    JOptionPane.showMessageDialog(null, Nombre);
+                    response.sendRedirect("Menu_Cliente.jsp");
+                 break;
+                 default:
+                     JOptionPane.showMessageDialog(null,"Datos Incorrectos");
+                    response.sendRedirect("Login.jsp");
+            }
+        }
+       
+        }
+       
+         HttpSession datt = request.getSession();
+        datt.setAttribute("NomSession", Nombre);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

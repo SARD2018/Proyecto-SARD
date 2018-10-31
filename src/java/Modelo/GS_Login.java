@@ -13,6 +13,11 @@ public class GS_Login {
         this.Rol_Ingreso = Rol_Ingreso;
     }
 
+    public GS_Login(String Usuario, String Clave) {
+        this.Usuario = Usuario;
+        this.Clave = Clave;
+    }
+    
     public GS_Login() {
     }
 

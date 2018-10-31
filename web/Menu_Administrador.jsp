@@ -6,6 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+        HttpSession Nom=request.getSession();
+        String Nombre=(String)Nom.getAttribute("NomSession");
+        System.out.println(Nombre);
+        %>
 <html>
     <head>
     	<title>Menu</title>
