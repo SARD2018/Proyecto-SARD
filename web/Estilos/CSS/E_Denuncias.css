@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+h1{
+	font-family: 'Courgette', cursive;
+	font-size: 30px;
+}
+.Container{
+	padding: 20px 40px;
+    margin: auto;
+    font-family: 'Arial', cursive;
+	font-size: 16px;
+}
+.Tabla{
+	margin: 0;
+	padding: 0;
+}
+.table{
+	border: 2px solid #28a745; 
+}
+.th{
+	padding: 0 5px;
+	background-color: #EAEB8E;
+	color: #000;
+	border: 2px solid #28a745; 
+}
+.icon-info{
+	color: #000;
+	background-color: transparent;
+	border: transparent;
+	font-size: 25px;
+	cursor: pointer;
+}
+.Des{
+	padding: 0 5px;
+	width: 90%;
+	background-color: #EAEB8E;
+	color: #000;
+	border: 2px solid #28a745;
+}
+.Container textarea{
+	width: 50%;
+	height: 80px;
+	border-radius: 2px;
+}
+.Volver {
+	color: #FBFF00;
+	font-size: 30px;
+	text-decoration: none; 
+}
