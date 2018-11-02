@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
+
 @WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
+@MultipartConfig
 public class Servlet_Mascota extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
