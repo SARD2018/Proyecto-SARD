@@ -30,7 +30,7 @@
                                     Codigo = MM.Codigo()+1;
                                     
                                 %>
-                                <input type="Text" value="<%=Codigo%>"  disabled>
+                                <input type="Text" value="<%=Codigo%>" name="Codigo" disabled>
                                 
                             </label>
                             <label>Tipo Mascota:

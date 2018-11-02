@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 @WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
 public class Servlet_Mascota extends HttpServlet {
@@ -21,6 +22,24 @@ public class Servlet_Mascota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
+        
+        
+        TipoMascota = request.getParameter("Tipo_Mascota");
+        Nombre = request.getParameter("Nombre_M");
+        FechaNacimiento = request.getParameter("FechaNacimiento_M");
+        Color = request.getParameter("Color_M");
+        Raza = request.getParameter("Raza_M");
+        Sexo = request.getParameter("Sexo_M");
+        Dueno = request.getParameter("Duenno_M");
+        Part Foto = request.getPart("Foto_M");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
+        
+        String url = "C:\\Users\\Christian\\OneDrive\\Clases\\Ejercicios\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads"+Foto_Name;
+        String url2 = "Uploads/"+Foto_Name;
+        
         
     }
 
