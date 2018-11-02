@@ -16,14 +16,11 @@
     </head>
     <body>
         <div class="Container">
-            <div class="Encabezado">
-		<h1>Mascotas</h1>
-            </div>
             <form method="Post" action="" enctype="multipart/form-data">
-		<div class="Insertar_Mascota"><h2>Insertar Mascota</h2></div>
-		<div class="Formulario">
-                    <div class="Insertar">
-			<div class="Primero">
+		<div class="Registrar_M"><h2>Insertar Mascota</h2></div>
+		<div class="form_Mascota">
+                    <div class="LR_Mascota">
+			<div class="Left_Mascota">
                             <label>Tipo Mascota:
 				<select name="Tipo_Mascota" required>
                                     <option value="Perro">Perro</option>
@@ -41,7 +38,7 @@
                                 <input type="text" name="Color_M" pattern="[A-Za-Z]{3,20}" placeholder="Indique el color de su mascota" required>
                             </label>
 			</div>
-			<div class="Segundo">
+			<div class="Rigth_Mascota">
                             <label>Raza: 
                                 <input type="text" name="Raza_M" placeholder="Indique la raza de su mascota" pattern="[A-Za-Z]{3,20}" required>
                             </label>
@@ -75,7 +72,7 @@
                             </label>
 			</div>
                     </div>
-                    <div class="Tercero">
+                    <div class="btn_Mascota">
 			<button name="btn-Insertar" class="btn-Insertar">Insertar</button>
                     </div>
 		</div>
@@ -86,23 +83,14 @@
 		?>
             </form>
 			
-            <div class="Actualizar_Mascota">
+            <div class="Actualizar_M">
 		<h2>Actualizar Mascota</h2>
             </div>
             <form>
-		<div class="Actualizar">
-                    <div class="Tabla">
-			<table>
-                            <th>Codigo</th>
-                            <th>Tipo de Mascota</th>
-                            <th>Nombre</th>
-                            <th>Fecha de Nacimiento</th>
-                            <th>Color</th>
-                            <th>Raza</th>
-                            <th>Sexo</th>
-                            <th>Documento del propietario</th>
-                            <th>Foto</th>
-			</table>
+		<div class="Position_Mascota">
+                    <div class="Filtro_Mascota">
+                        <label>Filtrar por:
+                            <input type
                     </div>	
                 </div>			
             </form>
