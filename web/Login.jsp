@@ -15,7 +15,7 @@
                     <div class="col-md-4 Ingreso">
                         <a href="index.jsp" class="Volver"><span class="icon-home"></span></a>
                         <h2 class="text-center">Ingresar</h2>
-                        <form action="Servlet_Login" class="login-form">
+                        <form action="Servlet_Login" method="post" class="login-form">
                             <div class="form-group">
                                 
                                 <label class="text-uppercase">

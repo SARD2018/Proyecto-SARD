@@ -9,7 +9,7 @@
 <%
         HttpSession Nom=request.getSession();
         String Nombre=(String)Nom.getAttribute("NomSession");
-        System.out.println(Nombre);
+        
         %>
 <html>
     <head>
@@ -48,7 +48,7 @@
                 </nav>
                 <div class="Perfil">
                     <img src="Imagenes/Perfil.png">
-                    <h2>Yefrin Pacheco</h2>
+                    <h2><%=Nombre%></h2>
 		</div>
             </div>
         </header>

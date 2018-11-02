@@ -34,6 +34,15 @@ public class GS_Administrador {
         return Documento;
     }
 
+    public GS_Administrador() {
+    }
+
+    public GS_Administrador(String Nombre, String Apellido, String Foto) {
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Foto = Foto;
+    }
+
     public void setDocumento(String Documento) {
         this.Documento = Documento;
     }

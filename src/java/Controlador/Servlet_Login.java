@@ -47,7 +47,7 @@ public class Servlet_Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-         
+        
         String Usuario,Clave;
         Usuario=request.getParameter("Usuario");
         Clave=request.getParameter("Clave");
@@ -55,9 +55,10 @@ public class Servlet_Login extends HttpServlet {
         Login_M log = new Login_M();
         ArrayList<GS_Login> arreglo = new ArrayList<>();
         arreglo=log.Validacion(in);
-        String Nombre=log.Nombre(in);
+       
+        
         if(arreglo.size()>0){
-            
+              
             for (int i = 0; i < arreglo.size() ; i++) {
                 in=arreglo.get(i);
                 Usuario1=in.getUsuario();
@@ -66,26 +67,32 @@ public class Servlet_Login extends HttpServlet {
             }
         
         if((Usuario1.equals(Usuario)) && (Clave1.equals(Clave))){
-            
+          HttpSession datt = request.getSession();
             switch (Rol1){
                 case 1:
-                    JOptionPane.showMessageDialog(null, Nombre);
+                     String Nombre_Admin=log.Nombre_Admin();
+                     datt.setAttribute("NomSession", Nombre_Admin);
                     response.sendRedirect("Menu_Administrador.jsp");
+                    
                 break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, Nombre);
+                     String Nombre_Ambiente=log.Nombre_Cliente_Salud_Ambiente();
+                     datt.setAttribute("NomSession", Nombre_Ambiente);
                     response.sendRedirect("Menu_Ambiente.jsp");
                  break;
                  case 3:
-                    JOptionPane.showMessageDialog(null, Nombre);
+                    String Nombre_Salud=log.Nombre_Cliente_Salud_Ambiente();
+                    datt.setAttribute("NomSession", Nombre_Salud);
                     response.sendRedirect("Menu_Salud.jsp");
                  break;
                  case 4:
-                    JOptionPane.showMessageDialog(null, Nombre);
+                     String Nombre_Veterinaria=log.Nombre_Veterinaria();
+                     datt.setAttribute("NomSession", Nombre_Veterinaria);
                     response.sendRedirect("Menu_Veterinaria.jsp");
                  break;
                  case 5:
-                    JOptionPane.showMessageDialog(null, Nombre);
+                    String Nombre_Usuario=log.Nombre_Cliente_Salud_Ambiente();
+                    datt.setAttribute("NomSession", Nombre_Usuario);
                     response.sendRedirect("Menu_Cliente.jsp");
                  break;
                  default:
@@ -96,8 +103,7 @@ public class Servlet_Login extends HttpServlet {
        
         }
        
-         HttpSession datt = request.getSession();
-        datt.setAttribute("NomSession", Nombre);
+      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

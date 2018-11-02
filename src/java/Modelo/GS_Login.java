@@ -21,6 +21,10 @@ public class GS_Login {
     public GS_Login() {
     }
 
+    public GS_Login(int Rol_Ingreso) {
+        this.Rol_Ingreso = Rol_Ingreso;
+    }
+
     public String getUsuario() {
         return Usuario;
     }

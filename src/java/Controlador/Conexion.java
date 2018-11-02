@@ -14,7 +14,7 @@ public class Conexion {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            BaseDatos= DriverManager.getConnection("jdbc:mysql://localhost/SARD","root","");
+            BaseDatos= DriverManager.getConnection("jdbc:mysql://localhost/SARD","root","0000");
         } 
         catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la conexion!");
