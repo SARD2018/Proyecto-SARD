@@ -9,6 +9,7 @@
 <%
         HttpSession Nom=request.getSession();
         String Nombre=(String)Nom.getAttribute("NomSession");
+        String Documento=(String)Nom.getAttribute("DocSession");
         
         %>
 <html>
@@ -53,8 +54,8 @@
             </div>
         </header>
         <div class="DatosPerfil">
-            <a class="btn" href="">Perfil</a>
-            <a class="btn" href="">Cerrar Session</a>
+            <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
+            <a class="btn" href="Login.jsp">Cerrar Session</a>
         </div>
         <div class="Imagen">
         </div>

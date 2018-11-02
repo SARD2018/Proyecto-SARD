@@ -70,29 +70,39 @@ public class Servlet_Login extends HttpServlet {
           HttpSession datt = request.getSession();
             switch (Rol1){
                 case 1:
+                     String Documento_Admin=Usuario1;
                      String Nombre_Admin=log.Nombre_Admin();
                      datt.setAttribute("NomSession", Nombre_Admin);
+                     datt.setAttribute("DocSession", Documento_Admin);
                     response.sendRedirect("Menu_Administrador.jsp");
                     
                 break;
                 case 2:
+                     String Documento_Ambiente=Usuario1;
                      String Nombre_Ambiente=log.Nombre_Cliente_Salud_Ambiente();
                      datt.setAttribute("NomSession", Nombre_Ambiente);
+                     datt.setAttribute("DocSession", Documento_Ambiente);
                     response.sendRedirect("Menu_Ambiente.jsp");
                  break;
                  case 3:
+                      String Documento_Salud=Usuario1;
                     String Nombre_Salud=log.Nombre_Cliente_Salud_Ambiente();
                     datt.setAttribute("NomSession", Nombre_Salud);
+                    datt.setAttribute("NomSession", Documento_Salud);
                     response.sendRedirect("Menu_Salud.jsp");
                  break;
                  case 4:
+                     String Documento_Veterinaria=Usuario1;
                      String Nombre_Veterinaria=log.Nombre_Veterinaria();
                      datt.setAttribute("NomSession", Nombre_Veterinaria);
+                     datt.setAttribute("NomSession", Documento_Veterinaria);
                     response.sendRedirect("Menu_Veterinaria.jsp");
                  break;
                  case 5:
+                     String Documento_Ciudadano=Usuario1;
                     String Nombre_Usuario=log.Nombre_Cliente_Salud_Ambiente();
                     datt.setAttribute("NomSession", Nombre_Usuario);
+                    datt.setAttribute("NomSession", Documento_Ciudadano);
                     response.sendRedirect("Menu_Cliente.jsp");
                  break;
                  default:
