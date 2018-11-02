@@ -18,6 +18,19 @@ public class GS_Mascota {
         this.Codigo = Codigo;
     }
 
+    public GS_Mascota(String Tipo_Mascota, String Nombre, String Fecha_Nacimiento, String Color, String Raza, String Sexo, String Documento, String Foto) {
+        this.Tipo_Mascota = Tipo_Mascota;
+        this.Nombre = Nombre;
+        this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Color = Color;
+        this.Raza = Raza;
+        this.Sexo = Sexo;
+        this.Documento = Documento;
+        this.Foto = Foto;
+    }
+    
+    
+
     public GS_Mascota(int Codigo, String Tipo_Mascota, String Nombre, String Fecha_Nacimiento, String Color, String Raza, String Sexo, String Documento, String Foto) {
         this.Codigo = Codigo;
         this.Tipo_Mascota = Tipo_Mascota;

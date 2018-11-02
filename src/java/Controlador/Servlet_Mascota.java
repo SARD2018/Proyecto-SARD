@@ -1,6 +1,11 @@
 package Controlador;
 
+import Modelo.GS_Mascota;
+import Modelo.Mascota_M;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,6 +45,20 @@ public class Servlet_Mascota extends HttpServlet {
         String url = "C:\\Users\\Christian\\OneDrive\\Clases\\Ejercicios\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads"+Foto_Name;
         String url2 = "Uploads/"+Foto_Name;
         
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, Dueno, url2);
+        Mascota_M MM = new Mascota_M();
+        MM.In_Mascota(GSM);
+        request.getRequestDispatcher("Mascota.jsp").forward(request, response);
         
     }
 
