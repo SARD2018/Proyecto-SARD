@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 @WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
 public class Servlet_Mascota extends HttpServlet {
@@ -21,6 +22,11 @@ public class Servlet_Mascota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        if(request.getParameter("btn-Insertar")!=null){
+            JOptionPane.showMessageDialog(null,"¿aca si entre?");
+            this.InsertarMascota(request, response);
+        }
     }
     
     protected void InsertarMascota(HttpServletRequest request, HttpServletResponse response)
@@ -29,8 +35,6 @@ public class Servlet_Mascota extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
-        
-        
         TipoMascota = request.getParameter("Tipo_Mascota");
         Nombre = request.getParameter("Nombre_M");
         FechaNacimiento = request.getParameter("FechaNacimiento_M");
@@ -42,8 +46,8 @@ public class Servlet_Mascota extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
         
-        String url = "C:\\Users\\Christian\\OneDrive\\Clases\\Ejercicios\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads"+Foto_Name;
-        String url2 = "Uploads/"+Foto_Name;
+        String url = "C:\\Users\\Christian\\OneDrive\\Clases\\Ejercicios\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);

@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="Container">
-            <form method="Post" action="Servlet_Mascota" enctype="multipart/form-data">
+            <form action="Servlet_Mascota" enctype="multipart/form-data">
 		<div class="Registrar_M"><h2>Insertar Mascota</h2></div>
 		<div class="form_Mascota">
                     <div class="LR_Mascota">
@@ -41,18 +41,18 @@
 				</select>
                             </label>
                             <label>Nombre: 
-                                <input type="text" name="Nombre_M" placeholder="Ingrese el nombre de su Mascota" pattern="[A-Za-Z]{1,30}"" requiere>
+                                <input type="text" name="Nombre_M" placeholder="Ingrese el nombre de su Mascota" pattern="[A-Za-z]{1,30}" requiere>
                             </label>
                             <label>Fecha de Nacimiento: 
                                 <input type="date" id="FechaNacimiento_M" name="FechaNacimiento_M" required>
                             </label>
                             <label>Color: 
-                                <input type="text" name="Color_M" pattern="[A-Za-Z]{3,20}" placeholder="Indique el color de su mascota" required>
+                                <input type="text" name="Color_M" pattern="[A-Za-z]{3,20}" placeholder="Indique el color de su mascota" required>
                             </label>
 			</div>
 			<div class="Rigth_Mascota">
                             <label>Raza: 
-                                <input type="text" name="Raza_M" placeholder="Indique la raza de su mascota" pattern="[A-Za-Z]{3,20}" required>
+                                <input type="text" name="Raza_M" placeholder="Indique la raza de su mascota" pattern="[A-Za-z]{3,20}" required>
                             </label>
                             <label>Sexo: 
 				<select name="Sexo_M" required>
@@ -88,11 +88,6 @@
 			<button name="btn-Insertar" class="btn-Insertar">Insertar</button>
                     </div>
 		</div>
-                <?php
-                    if (isset($_POST['btn-Insertar'])) {
-                        echo "<script type='text/javascript'> alert('".$resultado."'); </script>";
-                    }
-		?>
             </form>
 			
             <div class="Actualizar_M">
