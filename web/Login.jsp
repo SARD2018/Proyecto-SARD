@@ -40,7 +40,7 @@
                             </div>
                         </form>
                         <div class="Opciones">
-                            <a href="Registro.php">
+                            <a href="Registro_Ciudadano.jsp">
                                 Registrarme
                             </a>
                             <br>

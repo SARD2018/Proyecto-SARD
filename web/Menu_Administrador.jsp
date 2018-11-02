@@ -40,7 +40,7 @@
                     <ul class="Menu">
                         <li><a href="#">Inicio</a></li>
                         <li><a href="">Denuncias</a></li>
-                        <li><a href="">Usuarios</a></li>
+                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
                         <li><a href="">Adopciones</a></li>
                         <li><a href="">Mascotas</a></li>
                         <li><a href="">Eventos</a></li>

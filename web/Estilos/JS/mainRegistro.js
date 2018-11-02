@@ -1,8 +1,11 @@
 $(document).ready(function(){
 
-	$(".Registrar_A").hide();	
+$(".Registrar_A").hide();	
 	$(".form_Administrador").hide();	
 	$(".Actualizar_A").hide();
+	$(".Position_Administrador").hide();
+	$(".Filtro_Administrador").hide();
+	$(".T_Administrador").hide();
 
 	$(".Registrar_AmbienteySalud").hide();
 	$(".form_AmbienteySalud").hide()
@@ -27,6 +30,8 @@ $(document).ready(function(){
 		});
 
 		$(".Actualizar_A").click(function(){
+		$(".Position_Administrador").slideToggle();	
+		$(".Filtro_Administrador").slideToggle();	
 		$(".T_Administrador").slideToggle();
 		});		
 
