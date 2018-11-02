@@ -1,3 +1,5 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.Mascota_M"%>
 <%@page import="Modelo.Cliente_M"%>
 <%@page import="Modelo.GS_Cliente"%>
 <%@page import="Modelo.GS_Mascota"%>
@@ -21,6 +23,16 @@
 		<div class="form_Mascota">
                     <div class="LR_Mascota">
 			<div class="Left_Mascota">
+                            <label>Codigo de Mascota:
+                                <%
+                                    int Codigo = 0;
+                                    Mascota_M MM = new Mascota_M();
+                                    Codigo = MM.Codigo()+1;
+                                    
+                                %>
+                                <input type="Text" value="<%=Codigo%>"  disabled>
+                                
+                            </label>
                             <label>Tipo Mascota:
 				<select name="Tipo_Mascota" required>
                                     <option value="Perro">Perro</option>
@@ -59,7 +71,7 @@
                                         GS = Datos_Cliente.get(i);                                    
                                     
                                 %>
-                                <option value="<%=GS.getDocumento()%>"><%=GS.getDocumento()%></option>
+                                <option value="<%=GS.getDocumento()%>"><%=GS.getDocumento()%>, <%=GS.getNombre()%> <%=GS.getApellido()%></option>
                                 <%
                                     }
                                 %>

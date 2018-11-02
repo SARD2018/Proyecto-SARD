@@ -1,6 +1,7 @@
 package Modelo;
 
 public class GS_Mascota {
+    private int Codigo;
     private String Tipo_Mascota;
     private String Nombre;
     private String Fecha_Nacimiento;
@@ -13,7 +14,12 @@ public class GS_Mascota {
     public GS_Mascota() {
     }
 
-    public GS_Mascota(String Tipo_Mascota, String Nombre, String Fecha_Nacimiento, String Color, String Raza, String Sexo, String Documento, String Foto) {
+    public GS_Mascota(int Codigo) {
+        this.Codigo = Codigo;
+    }
+
+    public GS_Mascota(int Codigo, String Tipo_Mascota, String Nombre, String Fecha_Nacimiento, String Color, String Raza, String Sexo, String Documento, String Foto) {
+        this.Codigo = Codigo;
         this.Tipo_Mascota = Tipo_Mascota;
         this.Nombre = Nombre;
         this.Fecha_Nacimiento = Fecha_Nacimiento;
@@ -22,6 +28,14 @@ public class GS_Mascota {
         this.Sexo = Sexo;
         this.Documento = Documento;
         this.Foto = Foto;
+    }
+
+    public int getCodigo() {
+        return Codigo;
+    }
+
+    public void setCodigo(int Codigo) {
+        this.Codigo = Codigo;
     }
 
     public String getTipo_Mascota() {
@@ -87,6 +101,7 @@ public class GS_Mascota {
     public void setFoto(String Foto) {
         this.Foto = Foto;
     }
+
     
     
     

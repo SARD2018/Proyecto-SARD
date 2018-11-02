@@ -2,15 +2,26 @@
 	box-sizing: border-box;
 	width: 99%;
 }
-.Acordeon_Mascota {
+.Registrar_M {
+	margin: auto;
+	border: 0.1px solid black;
+	border-radius: 5px 5px 0px 0px;
 	background-color: lightgreen;
-	text-align: center;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.Acordeon_Mascota .Boton{
-	opacity: 0;
-	width: 100%; 
+.form_Mascota{
+	border-radius: 0px 0px 5px 5px;
+	border: 0.1px solid black;
+	border-top: none;
+	box-sizing: border-box;
+	background: rgba(10,5,10,0.4);
+	background: url("../../Imagen/Banner1.jpg");
+	height: 350px;
 }
-.Insertar {
+.LR_Mascota {
 	font-size: x-large;
 	margin: auto;
 	width: 90%;
@@ -18,40 +29,48 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.Actualizar {
-	margin: auto;
-	width: 90%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.Primero {
-	width: 40%;
+.Left_Mascota {
+	padding-top: 3%;
+	width: 45%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
-.Primero input {
-	width: 40%;
+.Left_Mascota input {
+	width: 200px;
 	float: right;
 }
-.Primero select {
-	width: 41%;
+.Left_Mascota select {
+	width: 205px;
 	float: right;
 }
-.Segundo {
-	width: 40%;
+.Rigth_Mascota {
+	padding-top: 3%;
+	width: 45%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
-.Segundo input {
-	width: 40%;
+.Rigth_Mascota input {
+	width: 200px;
 	float: right;
 }
-.Segundo select {
-	width: 41%;
+.Rigth_Mascota select {
+	width: 205px;
 	float: right;
 }
-.Tercero {
+.InsertarFoto{
+        cursor: pointer;
+	float: right;
+	width: 120px;
+}
+.InsertarFoto .Foto{
+	opacity: 0;
+	width: 0.1px;
+	height: 0.1px;
+}
+.btn_Mascota {
+	padding-top: 3%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,5 +79,171 @@
 	background: green;
 	border-radius: 5px;
 	height: 30px;
-	width: 10%;
+	width: 200px;
+}
+@media screen and (max-width: 1200px){
+	.form_Mascota {
+		height: 100%;
+	}
+	.LR_Mascota {
+		font-size: x-large;
+		margin: auto;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.Left_Mascota {
+		padding-top: 3%;
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.Rigth_Mascota {
+		padding-top: 0;
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 1080px){
+	.form_Mascota {
+		height: 100%;
+	}
+	.LR_Mascota {
+		font-size: x-large;
+		margin: auto;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.Left_Mascota {
+		padding-top: 3%;
+		width: 80%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.Rigth_Mascota {
+		padding-top: 0;
+		width: 80%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 680px){
+	.form_Mascota {
+		height: 100%;
+	}
+	.LR_Mascota {
+		font-size: x-large;
+		margin: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.Left_Mascota {
+		padding-top: 3%;
+		width: 90%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.Left_Mascota input {
+		width: 200px;
+		float: right;
+	}
+	.Left_Mascota select {
+		width: 205px;
+		float: right;
+	}
+	.Rigth_Mascota {
+		padding-top: 0;
+		width: 90%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 550px){
+	.form_Mascota {
+		height: 100%;
+	}
+	.LR_Mascota {
+		font-size: x-large;
+		margin: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.Left_Mascota {
+		padding-top: 3%;
+		width: 90%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.Left_Mascota input {
+		width: 90%;
+		float: left;
+	}
+	.Left_Mascota select {
+		width: 90%;
+		float: left;
+	}
+	.Rigth_Mascota {
+		padding-top: 0;
+		width: 90%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.Rigth_Mascota input {
+		width: 90%;
+		float: left;
+	}
+	.Rigth_Mascota select {
+		width: 90%;
+		float: left;
+	}
+	.InsertarFoto{
+		float: right;
+		width: 50%;
+	}
+}
+.Actualizar_M {
+	margin: auto;
+	border-radius: 5px;
+	background-color: lightgreen;
+	height: 40px;
+	text-align: center;
+}
+.Position_Mascota {
+	margin: auto;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+}
+.Filtro_Mascota {
+	display: flex;
+}
+.Tabla_M {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.Tabla_M table {
+	width: 100%;
+}
+.Tabla_M th {
+	border: 1px solid red;
 }
