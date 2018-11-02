@@ -29,6 +29,19 @@ public class GS_Administrador {
         this.Rol = Rol;
         this.Foto = Foto;
     }
+
+    public GS_Administrador(String Documento, String Tipo_Documento, String Nombre, String Apellido, String Genero, String Fecha_Nacimiento, String Direccion, String Telefono, String Correo, String Foto) {
+        this.Documento = Documento;
+        this.Tipo_Documento = Tipo_Documento;
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Genero = Genero;
+        this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Foto = Foto;
+    }
     
     public String getDocumento() {
         return Documento;
