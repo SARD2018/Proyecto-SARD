@@ -71,7 +71,7 @@
 			<div class="Registrar_AmbienteySalud" >
 				<p>REGISTRAR</p>
 			</div>
-					<form action="../Controlador/Administrador_C.php" method="post" enctype="multipart/form-data">						<div class="form_AmbienteySalud">
+					<form action="Servlet_Ambiente_Salud" method="post" enctype="multipart/form-data">						<div class="form_AmbienteySalud">
 							<div class="LR_AmbienteySalud">
 								<div class="left_AmbienteySalud">
 									<p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
