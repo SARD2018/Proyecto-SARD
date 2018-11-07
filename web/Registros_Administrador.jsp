@@ -129,7 +129,7 @@
 			<div class="Registrar_C" >
 				<p>REGISTRAR</p>
 			</div>
-					<form action="../Controlador/Administrador_C.php" method="post" enctype="multipart/form-data">
+					<form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
 						<div class="form_Ciudadano">
 							<div class="LR_Ciudadano">
 								<div class="left_Ciudadano">

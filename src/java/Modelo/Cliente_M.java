@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Cliente_M {
 
@@ -28,6 +29,26 @@ public class Cliente_M {
         
         return Todo_Cliente;
     
+    }
+    public void In_Cliente (GS_Cliente GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Cliente (?,?,?,?,?,?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getTipo_Documento());
+            PreSta.setString(3, GS.getNombre());
+            PreSta.setString(4, GS.getApellido());
+            PreSta.setString(5, GS.getGenero());
+            PreSta.setString(6, GS.getFecha_Nacimiento());
+            PreSta.setString(7, GS.getDireccion());
+            PreSta.setString(8, GS.getTelefono());
+            PreSta.setString(9, GS.getCorreo());
+            PreSta.setString(10, GS.getFoto());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
     }
     
 }

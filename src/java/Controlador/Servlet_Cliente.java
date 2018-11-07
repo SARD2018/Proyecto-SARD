@@ -5,12 +5,8 @@
  */
 package Controlador;
 
-import Modelo.Administrador_M;
 import Modelo.Cliente_M;
-import Modelo.GS_Administrador;
 import Modelo.GS_Cliente;
-import Modelo.GS_Mascota;
-import Modelo.Mascota_M;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,11 +22,11 @@ import javax.servlet.http.Part;
 
 /**
  *
- * @author Yefrin Pacheco
+ * @author SENA
  */
-@WebServlet(name = "Servlet_Administrador", urlPatterns = {"/Servlet_Administrador"})
+@WebServlet(name = "Servlet_Cliente", urlPatterns = {"/Servlet_Cliente"})
 @MultipartConfig
-public class Servlet_Administrador extends HttpServlet {
+public class Servlet_Cliente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,13 +41,14 @@ public class Servlet_Administrador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        if (request.getParameter("R_Administrador")!=null) {
-            this.Insertar_Admin(request, response);
+         
+        if (request.getParameter("R_Ciudadano")!=null) {
+            this.Insertar_Cliente(request, response);
         }
         
-    }
-    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
+        }
+    
+        protected void Insertar_Cliente(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -83,12 +80,12 @@ public class Servlet_Administrador extends HttpServlet {
             num= file.read();
         }
         
-        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
-        Administrador_M Admin = new Administrador_M();
-        Admin.In_Administrador(GSA);
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, url2);
+        Cliente_M Cliente = new Cliente_M();
+        Cliente.In_Cliente(GSC);
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
     }
-
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
