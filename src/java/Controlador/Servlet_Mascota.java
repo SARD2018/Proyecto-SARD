@@ -1,4 +1,4 @@
-package Controlador;
+    package Controlador;
 
 import Modelo.GS_Mascota;
 import Modelo.Mascota_M;
@@ -16,9 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
-
-@WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
 @MultipartConfig
+@WebServlet(name = "Servlet_Mascota", urlPatterns = {"/Servlet_Mascota"})
 public class Servlet_Mascota extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -49,7 +48,7 @@ public class Servlet_Mascota extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
         
-        String url = "C:\\Users\\Christian\\OneDrive\\Clases\\Ejercicios\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
         
         InputStream file= Foto.getInputStream();
