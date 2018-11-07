@@ -26,7 +26,6 @@ public class Servlet_Mascota extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if(request.getParameter("btn-Insertar")!=null){
-            JOptionPane.showMessageDialog(null,"¿aca si entre?");
             this.InsertarMascota(request, response);
         }
     }

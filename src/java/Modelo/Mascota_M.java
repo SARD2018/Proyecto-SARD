@@ -15,8 +15,7 @@ public class Mascota_M {
     
     public void In_Mascota (GS_Mascota GSM){
         try {
-            JOptionPane.showMessageDialog(null, "Aca estoy");
-            PreSta = BaseDatos.prepareStatement("call In_Mascota");
+            PreSta = BaseDatos.prepareStatement("call In_Mascota(?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GSM.getTipo_Mascota());
             PreSta.setString(2, GSM.getNombre());
             PreSta.setString(3, GSM.getFecha_Nacimiento());

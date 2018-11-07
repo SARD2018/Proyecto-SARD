@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="Container">
-            <form action="Servlet_Mascota" enctype="multipart/form-data">
+            <form action="Servlet_Mascota" enctype="multipart/form-data" method="POST">
 		<div class="Registrar_M"><h2>Insertar Mascota</h2></div>
 		<div class="form_Mascota">
                     <div class="LR_Mascota">
