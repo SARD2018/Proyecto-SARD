@@ -5,19 +5,29 @@
  */
 package Controlador;
 
+import Modelo.Administrador_M;
+import Modelo.GS_Administrador;
+import Modelo.GS_Mascota;
+import Modelo.Mascota_M;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author Yefrin Pacheco
  */
 @WebServlet(name = "Servlet_Administrador", urlPatterns = {"/Servlet_Administrador"})
+@MultipartConfig
 public class Servlet_Administrador extends HttpServlet {
 
     /**
@@ -34,14 +44,83 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if (request.getParameter("")!=null) {
-            this.ActualizarAdministrador(request, response);
+        if (request.getParameter("R_Administrador")!=null) {
+            this.Insertar_Admin(request, response);
         }
     }
-    protected void ActualizarAdministrador(HttpServletRequest request, HttpServletResponse response)
+    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento");
+        Tipo= request.getParameter("Tipo_Documento");
+        Nombre = request.getParameter("Nombre");
+        Apellido = request.getParameter("Apellido");
+        Genero = request.getParameter("Genero");
+        Fecha = request.getParameter("Fecha_Nacimiento");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        Admin.In_Administrador(GSA);
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+    }
+    protected void Insertar_Ambiente_Salud(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento");
+        Tipo= request.getParameter("Tipo_Documento");
+        Nombre = request.getParameter("Nombre");
+        Apellido = request.getParameter("Apellido");
+        Genero = request.getParameter("Genero");
+        Fecha = request.getParameter("Fecha_Nacimiento");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        Admin.In_Administrador(GSA);
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

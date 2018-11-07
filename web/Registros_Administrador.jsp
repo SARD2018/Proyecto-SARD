@@ -21,7 +21,7 @@
 			<div class="Registrar_A" >
 				<p>REGISTRAR</p>
 			</div>
-					<form action="../Controlador/Administrador_C.php" method="post" enctype="multipart/form-data">
+					<form action="Servlet_Administrador" method="POST" enctype="multipart/form-data">
 						<div class="form_Administrador">
 							<div class="LR_Administrador">
 								<div class="left_Administrador">
