@@ -15,7 +15,7 @@ public class Mascota_M {
     
     public void In_Mascota (GS_Mascota GSM){
         try {
-            PreSta = BaseDatos.prepareStatement("call In_Mascota(?,?,?,?,?,?,?,?,?)");
+            PreSta = BaseDatos.prepareStatement("call In_Mascota(?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GSM.getTipo_Mascota());
             PreSta.setString(2, GSM.getNombre());
             PreSta.setString(3, GSM.getFecha_Nacimiento());
@@ -24,7 +24,7 @@ public class Mascota_M {
             PreSta.setString(6, GSM.getSexo());
             PreSta.setString(7, GSM.getDocumento());
             PreSta.setString(8, GSM.getFoto());
-            Reset = PreSta.executeQuery();
+            PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null,"Datos Ingresados Correctamente");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error Al ingresar los Datos");
