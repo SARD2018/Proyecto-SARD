@@ -13,13 +13,10 @@ $(document).ready(function(){
 	});
 
 	function Obtener_Registro(dato){
-		var Variable = dato;
 		$.ajax({
-			url: "../Controlador/Mascota_C.php",
-			type: "POST",
-			datatype: "php",
+			url: "Servelet_Mascota",
 			data: {
-				dato:Variable
+				variable:dato
 			},
 		})
 		.done(function(result){

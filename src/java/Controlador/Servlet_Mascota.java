@@ -30,6 +30,16 @@ public class Servlet_Mascota extends HttpServlet {
         }
     }
     
+    protected void TablaMascota(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Filtro = request.getParameter("variable");
+        response.sendRedirect("Mascota.jsp?Dato="+Filtro);
+        
+    }
+    
     protected void InsertarMascota(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

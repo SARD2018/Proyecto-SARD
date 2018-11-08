@@ -97,7 +97,57 @@
 		<div class="Position_Mascota">
                     <div class="Filtro_Mascota">
                         <label>Filtrar por:
-                            <input type
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="Tabla_M">
+                        <table class="Tabla_Mascota">
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Tipo de Mascota</th>
+                                <th>Nombre</th>
+                                <th>Fecha de Nacimiento</th>
+                                <th>Color</th>
+                                <th>Raza</th>
+                                <th>Sexo</th>
+                                <th>Dueno</th>
+                                <th>Foto</th>
+                                <th>Ultima Fecha de Vacunacion</th>
+                            </tr>
+                            <%
+                            String Dato = request.getParameter("Dato");
+                            ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();
+                            GS_Mascota GSM = new GS_Mascota();
+                            if (Dato != null){
+                                Tabla_mascota = MM.FiltroMascota(Dato);
+                            }else {
+                                Tabla_mascota = MM.Todo_Mascota();
+                            }
+                             
+                            for (int i = 0; i < Tabla_mascota.size();i++){
+                                GSM = Tabla_mascota.get(i);
+                            %>
+                            <tr>
+                                <td><input type="text" name="CodigoMascota" value="<%=GSM.getCodigo()%>"></td>
+                                <td><input type="text" name="TipoMascota" value="<%=GSM.getTipo_Mascota()%>"></td>
+                                <td><input type="text" name="NombreMascota" value="<%=GSM.getNombre()%>"></td>
+                                <td><input type="text" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
+                                <td><input type="text" name="ColorMascota" value="<%=GSM.getColor()%>"></td>
+                                <td><input type="text" name="RazaMascota" value="<%=GSM.getRaza()%>"></td>
+                                <td><input type="text" name="SexoMascota" value="<%=GSM.getSexo()%>"></td>
+                                <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>"></td>
+                                <td>
+                                    <label>
+                                        
+                                        <input type="submit" name="FotoMascota" class="FotoMascota">
+                                    </label>
+                                </td>
+                                    <td><input type="text" name="Foto" value="<%=GSM.getCodigo()%>"></td>
+                            </tr>
+                            <%
+                                }
+                            %>
+                        </table>
                     </div>	
                 </div>			
             </form>

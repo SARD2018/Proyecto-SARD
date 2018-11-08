@@ -46,6 +46,21 @@ public class Mascota_M {
         return Todo_Mascota;
     }
     
+     public ArrayList<GS_Mascota> FiltroMascota(String Dato) {
+        ArrayList<GS_Mascota> Filtro_Mascota = new ArrayList<>();
+        try {
+            PreSta = BaseDatos.prepareStatement("Call Uno_Mascota("+Dato+")");
+            Reset = PreSta.executeQuery();
+            while (Reset.next()){
+                GS_Mascota GSM = new GS_Mascota(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8),Reset.getString(9));
+                Filtro_Mascota.add(GSM);
+            }
+            
+        } catch (Exception e) {
+        }
+        return Filtro_Mascota;
+    }
+    
     public int Codigo() {
         int codigo = 0;
         try {

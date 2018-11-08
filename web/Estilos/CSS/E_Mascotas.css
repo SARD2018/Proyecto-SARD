@@ -226,7 +226,7 @@
 }
 .Position_Mascota {
 	margin: auto;
-	width: 90%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -234,16 +234,35 @@
 }
 .Filtro_Mascota {
 	display: flex;
+        justify-content: center;
+        align-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
 }
 .Tabla_M {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
-.Tabla_M table {
-	width: 100%;
+.Tabla_Mascota {
+    border: 1px solid black;
+    width: 100%;
+    margin: auto;
 }
-.Tabla_M th {
-	border: 1px solid red;
+
+.Tabla_Mascota input{
+    width: 100%;
+    margin: auto;
+    border: none;
+    text-align: center;
+}
+
+.FotoMascota {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
 }
