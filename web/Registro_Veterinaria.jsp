@@ -13,22 +13,22 @@
     </head>
     <body>
         <div class="Container">
-		<a href="Login.jsp">volver</a>
-		<h1>REGISTRO VETERINARIA</h1>
-		<div class="form_Veterinaria">
-			<form action="../Controlador/Veterinaria_C.php" method="post" enctype="multipart/form-data">
-				<p>Nit:<input type="text" name="Nit" pattern="[0-9]{4,15}" required></p>
-				<p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
-				<p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z]{1,50}" required></p>
-				<p>Fecha de Fundacion: <input type="date" name="Fecha_Fundacion"  required></p>
-				<p>Direccion: <input type="text" name="Direccion" required></p>
-				<p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z]{1,50}" required></p>
-				<p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
-				<p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
-				<p>Foto: <input type="file" name="Foto"></p>
-				<p><input class="btn" type="submit" name="R_Veterinaria" value="Registrar"></p>
-			</form>
-		</div>
+            <a href="Login.jsp">volver</a>
+            <h1>REGISTRO VETERINARIA</h1>
+            <div class="form_Veterinaria">
+                <form action="../Controlador/Veterinaria_C.php" method="post" enctype="multipart/form-data">
+                    <p>Nit:<input type="text" name="Nit" pattern="[0-9]{4,15}" required></p>
+                    <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
+                    <p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z]{1,50}" required></p>
+                    <p>Fecha de Fundacion: <input type="date" name="Fecha_Fundacion"  required></p>
+                    <p>Direccion: <input type="text" name="Direccion" required></p>
+                    <p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z]{1,50}" required></p>
+                    <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
+                    <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                    <p>Foto: <input type="file" name="Foto"></p>
+                    <p><input class="btn" type="submit" name="R_Veterinaria" value="Registrar"></p>
+                </form>
+            </div>
 	</div>
     </body>
 </html>
