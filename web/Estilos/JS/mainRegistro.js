@@ -33,7 +33,9 @@ $(".Registrar_A").hide();
 		$(".Position_Administrador").slideToggle();	
 		$(".Filtro_Administrador").slideToggle();	
 		$(".T_Administrador").slideToggle();
-		});		
+		});	
+                
+                
 
 	$(".SAmbienteySalud").click(function(){
 	$(".Registrar_AmbienteySalud").slideToggle();
@@ -73,5 +75,8 @@ $(".Registrar_A").hide();
 
 		$(".Actualizar_C").click(function(){
 		$(".T_Ciudadano").slideToggle();
-		});		
+		});	
+                
+   
+    
 });

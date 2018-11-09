@@ -4,6 +4,10 @@
     Author     : SENA
 --%>
 
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="Modelo.GS_Administrador"%>
+<%@page import="Modelo.Administrador_M"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
+        <script src="Estilos/JS/main_Filtro.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -61,7 +66,58 @@
 					<div class="Filtro_Administrador"> 
 						<input class="Filtro" type="text" name="Filtro" >
 					</div>
-					<div class="T_Administrador">	
+					<div class="T_Administrador">
+                                            
+                                             <table id="TablasL">
+                    
+                                                    <tr>
+
+                                                        <th>Documento</th>
+                                                        <th>Tipo Documento</th>
+                                                        <th>Nombre</th>
+                                                        <th>Apellido</th>
+                                                        <th>Genero</th>
+                                                        <th>Fecha Nacimiento</th>
+                                                        <th>Direccion/th>
+                                                        <th>Telefono/th>
+                                                        <th>Correo/th>
+                                                        <th>Foto/th>
+
+                                                    </tr>
+                    
+                                            <%
+                                                ArrayList<GS_Administrador> Tabla = new ArrayList<>();
+                                                String Dato = request.getParameter("dato");
+                                                Administrador_M Admin =new Administrador_M();
+                                                GS_Administrador GS_A = new GS_Administrador();
+                                                Tabla= Admin.Filtro_Admin(Dato);
+                                                
+                                                
+                                                for(int i=0; i<Tabla.size(); i++){
+                                                    GS_A =Tabla.get(i);
+                                               
+                                            %>
+                                            
+                                            <tr>
+                                                <form action="Servlet_Administrador">
+                                                    <td><input type="Text" name="Docuemento" readonly value="<%= GS_A.getDocumento()%>"></td>
+                                                    <td><input type="Text" name="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>"></td>
+                                                    <td><input type="Text" name="Nombre" readonly value="<%= GS_A.getNombre()%>"></td>
+                                                    <td><input type="Text" name="Apellido" readonly value="<%= GS_A.getApellido()%>"></td>
+                                                    <td><input type="Text" name="Genero" readonly value="<%= GS_A.getGenero()%>"></td>
+                                                    <td><input type="Text" name="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>"></td>
+                                                    <td><input type="Text" name="Direccion"  value="<%= GS_A.getDireccion()%>"></td>
+                                                    <td><input type="Text" name="Telefono" value="<%= GS_A.getTelefono()%>"></td>
+                                                    <td><input type="Text" name="Correo" value="<%= GS_A.getCorreo()%>"></td>
+                                                    <td><input type="Text" name="Foto" value="<%= GS_A.getFoto()%>"></td>
+                                                    <td><input type="Submit" value="Actualizar" name="Actualizar"></td>
+                                                    <td><input type="Submit" value="Eliminar" name="Eliminar"></td>
+                                                </form>
+                                            </tr>
+                                            <%
+                                            }
+                                            %>
+                                        </table>
 					</div>
 				</div>
 		
@@ -163,10 +219,6 @@
 			<div class="Actualizar_C" >
 				<p>OBSERVAR</p>
 			</div>
-
-		<div class="SMascota">
-			<p>MASCOTA</p>
-		</div>
 	</div>
     </body>
 </html>
