@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Modelo.Administrador_M;
@@ -47,6 +43,42 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento");
+        Nombre = request.getParameter("Nombre");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        int Consulta;
+        Consulta=Admin.Act_Administrador(GSA);
+        if (Consulta>0) {
+            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+        }
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        
+        
         if (request.getParameter("R_Administrador")!=null) {
             this.Insertar_Admin(request, response); 
         }
@@ -89,6 +121,13 @@ public class Servlet_Administrador extends HttpServlet {
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+    }
+    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        
     }
 
 

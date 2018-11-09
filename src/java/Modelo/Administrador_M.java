@@ -91,4 +91,22 @@ public class Administrador_M {
             JOptionPane.showMessageDialog(null,e);
     }
     }
+    
+     public int Act_Administrador (GS_Administrador GS){
+         int Actualizar=0;
+        try{
+            PreSta=BaseDatos.prepareStatement("call (?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(7, GS.getDireccion());
+            PreSta.setString(8, GS.getTelefono());
+            PreSta.setString(9, GS.getCorreo());
+            PreSta.setString(10, GS.getFoto());
+            Actualizar=PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
+    }
 }

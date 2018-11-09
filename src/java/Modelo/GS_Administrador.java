@@ -42,6 +42,14 @@ public class GS_Administrador {
         this.Correo = Correo;
         this.Foto = Foto;
     }
+
+    public GS_Administrador(String Documento,String Direccion, String Telefono, String Correo, String Foto) {
+        this.Documento = Documento;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Foto = Foto;
+    }
     
     public String getDocumento() {
         return Documento;

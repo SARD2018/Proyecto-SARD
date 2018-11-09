@@ -16,6 +16,7 @@
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
         <script src="Estilos/JS/main_Filtro.js"></script>
+        <script src="Estilos/JS/main_Filtro.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -79,10 +80,10 @@
                                                         <th>Apellido</th>
                                                         <th>Genero</th>
                                                         <th>Fecha Nacimiento</th>
-                                                        <th>Direccion/th>
-                                                        <th>Telefono/th>
-                                                        <th>Correo/th>
-                                                        <th>Foto/th>
+                                                        <th>Direccion</th>
+                                                        <th>Telefono</th>
+                                                        <th>Correo</th>
+                                                        <th>Foto</th>
 
                                                     </tr>
                     
@@ -100,20 +101,19 @@
                                             %>
                                             
                                             <tr>
-                                                <form action="Servlet_Administrador">
-                                                    <td><input type="Text" name="Docuemento" readonly value="<%= GS_A.getDocumento()%>"></td>
-                                                    <td><input type="Text" name="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>"></td>
-                                                    <td><input type="Text" name="Nombre" readonly value="<%= GS_A.getNombre()%>"></td>
-                                                    <td><input type="Text" name="Apellido" readonly value="<%= GS_A.getApellido()%>"></td>
-                                                    <td><input type="Text" name="Genero" readonly value="<%= GS_A.getGenero()%>"></td>
-                                                    <td><input type="Text" name="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>"></td>
-                                                    <td><input type="Text" name="Direccion"  value="<%= GS_A.getDireccion()%>"></td>
-                                                    <td><input type="Text" name="Telefono" value="<%= GS_A.getTelefono()%>"></td>
-                                                    <td><input type="Text" name="Correo" value="<%= GS_A.getCorreo()%>"></td>
-                                                    <td><input type="Text" name="Foto" value="<%= GS_A.getFoto()%>"></td>
-                                                    <td><input type="Submit" value="Actualizar" name="Actualizar"></td>
-                                                    <td><input type="Submit" value="Eliminar" name="Eliminar"></td>
-                                                </form>
+                                                    <td><input class="Documento" type="Text" name="Documento" readonly value="<%= GS_A.getDocumento()%>"></td>
+                                                    <td><input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>"></td>
+                                                    <td><input class="Nombre" type="Text" name="Nombre" readonly value="<%= GS_A.getNombre()%>"></td>
+                                                    <td><input class="Apellido" type="Text" name="Apellido" readonly value="<%= GS_A.getApellido()%>"></td>
+                                                    <td><input class="Genero" type="Text" name="Genero" readonly value="<%= GS_A.getGenero()%>"></td>
+                                                    <td><input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>"></td>
+                                                    <td><input class="Direccion" type="Text" name="Direccion"  value="<%= GS_A.getDireccion()%>"></td>
+                                                    <td><input class="Telefono" type="Text" name="Telefono" value="<%= GS_A.getTelefono()%>"></td>
+                                                    <td><input class="Correo" type="Text" name="Correo" value="<%= GS_A.getCorreo()%>"></td>
+                                                    <td><input class="Foto" type="file" name="Foto" value="<%= GS_A.getFoto()%>"></td>
+                                                    <td><input class="Actualizar" type="Submit" value="Actualizar" ></td>
+                                                    <td><input type="Submit" value="Eliminar" name="Eliminar_Admin"></td>
+                                              
                                             </tr>
                                             <%
                                             }
