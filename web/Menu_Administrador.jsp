@@ -4,14 +4,14 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="Modelo.GS_Administrador"%>
+<%@page import="Modelo.Administrador_M"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-        HttpSession Nom=request.getSession();
-        String Nombre=(String)Nom.getAttribute("NomSession");
-        String Documento=(String)Nom.getAttribute("DocSession");
-        
-        %>
+    HttpSession Nom=request.getSession();
+%>
 <html>
     <head>
     	<title>Menu</title>
@@ -47,10 +47,21 @@
                         <li><a href="">Eventos</a></li>
                     </ul>
                 </nav>
+                <%
+                String Documento=(String)Nom.getAttribute("DocSession");
+                ArrayList<GS_Administrador> datos = new ArrayList<>();
+                Administrador_M con = new Administrador_M();
+                datos = con.Uno_Admin(Documento);
+                GS_Administrador Dat = new GS_Administrador();
+
+                for(int i=0; i<datos.size(); i++){
+                    Dat = datos.get(i);
+                %>
                 <div class="Perfil">
-                    <img src="Imagenes/Perfil.png">
-                    <h2><%=Nombre%></h2>
+                    <img src="<%= Dat.getFoto()%>">
+                    <h2><%= Dat.getNombre()%> <%= Dat.getApellido()%></h2>
 		</div>
+                <% } %>
             </div>
         </header>
         <div class="DatosPerfil">
