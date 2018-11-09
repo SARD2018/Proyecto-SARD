@@ -47,7 +47,6 @@ public class Servlet_Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        
         String Usuario,Clave;
         Usuario=request.getParameter("Usuario");
         Clave=request.getParameter("Clave");
@@ -55,7 +54,6 @@ public class Servlet_Login extends HttpServlet {
         Login_M log = new Login_M();
         ArrayList<GS_Login> arreglo = new ArrayList<>();
         arreglo=log.Validacion(in);
-       
         
         if(arreglo.size()>0){
               
@@ -112,8 +110,11 @@ public class Servlet_Login extends HttpServlet {
         }
        
         }
-       
-      
+        else{
+            
+            JOptionPane.showMessageDialog(null, "No entro");
+        }
+  
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
