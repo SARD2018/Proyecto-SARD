@@ -133,17 +133,18 @@
         		<div class="left_AmbienteySalud">
                             <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
                             <p>Tipo de Documento: 
-                                    <select name="Tipo_Documento" required>
-                                            <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-                                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                                            <option value="Pasaporte">Pasaporte</option>
-                                    </select></p>
+                                <select name="Tipo_Documento" required>
+                                    <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                                    <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                </select></p>
                             <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
                             <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></p>
-                            <p>Genero: <select name="Genero" required >
+                            <p>Genero: 
+                                <select name="Genero" required >
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                            </select></p>
+                                </select></p>
                             <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
 			</div>
                         <div class="right_AmbienteySalud">
@@ -151,10 +152,10 @@
                             <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
                             <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
                             <p>Rol:
-                                    <select name="Rol" required="">
-                                            <option value="2">Ambiente</option>
-                                            <option value="3">Salud</option>
-                                    </select>
+                                <select name="Rol" required="">
+                                    <option value="2">Ambiente</option>
+                                    <option value="3">Salud</option>
+                                </select>
                             </p>
                             <p>Foto: <input type="file" name="Foto"></p>
                         </div>
@@ -164,62 +165,59 @@
                     </div>
                     </div>
         	</form>
-
-			<div class="Actualizar_AmbienteySalud" >
-				<p>OBSERVAR</p>
-			</div>
-		
-				
+                    <div class="Actualizar_AmbienteySalud" >
+                        <p>OBSERVAR</p>
+                    </div>	
 		<div class="SVeterinaria">
-			<p>VETERINARIA</p>
+                    <p>VETERINARIA</p>
 		</div>
-			<div class="Registrar_V" >
-				<p>REGISTRAR</p>
-			</div>
-			<div class="Actualizar_V" >
-				<p>OBSERVAR</p>
-			</div>
-
-		<div class="SCiudadano">
-			<p>CIUDADANO</p>
-		</div>
-			<div class="Registrar_C" >
-				<p>REGISTRAR</p>
-			</div>
-					<form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
-						<div class="form_Ciudadano">
-							<div class="LR_Ciudadano">
-								<div class="left_Ciudadano">
-									<p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
-									<p>Tipo de Documento: 
-										<select name="Tipo_Documento" required>
-											<option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
-											<option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-											<option value="Pasaporte">Pasaporte</option>
-										</select></p>
-									<p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
-									<p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></p>
-									<p>Genero: <select name="Genero" required >
-										<option value="Masculino">Masculino</option>
-										<option value="Femenino">Femenino</option>
-									</select></p>
-								</div>
-								<div class="Right_Ciudadano">
-									<p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
-									<p>Direccion: <input type="text" name="Direccion" required></p>
-									<p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
-									<p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
-									<p>Foto: <input type="file" name="Foto"></p>
-								</div>
-							</div>
-							<div class="btn_Ciudadano">
-								<p><input class="btn" type="submit" name="R_Ciudadano" value="Registrar"></p>
-							</div>
-						</div>
-					</form>
-			<div class="Actualizar_C" >
-				<p>OBSERVAR</p>
-			</div>
+                    <div class="Registrar_V" >
+                        <p>REGISTRAR</p>
+                    </div>
+                    <div class="Actualizar_V" >
+                        <p>OBSERVAR</p>
+                    </div>
+                    <div class="SCiudadano">
+                        <p>CIUDADANO</p>
+                    </div>
+                    <div class="Registrar_C" >
+                        <p>REGISTRAR</p>
+                    </div>
+                    <form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
+                        <div class="form_Ciudadano">
+                            <div class="LR_Ciudadano">
+                                <div class="left_Ciudadano">
+                                    <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
+                                    <p>Tipo de Documento: 
+                                        <select name="Tipo_Documento" required>
+                                            <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                                            <option value="Pasaporte">Pasaporte</option>
+                                        </select></p>
+                                    <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
+                                    <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></p>
+                                    <p>Genero: 
+                                        <select name="Genero" required >
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
+                                        </select></p>
+                                </div>
+                                <div class="Right_Ciudadano">
+                                    <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
+                                    <p>Direccion: <input type="text" name="Direccion" required></p>
+                                    <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
+                                    <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                                    <p>Foto: <input type="file" name="Foto"></p>
+                                </div>
+                            </div>
+                            <div class="btn_Ciudadano">
+                                <p><input class="btn" type="submit" name="R_Ciudadano" value="Registrar"></p>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="Actualizar_C" >
+                        <p>OBSERVAR</p>
+                    </div>
 	</div>
     </body>
 </html>
