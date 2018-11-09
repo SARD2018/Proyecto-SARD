@@ -48,7 +48,7 @@ public class Servlet_Administrador extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if (request.getParameter("R_Administrador")!=null) {
-            this.Insertar_Admin(request, response);
+            this.Insertar_Admin(request, response); 
         }
         
     }

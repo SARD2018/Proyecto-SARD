@@ -20,13 +20,14 @@
     </head>
     <body>
        <div class="Container">
-		<div class="SAdministrador">
-			<p>ADMINISTRADOR</p>
-		</div>
-			<div class="Registrar_A" >
-				<p>REGISTRAR</p>
-			</div>
-					<form action="Servlet_Administrador" method="POST" enctype="multipart/form-data">
+            <div class="SAdministrador">
+		<p>ADMINISTRADOR</p>
+            </div>
+            <div class="Registrar_A" >
+		<p>REGISTRAR</p>
+            </div>
+            
+           <form action="Servlet_Administrador" method="POST" enctype="multipart/form-data">
 						<div class="form_Administrador">
 							<div class="LR_Administrador">
 								<div class="left_Administrador">
@@ -87,10 +88,10 @@
                     
                                             <%
                                                 ArrayList<GS_Administrador> Tabla = new ArrayList<>();
-                                                String Dato = request.getParameter("dato");
+                                                // String Dato = request.getParameter("dato");
                                                 Administrador_M Admin =new Administrador_M();
                                                 GS_Administrador GS_A = new GS_Administrador();
-                                                Tabla= Admin.Filtro_Admin(Dato);
+                                                Tabla= Admin.Tabla_Admin();
                                                 
                                                 
                                                 for(int i=0; i<Tabla.size(); i++){

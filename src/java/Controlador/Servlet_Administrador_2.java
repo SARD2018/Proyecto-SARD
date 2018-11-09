@@ -37,7 +37,6 @@ public class Servlet_Administrador_2 extends HttpServlet {
         
         Administrador_M admin=new Administrador_M();
         String Dato = request.getParameter("Dato");
-       
         response.sendRedirect("Registros_Administrador.jsp?dato="+Dato);
     }
 
