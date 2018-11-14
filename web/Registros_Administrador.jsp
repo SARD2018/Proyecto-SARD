@@ -90,9 +90,10 @@
 
                         <%
                             ArrayList<GS_Administrador> Tabla = new ArrayList<>();
-                            // String Dato = request.getParameter("dato");
+                            String Dato = request.getParameter("dato");
                             Administrador_M Admin =new Administrador_M();
                             GS_Administrador GS_A = new GS_Administrador();
+                          
                             Tabla= Admin.Tabla_Admin();
 
 

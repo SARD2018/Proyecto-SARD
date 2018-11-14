@@ -43,7 +43,7 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+       /* String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         Documento = request.getParameter("Documento");
         Nombre = request.getParameter("Nombre");
         Direccion = request.getParameter("Direccion");
@@ -77,7 +77,7 @@ public class Servlet_Administrador extends HttpServlet {
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
         }
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
-        
+        */
         
         if (request.getParameter("R_Administrador")!=null) {
             this.Insertar_Admin(request, response); 
@@ -120,6 +120,7 @@ public class Servlet_Administrador extends HttpServlet {
         GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
+        Admin.Login_Admin(GSA);
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
     }
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)

@@ -109,4 +109,18 @@ public class Administrador_M {
     }
         return Actualizar;
     }
+   
+     public void Login_Admin (GS_Administrador GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDocumento());
+            PreSta.setInt(3, 1);
+            PreSta.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+    }
+    
 }

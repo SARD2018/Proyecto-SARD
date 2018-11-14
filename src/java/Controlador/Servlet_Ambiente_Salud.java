@@ -88,6 +88,12 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, Rol, url2);
          Ambiente_Salud_M AS = new Ambiente_Salud_M();
         AS.In_Ambiente_Salud(GSAS);
+        if(Rol==2){
+            AS.Login_Ambiente(GSAS);
+        }
+        else{
+            AS.Login_Salud(GSAS);
+        }
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
     }
 

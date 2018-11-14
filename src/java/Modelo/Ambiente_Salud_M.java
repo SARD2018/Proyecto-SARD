@@ -73,4 +73,32 @@ public class Ambiente_Salud_M {
         }
         return Tabla;
     }
+    
+    
+      public void Login_Ambiente (GS_Ambiente_Salud GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDocumento());
+            PreSta.setInt(3, 2);
+            PreSta.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+      
+      
+      public void Login_Salud (GS_Ambiente_Salud GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDocumento());
+            PreSta.setInt(3, 3);
+            PreSta.executeUpdate();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
 }

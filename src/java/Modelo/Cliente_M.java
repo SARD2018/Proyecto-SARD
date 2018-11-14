@@ -69,4 +69,19 @@ public class Cliente_M {
     }
     }
     
+    
+      public void Login_Cliente (GS_Cliente GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDocumento());
+            PreSta.setInt(3, 5);
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
 }
