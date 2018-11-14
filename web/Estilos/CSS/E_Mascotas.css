@@ -259,6 +259,10 @@
     border-bottom: 1px solid black;
 }
 
+.img{
+    text-align: center;
+}
+
 .Tabla_Mascota input{
     width: 100%;
     margin: auto;

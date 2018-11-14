@@ -128,21 +128,29 @@
                                 GSM = Tabla_mascota.get(i);
                             %>
                             <tr>
-                                <td><input type="text" name="CodigoMascota" value="<%=GSM.getCodigo()%>"></td>
-                                <td><input type="text" name="TipoMascota" value="<%=GSM.getTipo_Mascota()%>"></td>
+                                <td><input type="text" name="CodigoMascota" value="<%=GSM.getCodigo()%>" readonly></td>
+                                <td><select>
+                                        <option value="<%=GSM.getTipo_Mascota()%>" selected disabled><%=GSM.getTipo_Mascota()%></option>
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Pajaro">Pajaro</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" name="NombreMascota" value="<%=GSM.getNombre()%>"></td>
-                                <td><input type="text" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
+                                <td><input type="date" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
                                 <td><input type="text" name="ColorMascota" value="<%=GSM.getColor()%>"></td>
                                 <td><input type="text" name="RazaMascota" value="<%=GSM.getRaza()%>"></td>
                                 <td><input type="text" name="SexoMascota" value="<%=GSM.getSexo()%>"></td>
-                                <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>"></td>
-                                <td>
+                                <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>" readonly></td>
+                                <td class="img">
                                     <label>
                                         <image  src="<%=GSM.getFoto()%>" class="CargarImg">
-                                        <input type="file" name="FotoMascota" class="FotoMascota">
+                                        <input type="file" name="FotoMascota" class="FotoMascota" accept="image/jpeg, image/png, image/gif">
                                     </label>
                                 </td>
-                                    <td><input type="text" name="Foto" value="<%=GSM.getCodigo()%>"></td>
+                                <td><input type="date" name="Foto" value="<%=GSM.getCodigo()%>"></td>
+                                <td><span class="icon icon-pencil"></span></td>    
+                                <td><span class="icon icon-cancel"></span></td>    
                             </tr>
                             <%
                                 }
