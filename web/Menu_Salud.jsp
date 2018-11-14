@@ -42,18 +42,18 @@
                 <nav>
                     <ul class="Menu">
                         <li><a href="#">Inicio</a></li>
-                        <li><a href="">Denuncias</a></li>
-                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a href="">Adopciones</a></li>
-                        <li><a href="">Mascotas</a></li>
-                        <li><a href="">Eventos</a></li>
+                        <li><a href="Mascota.php">Mascota</a></li>
+                        <li><a href="#Noticias">Adopcion</a></li>
+                        <li><a href="#Conocenos">Vacunacion</a></li>
+                        <li><a href="#Noticias">Eventos</a></li>
+                        <li><a href="#Contactenos">Contactenos</a></li>
                     </ul>
                 </nav>
                 <%
                 String Documento=(String)Nom.getAttribute("DocSession");
-                ArrayList<GS_Administrador> datos = new ArrayList<>();
+                ArrayList<GS_Ambiente_Salud> datos = new ArrayList<>();
                 Ambiente_Salud_M con = new Ambiente_Salud_M();
-                datos = con.(Documento);
+                datos = con.Uno_Salud(Documento);
                 GS_Ambiente_Salud Dat = new GS_Ambiente_Salud();
 
                 for(int i=0; i<datos.size(); i++){

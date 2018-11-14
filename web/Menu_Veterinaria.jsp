@@ -4,6 +4,8 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="Modelo.Veterinaria_M"%>
+<%@page import="Modelo.GS_Veterinaria"%>
 <%@page import="Modelo.GS_Administrador"%>
 <%@page import="Modelo.Administrador_M"%>
 <%@page import="java.util.ArrayList"%>
@@ -40,26 +42,27 @@
                 <nav>
                     <ul class="Menu">
                         <li><a href="#">Inicio</a></li>
-                        <li><a href="">Denuncias</a></li>
-                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a href="">Adopciones</a></li>
-                        <li><a href="">Mascotas</a></li>
-                        <li><a href="">Eventos</a></li>
+                        <li><a href="Mascota.php">Mascota</a></li>
+                        <li><a href="Mascota.php">Denuncias</a></li>
+                        <li><a href="#Noticias">Adopcion</a></li>
+                        <li><a href="#Conocenos">Vacunacion</a></li>
+                        <li><a href="#Noticias">Eventos</a></li>
+                        <li><a href="#Contactenos">Contactenos</a></li>
                     </ul>
                 </nav>
                 <%
                 String Documento=(String)Nom.getAttribute("DocSession");
-                ArrayList<GS_Administrador> datos = new ArrayList<>();
-                Administrador_M con = new Administrador_M();
-                datos = con.Uno_Admin(Documento);
-                GS_Administrador Dat = new GS_Administrador();
+                ArrayList<GS_Veterinaria> datos = new ArrayList<>();
+                Veterinaria_M con = new Veterinaria_M();
+                datos = con.Uno_Veterinaria(Documento);
+                GS_Veterinaria Dat = new GS_Veterinaria();
 
                 for(int i=0; i<datos.size(); i++){
                     Dat = datos.get(i);
                 %>
                 <div class="Perfil">
                     <img src="<%= Dat.getFoto()%>">
-                    <h2><%= Dat.getNombre()%> <%= Dat.getApellido()%></h2>
+                    <h2><%= Dat.getNombre()%></h2>
 		</div>
                 <% } %>
             </div>

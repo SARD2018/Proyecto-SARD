@@ -4,6 +4,8 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="Modelo.Ambiente_Salud_M"%>
+<%@page import="Modelo.GS_Ambiente_Salud"%>
 <%@page import="Modelo.GS_Administrador"%>
 <%@page import="Modelo.Administrador_M"%>
 <%@page import="java.util.ArrayList"%>
@@ -40,19 +42,19 @@
                 <nav>
                     <ul class="Menu">
                         <li><a href="#">Inicio</a></li>
+                        <li><a href="Mascota.php">Mascota</a></li>
+                        <li><a href="#Noticias">Adopcion</a></li>
                         <li><a href="">Denuncias</a></li>
-                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a href="">Adopciones</a></li>
-                        <li><a href="">Mascotas</a></li>
-                        <li><a href="">Eventos</a></li>
+                        <li><a href="#Noticias">Eventos</a></li>
+                        <li><a href="#Contactenos">Contactenos</a></li>
                     </ul>
                 </nav>
                 <%
                 String Documento=(String)Nom.getAttribute("DocSession");
-                ArrayList<GS_Administrador> datos = new ArrayList<>();
-                Administrador_M con = new Administrador_M();
-                datos = con.Uno_Admin(Documento);
-                GS_Administrador Dat = new GS_Administrador();
+                ArrayList<GS_Ambiente_Salud> datos = new ArrayList<>();
+                Ambiente_Salud_M con = new Ambiente_Salud_M();
+                datos = con.Uno_Ambiente(Documento);
+                GS_Ambiente_Salud Dat = new GS_Ambiente_Salud();
 
                 for(int i=0; i<datos.size(); i++){
                     Dat = datos.get(i);

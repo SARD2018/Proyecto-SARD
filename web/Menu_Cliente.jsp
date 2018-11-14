@@ -4,6 +4,8 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="Modelo.Cliente_M"%>
+<%@page import="Modelo.GS_Cliente"%>
 <%@page import="Modelo.GS_Administrador"%>
 <%@page import="Modelo.Administrador_M"%>
 <%@page import="java.util.ArrayList"%>
@@ -40,19 +42,19 @@
                 <nav>
                     <ul class="Menu">
                         <li><a href="#">Inicio</a></li>
-                        <li><a href="">Denuncias</a></li>
-                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a href="">Adopciones</a></li>
-                        <li><a href="">Mascotas</a></li>
-                        <li><a href="">Eventos</a></li>
+                        <li><a name="Denuncia">Denuncia</a></li>
+                        <li><a href="Mascota.php">Mascotas</a></li>
+                        <li><a href="#Noticias">Adopcion</a></li>
+                        <li><a href="#Noticias">Eventos</a></li>
+                        <li><a href="#Conocenos">Conocenos</a></li>
                     </ul>
                 </nav>
                 <%
                 String Documento=(String)Nom.getAttribute("DocSession");
-                ArrayList<GS_Administrador> datos = new ArrayList<>();
-                Administrador_M con = new Administrador_M();
-                datos = con.Uno_Admin(Documento);
-                GS_Administrador Dat = new GS_Administrador();
+                ArrayList<GS_Cliente> datos = new ArrayList<>();
+                Cliente_M con = new Cliente_M();
+                datos = con.Uno_Cliente(Documento);
+                GS_Cliente Dat = new GS_Cliente();
 
                 for(int i=0; i<datos.size(); i++){
                     Dat = datos.get(i);

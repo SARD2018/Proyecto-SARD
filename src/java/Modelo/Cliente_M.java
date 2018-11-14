@@ -14,6 +14,24 @@ public class Cliente_M {
     PreparedStatement PreSta = null;
     ResultSet Reset = null;
     
+    public ArrayList<GS_Cliente> Uno_Cliente (String ID){
+        ArrayList<GS_Cliente> Tabla=new ArrayList<>();
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Uno_Cliente (?)");
+            PreSta.setString(1, ID);
+            Reset= PreSta.executeQuery();
+            
+            while (Reset.next()) {   
+                GS_Cliente ing=new GS_Cliente(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                Tabla.add(ing);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Uno Cliente");
+        }
+        return Tabla;
+    }
     public ArrayList<GS_Cliente> Todo_Cliente() {
         ArrayList<GS_Cliente> Todo_Cliente = new ArrayList<>();
         try {
