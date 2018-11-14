@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import Modelo.Denuncias;
+import Modelo.Denuncias_M;
 import Modelo.GS_Denuncia;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -74,7 +74,7 @@ public class Servlet_Denuncia extends HttpServlet {
         }
         
         GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, url2, Fecha);
-        Denuncias  Den= new Denuncias();
+        Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenuncias(GSD);
         request.getRequestDispatcher("Registro_Denuncia.jsp").forward(request, response);
         
