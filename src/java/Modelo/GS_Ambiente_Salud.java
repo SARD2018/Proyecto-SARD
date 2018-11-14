@@ -28,6 +28,26 @@ public class GS_Ambiente_Salud {
         this.Foto = Foto;
     }
 
+    public GS_Ambiente_Salud(String Documento, String Tipo_Documento, String Nombre, String Apellido, String Genero, String Fecha_Nacimiento, String Direccion, String Telefono, String Correo, String Foto) {
+        this.Documento = Documento;
+        this.Tipo_Documento = Tipo_Documento;
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Genero = Genero;
+        this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Foto = Foto;
+    }
+
+    public GS_Ambiente_Salud() {
+    }
+
+    public GS_Ambiente_Salud(String Documento) {
+        this.Documento = Documento;
+    }
+
     public String getDocumento() {
         return Documento;
     }

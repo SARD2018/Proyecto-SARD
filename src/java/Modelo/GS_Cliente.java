@@ -45,7 +45,10 @@ public class GS_Cliente {
         this.Foto = Foto;
     }
 
-    
+    public GS_Cliente(String Documento) {
+        this.Documento = Documento;
+    }
+
     public String getDocumento() {
         return Documento;
     }
