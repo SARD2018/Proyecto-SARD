@@ -97,7 +97,7 @@
 		<div class="Position_Mascota">
                     <div class="Filtro_Mascota">
                         <label>Filtrar por:
-                            <input type="text">
+                            <input type="text" class="Busqueda">
                         </label>
                     </div>
                     <div class="Tabla_M">
@@ -138,8 +138,8 @@
                                 <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>"></td>
                                 <td>
                                     <label>
-                                        
-                                        <input type="submit" name="FotoMascota" class="FotoMascota">
+                                        <image  src="<%=GSM.getFoto()%>" class="CargarImg">
+                                        <input type="file" name="FotoMascota" class="FotoMascota">
                                     </label>
                                 </td>
                                     <td><input type="text" name="Foto" value="<%=GSM.getCodigo()%>"></td>
