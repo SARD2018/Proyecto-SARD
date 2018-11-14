@@ -8,35 +8,37 @@ public class GS_Veterinaria {
     private String Representante;
     private String Fecha_Fundacion;
     private String Direccion;
+    private String Barrio;
     private String Telefono;
     private String Correo;
     private int Rol;
     private String Foto;
 
-    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Telefono, String Correo, int Rol, String Foto) {
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;
         this.Representante = Representante;
         this.Fecha_Fundacion = Fecha_Fundacion;
         this.Direccion = Direccion;
+        this.Barrio = Barrio;
         this.Telefono = Telefono;
         this.Correo = Correo;
         this.Rol = Rol;
         this.Foto = Foto;
     }
 
-    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Telefono, String Correo, String Foto) {
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;
         this.Representante = Representante;
         this.Fecha_Fundacion = Fecha_Fundacion;
         this.Direccion = Direccion;
+        this.Barrio = Barrio;
         this.Telefono = Telefono;
         this.Correo = Correo;
         this.Foto = Foto;
     }
 
-    
     public GS_Veterinaria() {
     }
 
@@ -68,8 +70,8 @@ public class GS_Veterinaria {
         return Fecha_Fundacion;
     }
 
-    public void setFecha_Fundacion(String Fecha_Nacimiento) {
-        this.Fecha_Fundacion = Fecha_Nacimiento;
+    public void setFecha_Fundacion(String Fecha_Fundacion) {
+        this.Fecha_Fundacion = Fecha_Fundacion;
     }
 
     public String getDireccion() {
@@ -78,6 +80,14 @@ public class GS_Veterinaria {
 
     public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
+    }
+
+    public String getBarrio() {
+        return Barrio;
+    }
+
+    public void setBarrio(String Barrio) {
+        this.Barrio = Barrio;
     }
 
     public String getTelefono() {
@@ -111,6 +121,7 @@ public class GS_Veterinaria {
     public void setFoto(String Foto) {
         this.Foto = Foto;
     }
+
     
     
     

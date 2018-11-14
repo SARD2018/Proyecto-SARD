@@ -67,7 +67,7 @@ public class Filtros {
        }
        return arreglo;
    }
-   
+   /*
     public ArrayList<GS_Veterinaria>Filtro_Veterinaria(GS_Veterinaria GS){
        ArrayList<GS_Veterinaria>arreglo=new ArrayList<>();
        
@@ -85,4 +85,5 @@ public class Filtros {
        }
        return arreglo;
    }
+*/
 }
