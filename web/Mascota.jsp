@@ -140,7 +140,14 @@
                                 <td><input type="date" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
                                 <td><input type="text" name="ColorMascota" value="<%=GSM.getColor()%>"></td>
                                 <td><input type="text" name="RazaMascota" value="<%=GSM.getRaza()%>"></td>
-                                <td><input type="text" name="SexoMascota" value="<%=GSM.getSexo()%>"></td>
+                                <td><select>
+                                        <option value="<%=GSM.getSexo()%>" selected disabled><%=GSM.getSexo()%></option>
+                                        <option value="Macho">Macho</option>
+                                        <option value="Hembra">Hembra</option>
+                                    </select>
+                                    
+                                    
+                                </td>
                                 <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>" readonly></td>
                                 <td class="img">
                                     <label>
