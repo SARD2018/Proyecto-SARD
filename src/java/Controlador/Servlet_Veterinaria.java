@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,9 @@ import javax.swing.JOptionPane;
  *
  * @author SENA
  */
+
 @WebServlet(name = "Servlet_Veterinaria", urlPatterns = {"/Servlet_Veterinaria"})
+@MultipartConfig
 public class Servlet_Veterinaria extends HttpServlet {
 
     /**
@@ -41,10 +44,7 @@ public class Servlet_Veterinaria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        JOptionPane.showMessageDialog(null, "entra servlet");
-        
         if (request.getParameter("R_Veterinaria")!=null) {
-            JOptionPane.showMessageDialog(null,"entra boton");
             this.Insertar_Veterinaria(request, response);
         }
     }
@@ -83,7 +83,7 @@ public class Servlet_Veterinaria extends HttpServlet {
         GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Fecha, Direccion, Barrio, Telefono, Correo, url2);
         Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria(GSC);    ;
-        
+    
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
         
     }

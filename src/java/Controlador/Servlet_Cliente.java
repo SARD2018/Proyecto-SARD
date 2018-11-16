@@ -45,7 +45,6 @@ public class Servlet_Cliente extends HttpServlet {
         if (request.getParameter("R_Ciudadano")!=null) {
             this.Insertar_Cliente(request, response);
         }
-        
         }
     
         protected void Insertar_Cliente(HttpServletRequest request, HttpServletResponse response)
