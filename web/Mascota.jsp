@@ -17,20 +17,82 @@
 	<title>Gestion Mascotas</title>
     </head>
     <body>
-        <div class="Container">
+        <div class="Container">		
+            <div class="Actualizar_M">
+		<h2>Modificacion Mascota</h2>
+            </div>
+            <div class="Position_Mascota">
+                <div class="Filtro_Mascota">
+                    <label>Filtrar por:
+                        <input type="text" class="Busqueda">
+                    </label>
+                </div>
+                <div class="Tabla_M">
+                        <%
+                        Mascota_M MM = new Mascota_M();
+                        String Dato = request.getParameter("Dato");
+                        ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();
+                        GS_Mascota GSM = new GS_Mascota();
+                        if (Dato != null){
+                            Tabla_mascota = MM.FiltroMascota(Dato);
+                        }else {
+                            Tabla_mascota = MM.Todo_Mascota();
+                        }
+
+                        for (int i = 0; i < Tabla_mascota.size();i++){
+                            GSM = Tabla_mascota.get(i);
+                        %>
+                        <div class="NombreMascota">
+                            <h2><%=GSM.getNombre()%></h2>
+                        </div>
+                            <input type="text" name="CodigoMascota" value="" readonly></td>
+                            <select>
+                                <option value="<%=GSM.getTipo_Mascota()%>" selected disabled><%=GSM.getTipo_Mascota()%></option>
+                                <option value="Perro">Perro</option>
+                                <option value="Gato">Gato</option>
+                                <option value="Pajaro">Pajaro</option>
+                            </select>
+                            <td><input type="text" name="NombreMascota" value="<%=GSM.getNombre()%>"></td>
+                            <td><input type="date" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
+                            <td><input type="text" name="ColorMascota" value="<%=GSM.getColor()%>"></td>
+                            <td><input type="text" name="RazaMascota" value="<%=GSM.getRaza()%>"></td>
+                            <td><select>
+                                    <option value="<%=GSM.getSexo()%>" selected disabled><%=GSM.getSexo()%></option>
+                                    <option value="Macho">Macho</option>
+                                    <option value="Hembra">Hembra</option>
+                                </select>
+
+
+                            </td>
+                            <td><input type="text" name="DuenoMascota" value="" readonly></td>
+                            <td class="img">
+                                <label>
+                                    <image  src="<%=GSM.getFoto()%>" class="CargarImg">
+                                    <input type="file" name="FotoMascota" class="FotoMascota" accept="image/jpeg, image/png, image/gif">
+                                </label>
+                            </td>
+                            <td><input type="date" name="Foto" value=""></td>
+                            <td><span class="icon icon-pencil"></span></td>    
+                            <td><span class="icon icon-cancel"></span></td>    
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </table>
+                </div>	
+            </div>
             <form action="Servlet_Mascota" enctype="multipart/form-data" method="POST">
 		<div class="Registrar_M"><h2>Insertar Mascota</h2></div>
 		<div class="form_Mascota">
                     <div class="LR_Mascota">
 			<div class="Left_Mascota">
-                            <label>Codigo de Mascota:
+                            <label>Documento de Mascota:
                                 <%
                                     int Codigo = 0;
-                                    Mascota_M MM = new Mascota_M();
                                     Codigo = MM.Codigo()+1;
                                     
                                 %>
-                                <input type="Text" value="<%=Codigo%>" name="Codigo" disabled>
+                                <input type="Text" value="000<%=Codigo%>" name="Codigo" readonly>
                                 
                             </label>
                             <label>Tipo Mascota:
@@ -52,7 +114,13 @@
 			</div>
 			<div class="Rigth_Mascota">
                             <label>Raza: 
-                                <input type="text" name="Raza_M" placeholder="Indique la raza de su mascota" pattern="[A-Za-z]{3,20}" required>
+                                <input type="text" name="Raza_M" placeholder="Indique la raza de la mascota" pattern="[A-Za-z]{3,20}" required>
+                            </label>
+                            <label>Estado:
+                                <select name="Estado_M">
+                                    <option value="1">Sin Propietario</option>
+                                    <option value="2">Con Propietario</option>
+                                </select>
                             </label>
                             <label>Sexo: 
 				<select name="Sexo_M" required>
@@ -88,83 +156,6 @@
 			<button name="btn-Insertar" class="btn-Insertar">Insertar</button>
                     </div>
 		</div>
-            </form>
-			
-            <div class="Actualizar_M">
-		<h2>Actualizar Mascota</h2>
-            </div>
-            <form>
-		<div class="Position_Mascota">
-                    <div class="Filtro_Mascota">
-                        <label>Filtrar por:
-                            <input type="text" class="Busqueda">
-                        </label>
-                    </div>
-                    <div class="Tabla_M">
-                        <table class="Tabla_Mascota">
-                            <tr>
-                                <th>Codigo</th>
-                                <th>Tipo de Mascota</th>
-                                <th>Nombre</th>
-                                <th>Fecha de Nacimiento</th>
-                                <th>Color</th>
-                                <th>Raza</th>
-                                <th>Sexo</th>
-                                <th>Dueno</th>
-                                <th>Foto</th>
-                                <th>Ultima Fecha de Vacunacion</th>
-                            </tr>
-                            <%
-                            String Dato = request.getParameter("Dato");
-                            ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();
-                            GS_Mascota GSM = new GS_Mascota();
-                            if (Dato != null){
-                                Tabla_mascota = MM.FiltroMascota(Dato);
-                            }else {
-                                Tabla_mascota = MM.Todo_Mascota();
-                            }
-                             
-                            for (int i = 0; i < Tabla_mascota.size();i++){
-                                GSM = Tabla_mascota.get(i);
-                            %>
-                            <tr>
-                                <td><input type="text" name="CodigoMascota" value="<%=GSM.getCodigo()%>" readonly></td>
-                                <td><select>
-                                        <option value="<%=GSM.getTipo_Mascota()%>" selected disabled><%=GSM.getTipo_Mascota()%></option>
-                                        <option value="Perro">Perro</option>
-                                        <option value="Gato">Gato</option>
-                                        <option value="Pajaro">Pajaro</option>
-                                    </select>
-                                </td>
-                                <td><input type="text" name="NombreMascota" value="<%=GSM.getNombre()%>"></td>
-                                <td><input type="date" name="FecaNacimiento" value="<%=GSM.getFecha_Nacimiento()%>"></td>
-                                <td><input type="text" name="ColorMascota" value="<%=GSM.getColor()%>"></td>
-                                <td><input type="text" name="RazaMascota" value="<%=GSM.getRaza()%>"></td>
-                                <td><select>
-                                        <option value="<%=GSM.getSexo()%>" selected disabled><%=GSM.getSexo()%></option>
-                                        <option value="Macho">Macho</option>
-                                        <option value="Hembra">Hembra</option>
-                                    </select>
-                                    
-                                    
-                                </td>
-                                <td><input type="text" name="DuenoMascota" value="<%=GSM.getDocumento()%>" readonly></td>
-                                <td class="img">
-                                    <label>
-                                        <image  src="<%=GSM.getFoto()%>" class="CargarImg">
-                                        <input type="file" name="FotoMascota" class="FotoMascota" accept="image/jpeg, image/png, image/gif">
-                                    </label>
-                                </td>
-                                <td><input type="date" name="Foto" value="<%=GSM.getCodigo()%>"></td>
-                                <td><span class="icon icon-pencil"></span></td>    
-                                <td><span class="icon icon-cancel"></span></td>    
-                            </tr>
-                            <%
-                                }
-                            %>
-                        </table>
-                    </div>	
-                </div>			
             </form>
         </div>
     </body>

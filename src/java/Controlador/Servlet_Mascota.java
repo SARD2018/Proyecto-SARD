@@ -1,5 +1,7 @@
     package Controlador;
 
+import Modelo.Estado_M;
+import Modelo.GS_Estado;
 import Modelo.GS_Mascota;
 import Modelo.Mascota_M;
 import java.io.File;
@@ -44,13 +46,16 @@ public class Servlet_Mascota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
         String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
+        int Estado,Codigo;
+        
+        Codigo = Integer.parseInt(request.getParameter("Codigo"));
         TipoMascota = request.getParameter("Tipo_Mascota");
         Nombre = request.getParameter("Nombre_M");
         FechaNacimiento = request.getParameter("FechaNacimiento_M");
         Color = request.getParameter("Color_M");
         Raza = request.getParameter("Raza_M");
+        Estado = Integer.parseInt(request.getParameter("Estado_M"));
         Sexo = request.getParameter("Sexo_M");
         Dueno = request.getParameter("Duenno_M");
         Part Foto = request.getPart("Foto_M");
@@ -69,14 +74,23 @@ public class Servlet_Mascota extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
+        GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
+        GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+        Estado_M EM = new Estado_M();
+        int Resultado = EM.Existente(GSE, GSM);
         
-        GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, Dueno, url2);
-        Mascota_M MM = new Mascota_M();
-        MM.In_Mascota(GSM);
-        request.getRequestDispatcher("Mascota.jsp").forward(request, response);
+        if (Resultado == 1){
+            JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
+        }else{
+            Mascota_M MM = new Mascota_M();
+            MM.In_Mascota(GSM); 
+            EM.In_Estado(GSE);
+            request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
+        } 
+        
         
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
