@@ -12,6 +12,7 @@
 	<title>SARD</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Principal.css">
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registro_Denuncias.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
 	<script src="Estilos/JS/main.js"></script>
@@ -47,16 +48,23 @@
     </div>
     <div id="Denuncias" class="Container-1">
         <div class="Text-1">
-                <h2>Denuncias</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
+            <h2>Denuncias</h2>
+            <div class="ImgD"> <img src="Imagenes/Denuncias.jpg"> </div>
+            <div class="TextD">
+                <p>Para nosotros es muy importante tus denuncias y por este motivo queremos recordarte que se considera como maltrato animal el hecho de vulnerar alguna de las siguientes libertades de las mascotas:</p>
+                    <ul>
+                        <li>Libre de sed, Hambre y malnutrición.</li>
+                        <li>Libre de incomodidades físicas o térmicas.</li>
+                        <li>Libre de dolor y enfermedad.</li>
+                        <li>Libre de expresarse.</li>
+                        <li>Libre de miedo y estrés.</li>
+                    </ul>
+                <p>Si has evidenciado la falta de alguna de estas libertades realiza tu denuncia haciendo <a href="#Caja-Denuncia">Click aqui..</a></p>
+            </div>
         </div>
     </div>
     <div id="Conocenos" class="Container-2">
-        <div class="Text-1">
+        <div class="Text-2">
                 <h2>Conocenos</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
@@ -66,7 +74,7 @@
         </div>
     </div>
     <div id="Noticias" class="Container-3">
-        <div class="Text-1">
+        <div class="Text-3">
                 <h2>Noticias</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
@@ -76,13 +84,29 @@
         </div>
     </div>
     <div id="Contactenos" class="Container-4">
-        <div class="Text-1">
+        <div class="Text-4">
             <h2>Contactenos</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
+        </div>
+    </div>
+    <div id="Caja-Denuncia">
+        <div class="Caja-Denuncia">
+            <a class="icon-cancel" href="index.jsp"></a>
+            <h2>Denuncias</h2>
+            <form action="Servlet_Denuncia" enctype="multipart/form-data" method="post">
+                <label>Direccion: <input type="text" name="Direccion" required ></label>
+                <label>Evidencia: 
+                    <input class="file" type="file" name="Evidencia" required accept="image/jpg, image/jpeg, image/png">
+                    <span class="icon-camera"></span>
+                </label>
+                <label>Fecha: <input type="date" required name="Fecha"></label>
+                <textarea name="Descripcion" placeholder="Escriba el caso ocurrido"></textarea>
+                <input class="btnE" type="submit" name="BotonDenun" value="Enviar">
+            </form>
         </div>
     </div>
 </body>
