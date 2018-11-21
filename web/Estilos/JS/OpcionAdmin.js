@@ -1,0 +1,28 @@
+$(document).ready(function(){
+    $(".Mascotas").click(function(){
+        $(".CargarPag").load("Mascota.jsp",function(dato){
+            $(this).jsp(dato);
+        });
+    });
+    $(".Adopcion").click(function(){
+        $(".CargarPag").load("Adopcion.jsp",function(dato){
+            $(this).jsp(dato);
+        });
+    });
+    $(".Usuarios").click(function(){
+        $(".CargarPag").load("Registros_Administrador.jsp",function(dato){
+            $(this).jsp(dato);
+        });
+    });
+    $(".Denuncia").click(function(){
+        $(".CargarPag").load("Mostrar_Denuncias.jsp",function(dato){
+            $(this).jsp(dato);
+        });
+    });
+    $(".Eventos").click(function(){
+        $(".CargarPag").load("Eventos.jsp",function(dato){
+            $(this).jsp(dato);
+        });
+    });
+});
+

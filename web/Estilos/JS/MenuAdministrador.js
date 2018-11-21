@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	//menu responsive 
+	//menu responsive
 	$(".Boton-m span").click(function(e){
 		e.preventDefault();
 		if ($(".Boton-m span").attr('class')=='icon-menu') {

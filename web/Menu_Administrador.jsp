@@ -19,7 +19,8 @@
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
-        <script src="Estilos/JS/MenuAdministrador.js"></script>
+        <script src="Estilos/JS/OpcionAdmin.js"></Script>
+        <script src="Estilos/JS/MenuAdministrador.js"></script> 
     </head>
     <body>
         <header>
@@ -39,12 +40,12 @@
                 </div>
                 <nav>
                     <ul class="Menu">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="Mostrar_Denuncias.jsp">Denuncias</a></li>
-                        <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a href="">Adopciones</a></li>
-                        <li><a href="">Mascotas</a></li>
-                        <li><a href="">Eventos</a></li>
+                        <li><a href="">Inicio</a></li>
+                        <li><a class="Denuncia">Denuncias</a></li>
+                        <li><a class="Usuarios">Usuarios</a></li>
+                        <li><a class="Adopcion">Adopciones</a></li>
+                        <li><a class="Mascotas">Mascotas</a></li>
+                        <li><a class="Eventos">Eventos</a></li>
                     </ul>
                 </nav>
                 <%
@@ -70,45 +71,8 @@
         </div>
         <div class="Imagen">
         </div>
-    <div id="Denuncias" class="Container-1">
-        <div class="Text-1">
-                <h2>Denuncias</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
+        <div class="CargarPag">
+            <!--Aca carga la pag -->
         </div>
-    </div>
-    <div id="Conocenos" class="Container-2">
-        <div class="Text-1">
-                <h2>Conocenos</h2>
-                <p>Lorem ipsum dolor sit amet,  elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet,  adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet,  elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet,  Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet,  vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-        </div>
-    </div>
-    <div id="Noticias" class="Container-3">
-        <div class="Text-1">
-                <h2>Noticias</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-        </div>
-    </div>
-    <div id="Contactenos" class="Container-4">
-        <div class="Text-1">
-            <h2>Contactenos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-        </div>
-    </div>
     </body>
 </html>
