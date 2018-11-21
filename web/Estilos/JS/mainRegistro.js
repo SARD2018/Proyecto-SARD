@@ -1,23 +1,35 @@
 $(document).ready(function(){
 
-$(".Registrar_A").hide();	
+	$(".Registrar_A").hide();	
 	$(".form_Administrador").hide();	
 	$(".Actualizar_A").hide();
-	$(".Position_Administrador").hide();
-	$(".Filtro_Administrador").hide();
+	$(".Filtro_Admin").hide();
 	$(".T_Administrador").hide();
+	
 
 	$(".Registrar_AmbienteySalud").hide();
 	$(".form_AmbienteySalud").hide()
 	$(".Actualizar_AmbienteySalud").hide();
+	$(".Ambiente").hide();
+	$(".Filtro_Ambiente").hide();
+	$(".T_Ambiente").hide();
+	$(".Salud").hide();
+	$(".Filtro_Salud").hide();
+	$(".T_Salud").hide();
 	
 	$(".Registrar_V").hide();
-	$(".Veterinaria").hide();
+	$(".form_Veterinaria").hide();
 	$(".Actualizar_V").hide();
+	$(".Filtro_Veterinaria").hide();
+	$(".T_Veterinaria_1").hide();
+	$(".T_Veterinaria_2").hide();
 	
 	$(".Registrar_C").hide();
 	$(".form_Ciudadano").hide();
 	$(".Actualizar_C").hide();
+	$(".Filtro_Ciudadano").hide();
+	$(".T_Ciudadano_1").hide();
+	$(".T_Ciudadano_2").hide();
 
 
 	$(".SAdministrador").click(function(){
@@ -30,12 +42,9 @@ $(".Registrar_A").hide();
 		});
 
 		$(".Actualizar_A").click(function(){
-		$(".Position_Administrador").slideToggle();	
-		$(".Filtro_Administrador").slideToggle();	
+		$(".Filtro_Admin").slideToggle();
 		$(".T_Administrador").slideToggle();
-		});	
-                
-                
+		});		
 
 	$(".SAmbienteySalud").click(function(){
 	$(".Registrar_AmbienteySalud").slideToggle();
@@ -47,7 +56,16 @@ $(".Registrar_A").hide();
 		});
 
 		$(".Actualizar_AmbienteySalud").click(function(){
-		$(".T_AmbienteySalud").slideToggle();
+		$(".Ambiente").slideToggle();
+		$(".Salud").slideToggle();
+		});	
+		$(".Ambiente").click(function(){
+		$(".Filtro_Ambiente").slideToggle();
+		$(".T_Ambiente_2").slideToggle();
+		});	
+		$(".Salud").click(function(){
+		$(".Filtro_Salud").slideToggle();
+		$(".T_Salud_2").slideToggle();
 		});	
 
 	$(".SVeterinaria").click(function(){
@@ -56,11 +74,12 @@ $(".Registrar_A").hide();
 	});
 
 		$(".Registrar_V").click(function(){
-		$(".").slideToggle();
+		$(".form_Veterinaria").slideToggle();
 		});
 
 		$(".Actualizar_V").click(function(){
-		$(".T_Veterinaria").slideToggle();
+		$(".Filtro_Veterinaria").slideToggle();
+		$(".T_Veterinaria_2").slideToggle();
 		});		
 
 
@@ -74,9 +93,7 @@ $(".Registrar_A").hide();
 		});
 
 		$(".Actualizar_C").click(function(){
+		$(".Filtro_Ciudadano").slideToggle();
 		$(".T_Ciudadano").slideToggle();
-		});	
-                
-   
-    
+		});		
 });

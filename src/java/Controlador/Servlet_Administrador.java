@@ -104,7 +104,7 @@ public class Servlet_Administrador extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
-        String url = "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
         
         InputStream file= Foto.getInputStream();

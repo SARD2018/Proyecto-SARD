@@ -1,17 +1,153 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
-h1{
-	font-family: 'Courgette', cursive;
-	font-size: 30px;
-}
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 .Container{
 	padding: 20px 40px;
-    margin: auto;
-    font-family: 'Arial', cursive;
+        margin: auto;
+        font-family: 'Arial', cursive;
 	font-size: 16px;
-	background-color: #28a745;
 }
-.Volver {
-	color: #FBFF00;
-	font-size: 30px;
-	text-decoration: none; 
+.Foto_input{
+    opacity: 0;
+    width: 0.1 px;
+    height: 0.1 px;
+}
+
+.Datos_T {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items:  center;
+}
+.Datos{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+}
+.Datos input{
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border:  transparent;
+    border-bottom: 1px solid black;
+}
+.btn_A_E {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.SAdministrador {
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Oswald', cursive;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+.Registrar_A{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.form_Administrador{
+	border-radius: 0px 0px 5px 5px;
+	border: 0.1px solid black;
+	border-top: none;
+	box-sizing: border-box;
+	height: 250px;
+}
+.LR_Administrador{
+        padding-top: 2%;
+	font-size: x-large;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Left_Administrador{
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.left_Administrador input{
+        width: 150px;
+        float: right;
+}
+.left_Administrador select {
+        width: 150px;
+        float: right;
+}
+.Right_Administrador{
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.Right_Administrador input{
+        width: 150px;
+        float: right;
+}
+.Right_Administrador label{
+        width: 150px;
+        float: right;
+}
+.btn_Administrador{
+    margin-top: 2%;
+    text-align: center;
+}
+.btn_Administrador input{
+    background: lightgreen;
+    padding: 2px 5px;
+    font-family: 'Oswald', cursive;
+    font-size: 18px;
+}
+.Actualizar_A{
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+
+.Nombre{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 13px;
+}
+.SAmbienteySalud{
+    margin-top: 2%;
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Oswald', cursive;
+    font-size: 25px;
+}
+.SVeterinaria{
+    margin-top: 2%;
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Oswald', cursive;
+    font-size: 25px;
+}
+.SCiudadano{
+    margin-top: 2%;
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Oswald', cursive;
+    font-size: 25px;
 }

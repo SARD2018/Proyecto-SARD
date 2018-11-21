@@ -19,6 +19,7 @@ public class Administrador_M {
     public ArrayList<GS_Administrador> Uno_Admin (String ID){
         ArrayList<GS_Administrador> Tabla=new ArrayList<>();
         
+       
         try {
             PreSta= BaseDatos.prepareStatement("call Uno_Admin (?)");
             PreSta.setString(1, ID);
@@ -43,7 +44,7 @@ public class Administrador_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Administrador ing=new GS_Administrador(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getInt(10),Reset.getString(11));
+                 GS_Administrador ing=new GS_Administrador(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getInt(10),Reset.getString(11));
                 Tabla.add(ing);
             }
             
