@@ -61,11 +61,11 @@ $(document).ready(function(){
 		});	
 		$(".Ambiente").click(function(){
 		$(".Filtro_Ambiente").slideToggle();
-		$(".T_Ambiente_2").slideToggle();
+		$(".T_Ambiente").slideToggle();
 		});	
 		$(".Salud").click(function(){
 		$(".Filtro_Salud").slideToggle();
-		$(".T_Salud_2").slideToggle();
+		$(".T_Salud").slideToggle();
 		});	
 
 	$(".SVeterinaria").click(function(){
