@@ -6,6 +6,7 @@ public class GS_Veterinaria {
     private String Nit;
     private String Nombre;
     private String Representante;
+    private String Tipo_Veterinaria;
     private String Fecha_Fundacion;
     private String Direccion;
     private String Barrio;
@@ -14,10 +15,11 @@ public class GS_Veterinaria {
     private int Rol;
     private String Foto;
 
-    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Tipo_Veterinaria, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, int Rol, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;
         this.Representante = Representante;
+        this.Tipo_Veterinaria = Tipo_Veterinaria;
         this.Fecha_Fundacion = Fecha_Fundacion;
         this.Direccion = Direccion;
         this.Barrio = Barrio;
@@ -27,10 +29,11 @@ public class GS_Veterinaria {
         this.Foto = Foto;
     }
 
-    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, String Foto) {
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Tipo_Veterinaria, String Fecha_Fundacion, String Direccion, String Barrio, String Telefono, String Correo, String Foto) {
         this.Nit = Nit;
         this.Nombre = Nombre;
         this.Representante = Representante;
+        this.Tipo_Veterinaria = Tipo_Veterinaria;
         this.Fecha_Fundacion = Fecha_Fundacion;
         this.Direccion = Direccion;
         this.Barrio = Barrio;
@@ -64,6 +67,14 @@ public class GS_Veterinaria {
 
     public void setRepresentante(String Representante) {
         this.Representante = Representante;
+    }
+
+    public String getTipo_Veterinaria() {
+        return Tipo_Veterinaria;
+    }
+
+    public void setTipo_Veterinaria(String Tipo_Veterinaria) {
+        this.Tipo_Veterinaria = Tipo_Veterinaria;
     }
 
     public String getFecha_Fundacion() {
@@ -123,8 +134,5 @@ public class GS_Veterinaria {
     }
 
     
-    
-    
-    
-    
+
 }

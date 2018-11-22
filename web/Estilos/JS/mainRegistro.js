@@ -42,7 +42,6 @@ $(document).ready(function(){
 		});
 
 		$(".Actualizar_A").click(function(){
-		$(".Filtro_Admin").slideToggle();
 		$(".T_Administrador").slideToggle();
 		});		
 
@@ -63,7 +62,6 @@ $(document).ready(function(){
 		$(".T_Ambiente").slideToggle();
 		});	
 		$(".Salud").click(function(){
-		$(".Filtro_Salud").slideToggle();
 		$(".T_Salud").slideToggle();
 		});	
 
@@ -77,8 +75,7 @@ $(document).ready(function(){
 		});
 
 		$(".Actualizar_V").click(function(){
-		$(".Filtro_Veterinaria").slideToggle();
-		$(".T_Veterinaria_2").slideToggle();
+		$(".T_Veterinaria").slideToggle();
 		});		
 
 
@@ -92,7 +89,6 @@ $(document).ready(function(){
 		});
 
 		$(".Actualizar_C").click(function(){
-		$(".Filtro_Ciudadano").slideToggle();
 		$(".T_Ciudadano").slideToggle();
 		});		
 });

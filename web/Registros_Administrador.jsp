@@ -4,6 +4,8 @@
     Author     : SENA
 --%>
 
+<%@page import="Modelo.Veterinaria_M"%>
+<%@page import="Modelo.GS_Veterinaria"%>
 <%@page import="Modelo.Ambiente_Salud_M"%>
 <%@page import="Modelo.GS_Ambiente_Salud"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -267,6 +269,49 @@
                     <div class="Actualizar_V" >
                         <p>OBSERVAR</p>
                     </div>
+                        <div class="T_Veterinaria">  
+                       
+
+                            <%
+                                ArrayList<GS_Veterinaria> Tabla_V = new ArrayList<>();
+                                Veterinaria_M Veterinaria =new Veterinaria_M();
+                                GS_Veterinaria GS_V = new GS_Veterinaria();
+                                Tabla_V= Veterinaria.Todo_cuatro();
+                                for(int i=0; i<Tabla_S.size(); i++){
+                                    GS_V =Tabla_V.get(i);
+
+                            %>
+                           <div class="Nombre_S">
+                                <h2><%= GS_V.getNombre()%></h2>
+                            </div>
+                            <div class="Datos_T">
+                                <div class="Foto">
+                                     <label>
+                                     <img src="<%= GS_V.getFoto()%>">
+                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     </label>
+                                 </div>
+                                 <div class="Datos">
+                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_V.getNit()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_V.getTipo_Veterinaria()%>">
+                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_V.getRepresentante()%>">
+                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_V.getFecha_Fundacion()%>">
+                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_V.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getBarrio()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getTelefono()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getCorreo()%>">
+                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_V.getRol()%>">
+                                 </div>
+                            </div>
+                            <div class="btn_A_E">
+                                <span class="icon icon-pencil Actualizar"></span>
+                            </div>
+                            <%
+                            }
+                            %>
+                    </div>
+                    
+                    
                     <div class="SCiudadano">
                         <p>CIUDADANO</p>
                     </div>
