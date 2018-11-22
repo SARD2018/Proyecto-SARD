@@ -82,22 +82,43 @@ header{
     background: #218838;
     border-color: #1e7e34;
 }
-.Text-1,
-.Text-2,
-.Text-3,
-.Text-4{
+.Container-1,
+.Container-2,
+.Container-3,
+.Container-4{
     width: 90%;
-    height: 600px;
     max-width: 1200px;
     margin: auto;
-    border: 2px solid yellow;
-    padding-top: 30px;
-    padding-bottom: 30px; 
+    background-color: lemonchiffon;
+    border: 0.5px solid lightgreen;
+    padding: 30px 40px;
 }
-.ImgD img{
-    float: left;
-    width: 350px;
-    height: 270px;
+.Text-4{
+    display: block;
+    padding-top: 20px;
+    justify-content: center;
+    text-decoration: none;
+}
+.Text-4 input{
+    width: 40%;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+}
+.Text-4 .btnCon{
+    width: auto;
+    height: auto;
+    padding: 8px 10px;
+    
+}
+.Text-4 textArea{
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    width: 40%;
+    height: 70px;
 }
 .Caja-Denuncia h2{
     font-family: 'Courgette', cursive;
@@ -191,6 +212,10 @@ header{
     .Caja-Denuncia{
         width: 80%;
         height: 400px;
+    }
+    .Text-4 input,
+    .Text-4 textArea{
+        width: 70%;
     }
     .Menu li{
         display: block;

@@ -24,7 +24,7 @@
                 </label>
                 <label>Fecha: <input type="date" required name="Fecha"></label>
                 <textarea name="Descripcion" placeholder="Escriba el caso ocurrido"></textarea>
-                <input type="submit" name="BotonDenun" value="Enviar">
+                <input type="submit" name="BotonDenun2" value="Enviar">
             </form>
         </div>
     </body>

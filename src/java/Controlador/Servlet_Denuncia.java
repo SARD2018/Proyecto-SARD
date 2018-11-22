@@ -45,6 +45,9 @@ public class Servlet_Denuncia extends HttpServlet {
         if (request.getParameter("BotonDenun")!=null) {
             this.Ingreso_Denuncias(request, response);
         }
+        if (request.getParameter("BotonDenun2")!=null) {
+            this.Ingreso_Denuncias2(request, response);
+        }
     }
     protected void Ingreso_Denuncias(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -76,7 +79,40 @@ public class Servlet_Denuncia extends HttpServlet {
         GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, url2, Fecha);
         Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenuncias(GSD);
-        request.getRequestDispatcher("Registro_Denuncia.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+        
+    }
+    protected void Ingreso_Denuncias2(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Direccion,Fecha,Descripcion;
+        
+        Direccion= request.getParameter("Direccion");
+        Part Evidencia= request.getPart("Evidencia");
+        Fecha= request.getParameter("Fecha");
+        Descripcion= request.getParameter("Descripcion");
+        String NameFoto= Evidencia.getSubmittedFileName();
+        String Name= Direccion+"_"+Fecha+"_"+NameFoto;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2= "Uploads/"+Name;
+        
+        InputStream file= Evidencia.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, url2, Fecha);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.InsertarDenuncias(GSD);
+        request.getRequestDispatcher("Menu_Cliente.jsp").forward(request, response);
         
     }
     
