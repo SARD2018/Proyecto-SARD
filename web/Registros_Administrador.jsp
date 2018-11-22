@@ -121,7 +121,6 @@
                         <%
                         }
                         %>
-                    </table>
                 </div>
             </div>
 		
@@ -160,11 +159,14 @@
                                     <option value="3">Salud</option>
                                 </select>
                             </p>
-                            <p>Foto: <input type="file" name="Foto"></p>
+                            <p>Foto: <label>
+                                    <span class="icon icon-camera"></span>
+                                    <input class="Foto_input" type="file" name="Foto" value="">
+                                    </label></p>
                         </div>
                     </div>
                     <div class="btn_AmbienteySalud">
-			<p><input class="btn" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
+			<p><input class="" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
                     </div>
                     </div>
         	</form>
@@ -187,20 +189,22 @@
                             <div class="Nombre">
                                 <h2><%= GS_AM.getNombre()+" "+GS_AM.getApellido()%></h2>
                             </div>
-                           <div class="Foto">
-                                <label>
-                                <img src="<%= GS_AM.getFoto()%>">
-                                <input class="Foto_input" type="file" name="Foto" value="">
-                                </label>
-                            </div>
-                            <div class="Datos">
-                                <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_AM.getDocumento()%>">
-                                <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_AM.getTipo_Documento()%>">
-                                <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_AM.getGenero()%>">
-                                <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_AM.getFecha_Nacimiento()%>">
-                                <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_AM.getDireccion()%>">
-                                <input class="Telefono" type="Text" name="Telefono" value="<%= GS_AM.getTelefono()%>">
-                                <input class="Correo" type="Text" name="Correo" value="<%= GS_AM.getCorreo()%>">
+                            <div class="Datos_T">
+                                <div class="Foto">
+                                     <label>
+                                     <img src="<%= GS_AM.getFoto()%>">
+                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     </label>
+                                 </div>
+                                 <div class="Datos">
+                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_AM.getDocumento()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_AM.getTipo_Documento()%>">
+                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_AM.getGenero()%>">
+                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_AM.getFecha_Nacimiento()%>">
+                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_AM.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_AM.getTelefono()%>">
+                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_AM.getCorreo()%>">
+                                 </div>
                             </div>
                             <div class="btn_A_E">
                                 <span class="icon icon-pencil Actualizar"></span>
@@ -215,20 +219,7 @@
                         <p>Salud</p>
                     </div>
                         <div class="T_Salud">  
-                        <table id="TablasL">                    
-                            <tr>
-                                <th>Documento</th>
-                                <th>Tipo Documento</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Genero</th>
-                                <th>Fecha Nacimiento</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>Correo</th>
-                                <th>Foto</th>
-
-                            </tr>
+                       
 
                             <%
                                 ArrayList<GS_Ambiente_Salud> Tabla_S = new ArrayList<>();
@@ -239,25 +230,33 @@
                                     GS_S =Tabla_S.get(i);
 
                             %>
-
-                            <tr>
-                                <td><input class="Documento" type="Text" name="Documento" readonly value="<%= GS_S.getDocumento()%>"></td>
-                                <td><input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_S.getTipo_Documento()%>"></td>
-                                <td><input class="Nombre" type="Text" name="Nombre" readonly value="<%= GS_S.getNombre()%>"></td>
-                                <td><input class="Apellido" type="Text" name="Apellido" readonly value="<%= GS_S.getApellido()%>"></td>
-                                <td><input class="Genero" type="Text" name="Genero" readonly value="<%= GS_S.getGenero()%>"></td>
-                                <td><input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_S.getFecha_Nacimiento()%>"></td>
-                                <td><input class="Direccion" type="Text" name="Direccion"  value="<%= GS_S.getDireccion()%>"></td>
-                                <td><input class="Telefono" type="Text" name="Telefono" value="<%= GS_S.getTelefono()%>"></td>
-                                <td><input class="Correo" type="Text" name="Correo" value="<%= GS_S.getCorreo()%>"></td>
-                                <td><input class="Foto" type="file" name="Foto" value="<%= GS_S.getFoto()%>"></td>
-                                <td><input class="Actualizar" type="Submit" value="Actualizar" ></td>
-                                <td><input type="Submit" value="Eliminar" name="Eliminar_Admin"></td>
-                            </tr>
+                           <div class="Nombre_S">
+                                <h2><%= GS_S.getNombre()+" "+GS_S.getApellido()%></h2>
+                            </div>
+                            <div class="Datos_T">
+                                <div class="Foto">
+                                     <label>
+                                     <img src="<%= GS_S.getFoto()%>">
+                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     </label>
+                                 </div>
+                                 <div class="Datos">
+                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_S.getDocumento()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_S.getTipo_Documento()%>">
+                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_S.getGenero()%>">
+                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_S.getFecha_Nacimiento()%>">
+                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_S.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_S.getTelefono()%>">
+                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_S.getCorreo()%>">
+                                 </div>
+                            </div>
+                            <div class="btn_A_E">
+                                <span class="icon icon-pencil Actualizar"></span>
+                                <span class="icon icon-trash Eliminar"></span>
+                            </div>
                             <%
                             }
                             %>
-                        </table>
                     </div>
 		<div class="SVeterinaria">
                     <p>VETERINARIA</p>

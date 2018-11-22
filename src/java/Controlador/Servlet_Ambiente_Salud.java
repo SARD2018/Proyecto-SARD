@@ -94,7 +94,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         else{
             AS.Login_Salud(GSAS);
         }
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

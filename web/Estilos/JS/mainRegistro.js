@@ -60,7 +60,6 @@ $(document).ready(function(){
 		$(".Salud").slideToggle();
 		});	
 		$(".Ambiente").click(function(){
-		$(".Filtro_Ambiente").slideToggle();
 		$(".T_Ambiente").slideToggle();
 		});	
 		$(".Salud").click(function(){

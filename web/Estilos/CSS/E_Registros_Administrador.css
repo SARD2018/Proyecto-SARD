@@ -71,12 +71,14 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.Left_Administrador{
+.left_Administrador{
 	width: 45%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+        text-align: left;
 }
+
 .left_Administrador input{
         width: 150px;
         float: right;
@@ -90,6 +92,7 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+        text-align: left;
 }
 .Right_Administrador input{
         width: 150px;
@@ -157,11 +160,12 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.Left_AmbienteySalud{
+.left_AmbienteySalud{
 	width: 45%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+        text-align: left;
 }
 .left_AmbienteySalud input{
         width: 150px;
@@ -171,13 +175,14 @@
         width: 150px;
         float: right;
 }
-.Right_AmbienteySalud{
-	width: 45%;
+.right_AmbienteySalud{
+	width: 40%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+        text-align: left;
 }
-.Right_AmbienteySalud input{
+.right_AmbienteySalud input{
         width: 150px;
         float: right;
 }
@@ -210,7 +215,7 @@
     font-size: 20px;
 }
 .Salud{
-     background:  lemonchiffon;
+    background:  lemonchiffon;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -225,6 +230,13 @@
     font-size: 13px;
 }
 
+.Nombre_S{
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 13px;
+}
 .SVeterinaria{
     margin-top: 2%;
     background:  lightgreen;

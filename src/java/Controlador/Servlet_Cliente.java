@@ -83,7 +83,7 @@ public class Servlet_Cliente extends HttpServlet {
         Cliente_M Cliente = new Cliente_M();
         Cliente.In_Cliente(GSC);
         Cliente.Login_Cliente(GSC);
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        request.getRequestDispatcher("Menu_Administrador.jsp.jsp").forward(request, response);
     }
     
 

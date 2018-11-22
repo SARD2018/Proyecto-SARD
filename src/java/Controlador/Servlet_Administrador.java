@@ -121,7 +121,7 @@ public class Servlet_Administrador extends HttpServlet {
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
         Admin.Login_Admin(GSA);
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
     }
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

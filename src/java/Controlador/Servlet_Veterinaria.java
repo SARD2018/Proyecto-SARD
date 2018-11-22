@@ -84,7 +84,7 @@ public class Servlet_Veterinaria extends HttpServlet {
         Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria(GSC);    ;
     
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
         
     }
 
