@@ -61,7 +61,6 @@ public class Servlet_Mascota extends HttpServlet {
                 num= file.read();
             }
             */
-            JOptionPane.showMessageDialog(null, "Llego aca");
             GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
             GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
             Estado_M EM = new Estado_M();
@@ -91,6 +90,20 @@ public class Servlet_Mascota extends HttpServlet {
             GS_Mascota GSM = new GS_Mascota(Codigo, TipoMas, NombreMas, FechaNac, ColorMas, RazaMas, GeneroMas, FotoMas);
             Mascota_M MM = new Mascota_M();
             X = MM.A_Mascota(GSM);
+            if (X > 0){
+                JOptionPane.showMessageDialog(null, "Datos Actualizados Correctamente");
+            }
+        }else if (opc == 3){
+            int Codigo,X;
+            
+            Codigo = Integer.parseInt(request.getParameter("CodigoMascota"));
+            GS_Mascota GSM = new GS_Mascota(Codigo);
+            Mascota_M MM = new Mascota_M();
+            X = MM.B_Mascota(GSM);
+            if (X > 0){
+                JOptionPane.showMessageDialog(null, "Datos Eliminados Correctamente");
+            }
+            
         }
         
     }

@@ -17,8 +17,12 @@ $(document).ready(function(){
 		$(".btns").slideUp();
 	});
         $(".NombreMascota").click(function(){
-		$(".Position_Informacion").slideToggle();
-		$(".btns").slideToggle();
+            var Pos = $(".NombreMascota").index(this); 
+            var asi = $(".Position_Informacion").eq(Pos); 
+            var asibtn = $(".btns").eq(Pos); 
+            
+            $(asi).slideToggle();
+            $(asibtn).slideToggle();
 	});
         
         //Actualizar
@@ -52,7 +56,6 @@ $(document).ready(function(){
             var CMa = $(CoM).val();
             var RMa = $(RaM).val();
             var GMa = $(GeM).val();
-            alert (FMa);
             $.ajax({
                 url: "Servlet_Mascota",
                 data: {
@@ -65,6 +68,28 @@ $(document).ready(function(){
                     ColorMascota: CMa,
                     RazaMascota: RMa,
                     GeneroMascota: GMa
+
+                },
+                success:function(result){
+                    $("#weather-temp").html("<strong>" + result + "</strong> degrees");
+		}
+            })
+        });
+        
+        //Eliminar
+        $(".btn-Eliminar").click(function(){
+            
+            var x = $(".btn-Eliminar").index(this);
+            var CoMas = $(".CodigoMascota").eq(x);
+            
+            var Eli = 3;
+            var CoMa = $(CoMas).val();
+            
+            $.ajax({
+                url: "Servlet_Mascota",
+                data: {
+                    Opcion: Eli,
+                    CodigoMascota: CoMa
 
                 },
                 success:function(result){

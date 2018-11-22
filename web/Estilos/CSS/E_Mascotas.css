@@ -243,6 +243,7 @@
     background: lemonchiffon;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
 .Position_Informacion {
     display: flex;
@@ -257,10 +258,13 @@
 .Position_Informacion input{
     border: none;
     border-bottom: 1px solid black;
+    text-align: center;
 }
 .Position_Informacion select{
     border: none;
     border-bottom: 1px solid black;
+    text-decoration: none;
+    text-align: center;
 }
 .InfoMascota {
     display: flex;

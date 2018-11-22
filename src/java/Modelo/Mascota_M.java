@@ -37,7 +37,19 @@ public class Mascota_M {
                     +GSM.getFecha_Nacimiento()+"','"+GSM.getColor()+"','"+GSM.getRaza()+"','"+GSM.getSexo()+"','"+GSM.getFoto()+"')");
             x = PreSta.executeUpdate();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Error al actualizar los datos");
+        }
+        
+        return x;
+    }
+    
+    public int B_Mascota (GS_Mascota GSM){
+        int x=0;
+        try {
+            PreSta = BaseDatos.prepareStatement("call B_Mascota ("+GSM.getCodigo()+")");
+            x = PreSta.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al eliminar los datos");
         }
         
         return x;
