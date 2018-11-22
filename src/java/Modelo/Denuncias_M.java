@@ -19,11 +19,12 @@ public class Denuncias_M {
     public void InsertarDenuncias(GS_Denuncia GD){
         
         try {
-            PreSta= BaseDatos.prepareStatement("call In_Denuncia(?,?,?,?)");
+            PreSta= BaseDatos.prepareStatement("call In_Denuncia(?,?,?,?,?)");
             PreSta.setString(1, GD.getDireccion());
             PreSta.setString(2, GD.getDescripcion());
             PreSta.setString(3, GD.getEvidencia());
-            PreSta.setString(4, GD.getFecha());
+            PreSta.setString(4, GD.getCorreo());
+            PreSta.setString(5, GD.getFecha());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
@@ -38,7 +39,7 @@ public class Denuncias_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Denuncia ing=new GS_Denuncia(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5));
+                GS_Denuncia ing=new GS_Denuncia(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6));
                 Tabla.add(ing);
             }
             

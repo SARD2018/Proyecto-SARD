@@ -8,13 +8,15 @@ public class GS_Denuncia {
     private String Direccion;
     private String Descripcion;
     private String Evidencia;
+    private String Correo;
     private String Fecha;
 
-    public GS_Denuncia(int Codigo, String Direccion, String Descripcion, String Evidencia, String Fecha) {
+    public GS_Denuncia(int Codigo, String Direccion, String Descripcion, String Evidencia, String Correo, String Fecha) {
         this.Codigo = Codigo;
         this.Direccion = Direccion;
         this.Descripcion = Descripcion;
         this.Evidencia = Evidencia;
+        this.Correo = Correo;
         this.Fecha = Fecha;
     }
 
@@ -24,7 +26,7 @@ public class GS_Denuncia {
 
     public GS_Denuncia() {
     }
-    
+
     public int getCodigo() {
         return Codigo;
     }
@@ -55,6 +57,14 @@ public class GS_Denuncia {
 
     public void setEvidencia(String Evidencia) {
         this.Evidencia = Evidencia;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
     }
 
     public String getFecha() {

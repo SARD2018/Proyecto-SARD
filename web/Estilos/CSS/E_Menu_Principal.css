@@ -144,15 +144,14 @@ header{
     float: right;
     color: #000;
     margin-top: -19px;
-    margin-right: 1px;
-    padding: 1px 10px;
+    margin-right: -2px;
     font-size: 25px;
     text-decoration: none;
     
 }
 .Caja-Denuncia{
     width: 400px;
-    height: 400px;
+    height: 450px;
     display: block;
     padding-top: 20px;
     background-color: lightyellow;

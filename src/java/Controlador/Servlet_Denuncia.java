@@ -54,12 +54,13 @@ public class Servlet_Denuncia extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Direccion,Fecha,Descripcion;
+        String Direccion,Fecha,Descripcion,Correo;
         
         Direccion= request.getParameter("Direccion");
-        Part Evidencia= request.getPart("Evidencia");
-        Fecha= request.getParameter("Fecha");
         Descripcion= request.getParameter("Descripcion");
+        Part Evidencia= request.getPart("Evidencia");
+        Correo= request.getParameter("Correo");
+        Fecha= request.getParameter("Fecha");
         String NameFoto= Evidencia.getSubmittedFileName();
         String Name= Direccion+"_"+Fecha+"_"+NameFoto;
         
@@ -76,7 +77,7 @@ public class Servlet_Denuncia extends HttpServlet {
             num= file.read();
         }
         
-        GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, url2, Fecha);
+        GS_Denuncia GSD=new GS_Denuncia(0, Direccion, Descripcion, url2, Correo, Fecha);
         Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenuncias(GSD);
         request.getRequestDispatcher("index.jsp").forward(request, response);
@@ -109,7 +110,7 @@ public class Servlet_Denuncia extends HttpServlet {
             num= file.read();
         }
         
-        GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, url2, Fecha);
+        GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, Fecha, url2, Fecha);
         Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenuncias(GSD);
         request.getRequestDispatcher("Menu_Cliente.jsp").forward(request, response);
