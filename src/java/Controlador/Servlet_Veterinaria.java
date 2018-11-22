@@ -80,7 +80,7 @@ public class Servlet_Veterinaria extends HttpServlet {
             num= file.read();
         }
         
-        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Fecha, Direccion, Barrio, Telefono, Correo, url2);
+        //GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Fecha, Direccion, Barrio, Telefono, Correo, url2);
         Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria(GSC);    ;
     
