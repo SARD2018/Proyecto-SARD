@@ -26,8 +26,21 @@ public class Mascota_M {
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null,"Datos Ingresados Correctamente");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error Al ingresar los Datos");
+            JOptionPane.showMessageDialog(null,e);
         }
+    }
+    
+    public int A_Mascota (GS_Mascota GSM){
+        int x=0;
+        try {
+            PreSta = BaseDatos.prepareStatement("call A_Mascota ("+GSM.getCodigo()+",'"+GSM.getTipo_Mascota()+"','"+GSM.getNombre()+"','"
+                    +GSM.getFecha_Nacimiento()+"','"+GSM.getColor()+"','"+GSM.getRaza()+"','"+GSM.getSexo()+"','"+GSM.getFoto()+"')");
+            x = PreSta.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return x;
     }
     
     public ArrayList<GS_Mascota> Todo_Mascota() {
@@ -36,7 +49,7 @@ public class Mascota_M {
             PreSta = BaseDatos.prepareStatement("Call Todo_Mascota");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
-                GS_Mascota GSM = new GS_Mascota(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7));
+                GS_Mascota GSM = new GS_Mascota(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8));
                 Todo_Mascota.add(GSM);
             }
             

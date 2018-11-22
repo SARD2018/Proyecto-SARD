@@ -1,4 +1,4 @@
-    package Controlador;
+package Controlador;
 
 import Modelo.Estado_M;
 import Modelo.GS_Estado;
@@ -26,10 +26,73 @@ public class Servlet_Mascota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        int opc;
+        opc = Integer.parseInt(request.getParameter("Opcion"));
+        JOptionPane.showMessageDialog(null, opc);
+        if (opc == 1){
+            String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
+            int Estado,Codigo;
+
+            Codigo = Integer.parseInt(request.getParameter("Codigo"));
+            TipoMascota = request.getParameter("Tipo_Mascota");
+            Nombre = request.getParameter("Nombre_M");
+            FechaNacimiento = request.getParameter("FechaNacimiento_M");
+            Color = request.getParameter("Color_M");
+            Raza = request.getParameter("Raza_M");
+            Estado = Integer.parseInt(request.getParameter("Estado_M"));
+            Sexo = request.getParameter("Sexo_M");
+            Dueno = request.getParameter("Duenno_M");
+            String url2 = request.getParameter("Foto_M");
+            /*
+            Part Foto = request.getPart("Foto_M");
+            String Nombre_F = Foto.getSubmittedFileName();
+            String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
+            
+            String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
+            String url2 = "Uploads\\"+Foto_Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
+            */
+            JOptionPane.showMessageDialog(null, "Llego aca");
+            GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
+            GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
+            Estado_M EM = new Estado_M();
+            Mascota_M MM = new Mascota_M();
+            int Resultado = EM.Existente(GSE, GSM);
+
+            if (Resultado == 1){
+                JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
+            }else{
+                MM.In_Mascota(GSM); 
+                EM.In_Estado(GSE);
+                request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
+            }
         
-        if(request.getParameter("btn-Insertar")!=null){
-            this.InsertarMascota(request, response);
+        }else if (opc == 2){
+            String TipoMas,NombreMas,FechaNac,ColorMas,RazaMas,GeneroMas,FotoMas;
+            int Codigo, X;
+            
+            Codigo = Integer.parseInt(request.getParameter("CodigoMascota"));
+            TipoMas = request.getParameter("Tipo_Mas");
+            NombreMas = request.getParameter("Nombre_Mascota");
+            FechaNac = request.getParameter("FechaNacmiento");
+            ColorMas = request.getParameter("ColorMascota");
+            RazaMas = request.getParameter("RazaMascota");
+            GeneroMas = request.getParameter("GeneroMascota");
+            FotoMas = request.getParameter("FotoMascota");
+            GS_Mascota GSM = new GS_Mascota(Codigo, TipoMas, NombreMas, FechaNac, ColorMas, RazaMas, GeneroMas, FotoMas);
+            Mascota_M MM = new Mascota_M();
+            X = MM.A_Mascota(GSM);
         }
+        
     }
     
     protected void TablaMascota(HttpServletRequest request, HttpServletResponse response)
@@ -46,47 +109,7 @@ public class Servlet_Mascota extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
-        int Estado,Codigo;
-        
-        Codigo = Integer.parseInt(request.getParameter("Codigo"));
-        TipoMascota = request.getParameter("Tipo_Mascota");
-        Nombre = request.getParameter("Nombre_M");
-        FechaNacimiento = request.getParameter("FechaNacimiento_M");
-        Color = request.getParameter("Color_M");
-        Raza = request.getParameter("Raza_M");
-        Estado = Integer.parseInt(request.getParameter("Estado_M"));
-        Sexo = request.getParameter("Sexo_M");
-        Dueno = request.getParameter("Duenno_M");
-        Part Foto = request.getPart("Foto_M");
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
-        
-        String url = "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
-        GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
-        Estado_M EM = new Estado_M();
-        int Resultado = EM.Existente(GSE, GSM);
-        
-        if (Resultado == 1){
-            JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
-        }else{
-            Mascota_M MM = new Mascota_M();
-            MM.In_Mascota(GSM); 
-            EM.In_Estado(GSE);
-            request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
-        } 
+         
         
         
     }
