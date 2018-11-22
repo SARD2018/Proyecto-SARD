@@ -40,7 +40,7 @@
                             </div>
                         </form>
                         <div class="Opciones">
-                            <a href="Registro_Ciudadano.jsp">
+                            <a href="#Registros" class="Registrarme">
                                 Registrarme
                             </a>
                             <br>
@@ -100,6 +100,42 @@
                 </div>
             </div>
         </section>
+        <div id="Registros">
+        <a href="Login.jsp">volver</a>
+        <div class="form_Ciudadano">
+            <h1>REGISTRO</h1>
+            <form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
+                <label>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required> </label>
+                <label>Tipo de Documento:
+                    <select name="Tipo_Documento" required>
+                        <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                        <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </label>
+                <label>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></label>
+                <label>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></label>
+                <label>Genero:
+                    <select name="Genero" required >
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </label>
+                <label>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></label>
+                <label>Direccion: <input type="text" name="Direccion" required></label>
+                <label>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></label>
+                <label>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></label>
+                <label>Foto: 
+                    <input type="file" name="FotoCliente" class="FotoCliente"> 
+                    <span class="icon icon-camera-outline"></span>
+                </label>
+                <input class="btn" type="submit" name="R_Ciudadano" value="Registrar">
+            </form>
+        </div>
+        <div class="link_Veterinaria">
+            <label>Si quieres registrar tu veterinaria has click  <a href="Registro_Veterinaria.jsp">aqui</a></label>
+        </div>		
+	</div>
         <script src="Estilos/JS/jquery.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
