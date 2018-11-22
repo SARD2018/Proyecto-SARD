@@ -39,12 +39,12 @@
                         Dat = datos.get(i);
                 %>
                 <tr>
-                    <th><%= Dat.getCodigo()%></th>
-                    <th><%= Dat.getDireccion()%></th>
-                    <th><%= Dat.getDescripcion()%></th>
-                    <th><img src="<%= Dat.getEvidencia()%>"></th>
-                    <th><%= Dat.getFecha()%></th>
-                    <th><span class="icon-pencil"></span></th>
+                    <td><%= Dat.getCodigo()%></td>
+                    <td><%= Dat.getDireccion()%></td>
+                    <td><%= Dat.getDescripcion()%></td>
+                    <td><img src="<%= Dat.getEvidencia()%>"></td>
+                    <td><%= Dat.getFecha()%></td>
+                    <td><span class="icon-pencil"></span></td>
                 </tr>
                 <%  } %>
             </table>

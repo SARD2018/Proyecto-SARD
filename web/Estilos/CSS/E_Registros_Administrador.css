@@ -133,6 +133,98 @@
     font-family: 'Oswald', cursive;
     font-size: 25px;
 }
+
+.Registrar_AmbienteySalud{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.form_AmbienteySalud{
+	border-radius: 0px 0px 5px 5px;
+	border: 0.1px solid black;
+	border-top: none;
+	box-sizing: border-box;
+	height: 250px;
+}
+.LR_AmbienteySalud{
+        padding-top: 2%;
+	font-size: x-large;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Left_AmbienteySalud{
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.left_AmbienteySalud input{
+        width: 150px;
+        float: right;
+}
+.left_AmbienteySalud select {
+        width: 150px;
+        float: right;
+}
+.Right_AmbienteySalud{
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.Right_AmbienteySalud input{
+        width: 150px;
+        float: right;
+}
+.Right_AmbienteySalud label{
+        width: 150px;
+        float: right;
+}
+.btn_AmbienteySalud{
+    margin-top: 2%;
+    text-align: center;
+}
+.btn_AmbienteySalud input{
+    background: lightgreen;
+    padding: 2px 5px;
+    font-family: 'Oswald', cursive;
+    font-size: 18px;
+}
+.Actualizar_AmbienteySalud{
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.Ambiente{
+     background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.Salud{
+     background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+
+.Nombre{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 13px;
+}
+
 .SVeterinaria{
     margin-top: 2%;
     background:  lightgreen;

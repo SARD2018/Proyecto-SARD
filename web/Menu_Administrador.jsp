@@ -69,9 +69,9 @@
             <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
             <a class="btn" href="Login.jsp">Cerrar Session</a>
         </div>
-        <div class="Imagen">
-        </div>
         <div class="CargarPag">
+            <h2>Bienvenido...</h2>
+            <img src="Imagenes/Fondo_MC.jpg">
             <!--Aca carga la pag -->
         </div>
     </body>
