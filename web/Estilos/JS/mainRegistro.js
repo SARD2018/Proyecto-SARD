@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+        
 	$(".Datos_T").hide();	
 	
         $(".Registrar_A").hide();	
