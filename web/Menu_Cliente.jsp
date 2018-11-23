@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Cliente.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
-        <script src="Estilos/JS/MenuAdministrador.js"></script>
+        <script src="Estilos/JS/Menus.js"></script>
         <script src="Estilos/JS/OpcionCliente.js"></script>
     </head>
     <body>

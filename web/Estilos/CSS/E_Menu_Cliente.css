@@ -84,7 +84,6 @@ header{
 }
 .Perfil{
     float: right;
-    background-color: red;
     width: 255px;
     margin-top: -53px;
     margin-right: 60px;
@@ -164,7 +163,7 @@ header{
         text-decoration: none;
         text-align: center;
         font-size: 15px;
-        padding: 10px auto;
+        padding: 10px;
     }
     .Perfil img{
         float: right;
