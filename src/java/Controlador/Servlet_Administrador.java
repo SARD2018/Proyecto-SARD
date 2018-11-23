@@ -42,10 +42,64 @@ public class Servlet_Administrador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        if (request.getParameter("Boton")=="In_Admin") {
-            this.Insertar_Admin(request, response);
+        
+        out.print("llega al servlet");
+        String Valor =request.getParameter("Boton");
+        out.print(Valor);
+        
+        if(Valor.equalsIgnoreCase("In_Admin")){
+         out.print("entra al if");
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento");
+        Tipo= request.getParameter("Tipo_Documento");
+        Nombre = request.getParameter("Nombre");
+        Apellido = request.getParameter("Apellido");
+        Genero = request.getParameter("Genero");
+        Fecha = request.getParameter("Fecha_Nacimiento");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
         }
-       /* String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        Admin.In_Administrador(GSA);
+        Admin.Login_Admin(GSA);
+        }
+        else{
+            out.print("entro al else");
+        }
+        
+         
+    }
+   
+    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+    }
+    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        /* String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         Documento = request.getParameter("Documento");
         Nombre = request.getParameter("Nombre");
         Direccion = request.getParameter("Direccion");
@@ -85,51 +139,6 @@ public class Servlet_Administrador extends HttpServlet {
             this.Insertar_Admin(request, response); 
         }
         */
-        
-    }
-   
-    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento");
-        Tipo= request.getParameter("Tipo_Documento");
-        Nombre = request.getParameter("Nombre");
-        Apellido = request.getParameter("Apellido");
-        Genero = request.getParameter("Genero");
-        Fecha = request.getParameter("Fecha_Nacimiento");
-        Direccion = request.getParameter("Direccion");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto");
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
-        
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        
-        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
-        Administrador_M Admin = new Administrador_M();
-        Admin.In_Administrador(GSA);
-        Admin.Login_Admin(GSA);
-        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
-    }
-    protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         
         
     }

@@ -70,9 +70,12 @@
                     </div>
 
                     <div class="btn_Administrador">
-			<p><input class="In_Admin" type="submit" name="R_Administrador" value="Registrar"></p>
+			<p><input class="In_Admin" type="submit" value="Registrar"></p>
                     </div>
 		</div>
+           <div class="prueba">
+               <h1>Holaa</h1>   
+           </div>
             
             <div class="Actualizar_A">
 		<P>OBSERVAR</P>
