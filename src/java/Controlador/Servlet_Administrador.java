@@ -42,7 +42,9 @@ public class Servlet_Administrador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+        if (request.getParameter("Boton")=="In_Admin") {
+            this.Insertar_Admin(request, response);
+        }
        /* String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         Documento = request.getParameter("Documento");
         Nombre = request.getParameter("Nombre");
@@ -77,11 +79,12 @@ public class Servlet_Administrador extends HttpServlet {
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
         }
         request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
-        */
+        
         
         if (request.getParameter("R_Administrador")!=null) {
             this.Insertar_Admin(request, response); 
         }
+        */
         
     }
    

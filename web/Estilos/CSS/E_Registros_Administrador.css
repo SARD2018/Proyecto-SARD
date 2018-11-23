@@ -37,6 +37,7 @@
 .btn_A_E {
     text-align: center;
     padding-top: 5%;
+    width: 10%;
 }
 
 .SAdministrador {
@@ -120,13 +121,22 @@
     font-size: 20px;
 }
 
-.Nombre{
+.Nombre_A , .Nombre_AM ,.Nombre_4{
     background:  lemonchiffon;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
     font-size: 13px;
 }
+
+.Nombre_S, .Nombre_0, .Nombre_C {
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 13px;
+}
+
 .SAmbienteySalud{
     margin-top: 2%;
     background:  lemonchiffon;
@@ -222,21 +232,6 @@
     font-size: 20px;
 }
 
-.Nombre{
-    background:  lemonchiffon;
-    width: 100%;
-    text-align: center;
-    font-family: 'Oswald', cursive;
-    font-size: 13px;
-}
-
-.Nombre_S{
-    background:  lightgreen;
-    width: 100%;
-    text-align: center;
-    font-family: 'Oswald', cursive;
-    font-size: 13px;
-}
 .SVeterinaria{
     margin-top: 2%;
     background:  lightgreen;
@@ -245,6 +240,20 @@
     border-radius: 10px 10px 0px 0px;
     font-family: 'Oswald', cursive;
     font-size: 25px;
+}
+.Registrar_V{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.Actualizar_V{
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
 }
 .SCiudadano{
     margin-top: 2%;
@@ -255,3 +264,73 @@
     font-family: 'Oswald', cursive;
     font-size: 25px;
 }
+.Registrar_C{
+    background:  lightgreen;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}
+.form_Ciudadano{
+	border-radius: 0px 0px 5px 5px;
+	border: 0.1px solid black;
+	border-top: none;
+	box-sizing: border-box;
+	height: 250px;
+}
+.LR_Ciudadano{
+        padding-top: 2%;
+	font-size: x-large;
+	margin: auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.left_Ciudadano{
+	width: 45%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+        text-align: left;
+}
+.left_Ciudadano input{
+        width: 150px;
+        float: right;
+}
+.left_Ciudadano select {
+        width: 150px;
+        float: right;
+}
+.Right_Ciudadano{
+	width: 40%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+        text-align: left;
+}
+.Right_Ciudadano input{
+        width: 150px;
+        float: right;
+}
+.Right_Ciudadano label{
+        width: 150px;
+        float: right;
+}
+.btn_Ciudadano{
+    margin-top: 2%;
+    text-align: center;
+}
+.btn_Ciudadano input{
+    background: lightgreen;
+    padding: 2px 5px;
+    font-family: 'Oswald', cursive;
+    font-size: 18px;
+}
+.Actualizar_C{
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 20px;
+}   

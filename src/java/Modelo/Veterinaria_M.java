@@ -39,7 +39,7 @@ public class Veterinaria_M {
         ArrayList<GS_Veterinaria> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Todo_Veterinaria_cero ()");
+            PreSta= BaseDatos.prepareStatement("call Todo_Veterinaria_cero()");
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   

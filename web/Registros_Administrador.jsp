@@ -4,6 +4,8 @@
     Author     : SENA
 --%>
 
+<%@page import="Modelo.Cliente_M"%>
+<%@page import="Modelo.GS_Cliente"%>
 <%@page import="Modelo.Veterinaria_M"%>
 <%@page import="Modelo.GS_Veterinaria"%>
 <%@page import="Modelo.Ambiente_Salud_M"%>
@@ -20,6 +22,7 @@
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
         <script src="Estilos/JS/Filtros_Administrador.js"></script>
+        <script src="Estilos/JS/Ajax_Registro_Admin.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
         <title>JSP Page</title>
@@ -33,8 +36,7 @@
 		<p>REGISTRAR</p>
             </div>
             
-           <form action="Servlet_Administrador" method="POST" enctype="multipart/form-data">
-		<div class="form_Administrador">
+                <div class="form_Administrador">
                     <div class="LR_Administrador">
 			<div class="left_Administrador">
                             <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
@@ -68,10 +70,10 @@
                     </div>
 
                     <div class="btn_Administrador">
-			<p><input class="" type="submit" name="R_Administrador" value="Registrar"></p>
+			<p><input class="In_Admin" type="submit" name="R_Administrador" value="Registrar"></p>
                     </div>
 		</div>
-            </form>
+            
             <div class="Actualizar_A">
 		<P>OBSERVAR</P>
             </div>
@@ -94,7 +96,7 @@
 
                         %>
                         
-                            <div class="Nombre">
+                            <div class="Nombre_A">
                                 <h2><%= GS_A.getNombre()+" "+ GS_A.getApellido()%></h2>
                             </div>
                             <div class="Datos_T">
@@ -188,7 +190,7 @@
                                     GS_AM =Tabla_A.get(i);
 
                             %>
-                            <div class="Nombre">
+                            <div class="Nombre_AM">
                                 <h2><%= GS_AM.getNombre()+" "+GS_AM.getApellido()%></h2>
                             </div>
                             <div class="Datos_T">
@@ -266,22 +268,63 @@
                     <div class="Registrar_V" >
                         <p>REGISTRAR</p>
                     </div>
+                    <div class="T_Veterinaria_0">  
+                       
+
+                            <%
+                                ArrayList<GS_Veterinaria> Tabla_V0 = new ArrayList<>();
+                                Veterinaria_M Veterinaria =new Veterinaria_M();
+                                GS_Veterinaria GS_V0 = new GS_Veterinaria();
+                                Tabla_V0= Veterinaria.Todo_cero();
+                                for(int i=0; i<Tabla_V0.size(); i++){
+                                    GS_V0 =Tabla_V0.get(i);
+
+                            %>
+                           <div class="Nombre_0">
+                                <h2><%= GS_V0.getNombre()%></h2>
+                            </div>
+                            <div class="Datos_T">
+                                <div class="Foto">
+                                     <label>
+                                     <img src="<%= GS_V0.getFoto()%>">
+                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     </label>
+                                 </div>
+                                 <div class="Datos">
+                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_V0.getNit()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_V0.getTipo_Veterinaria()%>">
+                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_V0.getRepresentante()%>">
+                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_V0.getFecha_Fundacion()%>">
+                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_V0.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getBarrio()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getTelefono()%>">
+                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getCorreo()%>">
+                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_V0.getRol()%>">
+                                 </div>
+                            </div>
+                            <div class="btn_A_E">
+                                <span class="icon icon-pencil Actualizar"></span>
+                            </div>
+                            <%
+                            }
+                            %>
+                    </div>
                     <div class="Actualizar_V" >
                         <p>OBSERVAR</p>
                     </div>
-                        <div class="T_Veterinaria">  
+                        <div class="T_Veterinaria_4">  
                        
 
                             <%
                                 ArrayList<GS_Veterinaria> Tabla_V = new ArrayList<>();
-                                Veterinaria_M Veterinaria =new Veterinaria_M();
+                                Veterinaria_M Veterinaria4 =new Veterinaria_M();
                                 GS_Veterinaria GS_V = new GS_Veterinaria();
-                                Tabla_V= Veterinaria.Todo_cuatro();
-                                for(int i=0; i<Tabla_S.size(); i++){
+                                Tabla_V= Veterinaria4.Todo_cuatro();
+                                for(int i=0; i<Tabla_V.size(); i++){
                                     GS_V =Tabla_V.get(i);
 
                             %>
-                           <div class="Nombre_S">
+                           <div class="Nombre_4">
                                 <h2><%= GS_V.getNombre()%></h2>
                             </div>
                             <div class="Datos_T">
@@ -346,13 +389,56 @@
                                 </div>
                             </div>
                             <div class="btn_Ciudadano">
-                                <p><input class="btn" type="submit" name="R_Ciudadano" value="Registrar"></p>
+                                <p><input class="" type="submit" name="R_Ciudadano" value="Registrar"></p>
                             </div>
                         </div>
                     </form>
                     <div class="Actualizar_C" >
                         <p>OBSERVAR</p>
                     </div>
+                    <div class="T_Ciudadano">
+                        <%
+                            ArrayList<GS_Cliente> Tabla_C = new ArrayList<>();
+                            Cliente_M Cliente =new Cliente_M();
+                            GS_Cliente GS_C = new GS_Cliente();
+                            Tabla_C= Cliente.Todo_Cliente();
+
+
+                            for(int i=0; i<Tabla_C.size(); i++){
+                                GS_C =Tabla_C.get(i);
+
+                        %>
+                        
+                            <div class="Nombre_C">
+                                <h2><%= GS_C.getNombre()+" "+ GS_C.getApellido()%></h2>
+                            </div>
+                            <div class="Datos_T">
+                                <div class="Foto">
+                                    <label>
+                                    <img src="<%= GS_C.getFoto()%>">
+                                    <input class="Foto_input" type="file" name="Foto" value="">
+                                    </label>
+                                </div>
+                                <div class="Datos">
+                                    <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_C.getDocumento()%>">
+                                    <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_C.getTipo_Documento()%>">
+                                    <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_C.getGenero()%>">
+                                    <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_C.getFecha_Nacimiento()%>">
+                                    <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_C.getDireccion()%>">
+                                    <input class="Telefono" type="Text" name="Telefono" value="<%= GS_C.getTelefono()%>">
+                                    <input class="Correo" type="Text" name="Correo" value="<%= GS_C.getCorreo()%>">
+                                </div>
+                                
+                            </div>
+                                <div class="btn_A_E">
+                                    <span class="icon icon-pencil Actualizar"></span>
+                                    <span class="icon icon-trash Eliminar"></span>
+                                </div>
+                        
+                        <%
+                        }
+                        %>
+                </div>
 	</div>
     </body>
 </html>
