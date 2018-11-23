@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/OpcionAdmin.js"></Script>
-        <script src="Estilos/JS/MenuAdministrador.js"></script> 
+        <script src="Estilos/JS/Menus.js"></script> 
     </head>
     <body>
         <header>

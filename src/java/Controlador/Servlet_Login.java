@@ -86,21 +86,21 @@ public class Servlet_Login extends HttpServlet {
                       String Documento_Salud=Usuario1;
                     String Nombre_Salud=log.Nombre_Cliente_Salud_Ambiente();
                     datt.setAttribute("NomSession", Nombre_Salud);
-                    datt.setAttribute("NomSession", Documento_Salud);
+                    datt.setAttribute("DocSession", Documento_Salud);
                     response.sendRedirect("Menu_Salud.jsp");
                  break;
                  case 4:
                      String Documento_Veterinaria=Usuario1;
                      String Nombre_Veterinaria=log.Nombre_Veterinaria();
                      datt.setAttribute("NomSession", Nombre_Veterinaria);
-                     datt.setAttribute("NomSession", Documento_Veterinaria);
+                     datt.setAttribute("DocSession", Documento_Veterinaria);
                     response.sendRedirect("Menu_Veterinaria.jsp");
                  break;
                  case 5:
                      String Documento_Ciudadano=Usuario1;
                     String Nombre_Usuario=log.Nombre_Cliente_Salud_Ambiente();
                     datt.setAttribute("NomSession", Nombre_Usuario);
-                    datt.setAttribute("NomSession", Documento_Ciudadano);
+                    datt.setAttribute("DocSession", Documento_Ciudadano);
                     response.sendRedirect("Menu_Cliente.jsp");
                  break;
                  default:

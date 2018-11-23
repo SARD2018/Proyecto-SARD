@@ -84,7 +84,8 @@ header{
 }
 .Perfil{
     float: right;
-    width: 205px;
+    background-color: red;
+    width: 255px;
     margin-top: -53px;
     margin-right: 60px;
     font-family: 'Courgette', cursive;
@@ -92,7 +93,9 @@ header{
     cursor: pointer;
 }
 .Perfil h2{
-    padding: 12.5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 12.5px auto;
     color: #fff;
 }
 .Perfil img{
@@ -128,6 +131,51 @@ header{
     background: #218838;
     border-color: #1e7e34;
 }
+@media screen and (max-width: 870px){
+    .Boton-m{
+        width: 90%;
+        margin: auto;
+        display: block;
+        padding: 8px 0;
+    }
+    .Barra-menu nav{
+        position: absolute; 
+        left: -100%;
+        background: #28a745;
+        border-color: #28a745;
+        width: 200px;
+        height: 100%;
+    }
+    .Menu li{
+        display: block;
+    }
+    .Menu .Derecha {
+        float: left;
+        width: 100%;
+    }
+    .Perfil{
+        float: right;
+        width: 215px;
+        margin-top: -39px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .Perfil h2{
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px auto;
+    }
+    .Perfil img{
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 39px;
+        height: 39px;
+        border-radius: 50px;
+        border: 1px solid black;
+    }
+}
 @media screen and (max-width: 770px){
     .Boton-m{
         width: 90%;
@@ -153,15 +201,18 @@ header{
     .img2 .Dos{
         display: none;
     }
-    .Perfil{
+   .Perfil{
         float: right;
-        width: 60px;
+        width: 155px;
         margin-top: -39px;
         margin-right: 20px;
         cursor: pointer;
     }
     .Perfil h2{
-            display: none;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px auto;
     }
     .Perfil img{
         float: right;

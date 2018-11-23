@@ -4,10 +4,9 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Cliente_M"%>
 <%@page import="Modelo.GS_Cliente"%>
-<%@page import="Modelo.GS_Administrador"%>
-<%@page import="Modelo.Administrador_M"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -55,14 +54,14 @@
                 ArrayList<GS_Cliente> datos = new ArrayList<>();
                 Cliente_M con = new Cliente_M();
                 datos = con.Uno_Cliente(Documento);
-                GS_Cliente Dat = new GS_Cliente();
+                GS_Cliente Dato = new GS_Cliente();
 
                 for(int i=0; i<datos.size(); i++){
-                    Dat = datos.get(i);
+                    Dato= datos.get(i);
                 %>
                 <div class="Perfil">
-                    <img src="<%= Dat.getFoto()%>">
-                    <h2><%= Dat.getNombre()%> <%= Dat.getApellido()%></h2>
+                    <img src="<%= Dato.getFoto()%>">
+                    <h2><%= Dato.getNombre()%> <%= Dato.getApellido()%></h2>
 		</div>
                 <% } %>
             </div>
@@ -70,8 +69,6 @@
         <div class="DatosPerfil">
             <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
             <a class="btn" href="Login.jsp">Cerrar Session</a>
-        </div>
-        <div class="Imagen">
         </div>
         <div class="CargarPag">
             <!--Aca carga la pag -->
