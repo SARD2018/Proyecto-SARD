@@ -1,34 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
-h2{
+.Caja .h2{
     font-family: 'Courgette', cursive;
     font-size: 30px;
 }
-.Container{
-    margin: auto;
-    padding: 0;
-}
 .Caja{
-    width: 300px;
-    height: 600px;
+    width: 400px;
+    height: 450px;
     display: block;
     padding-top: 20px;
-    background-color: yellow;
+    background-color: lightyellow;
+    border: 2px solid yellow;
+    border-radius: 20px;
     justify-content: center;
     text-align: center;
     text-decoration: none;
+    margin: 10% auto;
 }
 .Caja input{
     margin: auto;
+    width: 50%;
+    height: 25px;
     margin-bottom: 5px;
     display: block;
     text-align: center;
     text-decoration: none;
 }
+.Caja .btnE{
+    width: auto;
+    height: auto;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+.Caja textarea{
+    width: 50%;
+    height: 75px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
 .Caja label{
     display: block;
+    margin-bottom: 10px;
     text-decoration: none;
 }
-.file{
+.Caja .file{
     opacity: 0;
     width: 0.1px;
     height: 0.1px;

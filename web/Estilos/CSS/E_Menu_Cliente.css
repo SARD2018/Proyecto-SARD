@@ -92,9 +92,8 @@ header{
     cursor: pointer;
 }
 .Perfil h2{
-    text-decoration: none;
     text-align: center;
-    padding: 12.5px auto;
+    padding: 12.5px 0;
     color: #fff;
 }
 .Perfil img{
@@ -110,13 +109,15 @@ header{
     position: absolute;
     right: 0;
     width: 200px;
-    height: 100%;
-    background-color: #28a745;
+    height: 107px;
+    border-bottom: 1px solid #28A745;
+    border-left: 1px solid #28A745;
+    background: rgba(40, 167, 69 ,0.2);
 }
 .btn{
     float: right;
     padding: 15px;
-    color: #fff;
+    color: #28A745;
     width: 100%;
     text-align: right;
     text-decoration: none;
@@ -211,7 +212,7 @@ header{
         text-decoration: none;
         text-align: center;
         font-size: 15px;
-        padding: 10px auto;
+        padding: auto;
     }
     .Perfil img{
         float: right;

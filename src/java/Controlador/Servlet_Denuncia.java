@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.Denuncias_M;
 import Modelo.GS_Denuncia;
+import Modelo.GS_Denuncia_Cliente;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -88,18 +90,18 @@ public class Servlet_Denuncia extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Direccion,Fecha,Descripcion;
+        String Direccion,Documento,Fecha,Descripcion;
         
         Direccion= request.getParameter("Direccion");
-        Part Evidencia= request.getPart("Evidencia");
-        Fecha= request.getParameter("Fecha");
         Descripcion= request.getParameter("Descripcion");
+        Part Evidencia= request.getPart("Evidencia");
+        Documento= request.getParameter("Documento");
+        Fecha= request.getParameter("Fecha");
         String NameFoto= Evidencia.getSubmittedFileName();
         String Name= Direccion+"_"+Fecha+"_"+NameFoto;
         
         String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2= "Uploads/"+Name;
-        
         InputStream file= Evidencia.getInputStream();
         File img=new File(url);
         FileOutputStream sal=new FileOutputStream(img);
@@ -110,9 +112,9 @@ public class Servlet_Denuncia extends HttpServlet {
             num= file.read();
         }
         
-        GS_Denuncia GSD=new GS_Denuncia( 0, Direccion, Descripcion, Fecha, url2, Fecha);
+        GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento, Fecha);
         Denuncias_M  Den= new Denuncias_M();
-        Den.InsertarDenuncias(GSD);
+        Den.InsertarDenunciasC(GSD);
         request.getRequestDispatcher("Menu_Cliente.jsp").forward(request, response);
         
     }
