@@ -26,6 +26,7 @@
         <script src="Estilos/JS/Ambiente_Salud.js"></script>
         <script src="Estilos/JS/Ciudadano.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/MNombres_Registros.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
         <title>JSP Page</title>
     </head>
@@ -109,7 +110,7 @@
                                     </label>
                                 </div>
                                 <div class="Datos">
-                                    <input class="Documento_A" type="Text" class="Documento" readonly value="<%= GS_A.getDocumento()%>">
+                                    <input class="Documento_A" type="Text" class="Documento" readonly   value="<%= GS_A.getDocumento()%>">
                                     <input class="Tipo_Documento" type="Text" class="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>">
                                     <input class="Genero" type="Text" class="Genero" readonly value="<%= GS_A.getGenero()%>">
                                     <input class="Fecha" type="Text" class="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>">
