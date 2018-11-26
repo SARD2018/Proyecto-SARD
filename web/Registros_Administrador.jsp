@@ -90,13 +90,9 @@
                             ArrayList<GS_Administrador> Tabla = new ArrayList<>();
                             Administrador_M Admin =new Administrador_M();
                             GS_Administrador GS_A = new GS_Administrador();
-                          
                             Tabla= Admin.Tabla_Admin();
-
-
                             for(int i=0; i<Tabla.size(); i++){
                                 GS_A =Tabla.get(i);
-
                         %>
                         
                             <div class="Nombre_A">  
@@ -111,9 +107,9 @@
                                 </div>
                                 <div class="Datos">
                                     <input class="Documento_A" type="Text" class="Documento" readonly   value="<%= GS_A.getDocumento()%>">
-                                    <input class="Tipo_Documento" type="Text" class="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>">
-                                    <input class="Genero" type="Text" class="Genero" readonly value="<%= GS_A.getGenero()%>">
-                                    <input class="Fecha" type="Text" class="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>">
+                                    <input class="Tipo_Documento_A" type="Text" class="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>">
+                                    <input class="Genero_A" type="Text" class="Genero" readonly value="<%= GS_A.getGenero()%>">
+                                    <input class="Fecha_A" type="Text" class="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>">
                                     <input class="Direccion_A" type="Text" class="Direccion"  value="<%= GS_A.getDireccion()%>">
                                     <input class="Telefono_A" type="Text" class="Telefono" value="<%= GS_A.getTelefono()%>">
                                     <input class="Correo_A" type="Text" class="Correo" value="<%= GS_A.getCorreo()%>">

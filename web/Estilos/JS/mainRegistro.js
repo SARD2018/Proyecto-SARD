@@ -112,11 +112,13 @@ $(document).ready(function(){
 		});
 
 		$(".Actualizar_C").click(function(){
-		$(".T_Ciudadano").slideToggle();
-		$(".Datos_T").hide();
-                $(".btn_A_E").hide();
-                });	
+                    $(".T_Ciudadano").slideToggle();
+		});
                 
+                $(".Nombre_C").click(function(){
+                    $(".Datos_T").slideToggle();
+                    $(".btn_A_E").slideToggle();
+		});
                 
        
 });
