@@ -97,7 +97,6 @@
                     <span class="icon-camera"></span>
                 </label>
                 <label>Correo: <input type="email" required name="Correo"></label>
-                <label>Fecha: <input type="date" required name="Fecha"></label>
                 <textarea name="Descripcion" placeholder="Escriba el caso ocurrido"></textarea>
                 <input class="btnE" type="submit" name="BotonDenun" value="Enviar">
             </form>

@@ -28,7 +28,7 @@ public class Denuncias_M {
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error en la denuncia1");
         }
     }
     public void InsertarDenunciasC(GS_Denuncia_Cliente GD){
