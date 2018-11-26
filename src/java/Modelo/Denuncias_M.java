@@ -63,4 +63,21 @@ public class Denuncias_M {
         }
         return Tabla;
     }
+    public ArrayList<GS_Denuncia_Cliente> Tabla_Denuncias2 (){
+        ArrayList<GS_Denuncia_Cliente> Tabla2=new ArrayList<>();
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Todo_DenunciasC ()");
+            Reset= PreSta.executeQuery();
+            
+            while (Reset.next()) {   
+                GS_Denuncia_Cliente ing=new GS_Denuncia_Cliente(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6));
+                Tabla2.add(ing);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Todo Denuncia");
+        }
+        return Tabla2;
+    }
 }

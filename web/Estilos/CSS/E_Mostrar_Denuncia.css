@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+tr{
+    background-color: #CBF4C7;
+    border-radius: 20px;
+}
+th{
+    padding: 4px;
+    font-family: 'Courgette' ,cursive;
+    border: 1px lightgreen solid;
+}
+label{
+    font-size: 25px;
+    font-family: 'Courgette' ,cursive; 
+}
+.position{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 40px;
+}
+.Tabla{
+    float: left;
+    top: 0;
+    left: 0;
+}
+.Tabla2{
+    float: right;
+    top: 0;
+    right: 0;
+}
+.Tabla .imagen, .Tabla2 .imagen{
+    width: 60px;
+    height: 60px;
+}
+.icon-pencil{
+    cursor: pointer;
+    font-size: 25px;
+    color: green;
+}
+.icon-pencil:hover{
+    cursor: pointer;
+    color: lightgreen;
+}
