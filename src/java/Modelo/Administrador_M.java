@@ -96,12 +96,12 @@ public class Administrador_M {
      public int Act_Administrador (GS_Administrador GS){
          int Actualizar=0;
         try{
-            PreSta=BaseDatos.prepareStatement("call (?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call A_Admin(?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
-            PreSta.setString(7, GS.getDireccion());
-            PreSta.setString(8, GS.getTelefono());
-            PreSta.setString(9, GS.getCorreo());
-            PreSta.setString(10, GS.getFoto());
+            PreSta.setString(2, GS.getDireccion());
+            PreSta.setString(3, GS.getTelefono());
+            PreSta.setString(4, GS.getCorreo());
+            PreSta.setString(5, GS.getFoto());
             Actualizar=PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
         }
@@ -110,6 +110,19 @@ public class Administrador_M {
     }
         return Actualizar;
     }
+     
+     public void Eli_Administrador(GS_Administrador GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("B_Administrador(?)");
+            PreSta.setString(1,GS.getDocumento());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos Borrados");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
    
      public void Login_Admin (GS_Administrador GS){
         try{

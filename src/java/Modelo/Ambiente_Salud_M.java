@@ -17,6 +17,7 @@ public class Ambiente_Salud_M {
     
     public void In_Ambiente_Salud (GS_Ambiente_Salud GS){
         try{
+            JOptionPane.showMessageDialog(null, "entra modelo");
             PreSta=BaseDatos.prepareStatement("call In_Cliente_Admin(?,?,?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getTipo_Documento());
@@ -37,6 +38,37 @@ public class Ambiente_Salud_M {
             JOptionPane.showMessageDialog(null,e);
         }
     }
+    
+     public int Act_Ambiente_Salud (GS_Ambiente_Salud GS){
+         int Actualizar=0;
+        try{
+            PreSta=BaseDatos.prepareStatement("call A_Cliente_Admin(?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDireccion());
+            PreSta.setString(3, GS.getTelefono());
+            PreSta.setString(4, GS.getCorreo());
+            PreSta.setString(5, GS.getFoto());
+            Actualizar=PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
+    }
+   
+     public void Eli_Ambiente_Salud(GS_Ambiente_Salud GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("B_Cliente(?)");
+            PreSta.setString(1,GS.getDocumento());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos Borrados");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
     
     public ArrayList<GS_Ambiente_Salud> Uno_Salud (String ID){
         ArrayList<GS_Ambiente_Salud> Tabla=new ArrayList<>();

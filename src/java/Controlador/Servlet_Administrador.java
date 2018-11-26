@@ -43,23 +43,33 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        out.print("llega al servlet");
-        String Valor =request.getParameter("Boton");
-        out.print(Valor);
-        
-        if(Valor.equalsIgnoreCase("In_Admin")){
-         out.print("entra al if");
+        if(request.getParameter("Valor_A").equalsIgnoreCase("In_Admin")){
+            JOptionPane.showMessageDialog(null,"entra if");
+            Insertar_Admin(request, response);
+        }
+        if(request.getParameter("Valor_A").equalsIgnoreCase("Act_Admin")){
+            JOptionPane.showMessageDialog(null,"entra if");
+            Actualizar_Admin(request, response);
+        }
+    }
+   
+    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        JOptionPane.showMessageDialog(null, "entra metodo");
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento");
-        Tipo= request.getParameter("Tipo_Documento");
-        Nombre = request.getParameter("Nombre");
-        Apellido = request.getParameter("Apellido");
-        Genero = request.getParameter("Genero");
-        Fecha = request.getParameter("Fecha_Nacimiento");
-        Direccion = request.getParameter("Direccion");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto");
+        Documento = request.getParameter("Documento_A");
+        Tipo= request.getParameter("Tipo_A");
+        Nombre = request.getParameter("Nombre_A");
+        Apellido = request.getParameter("Apellido_A");
+        Genero = request.getParameter("Genero_A");
+        Fecha = request.getParameter("Fecha_A");
+        Direccion = request.getParameter("Direccion_A");
+        Telefono = request.getParameter("Telefono_A");
+        Correo = request.getParameter("Correo_A");
+        /*
+        Part Foto = request.getPart("Foto_A");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
@@ -75,36 +85,24 @@ public class Servlet_Administrador extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        
-        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
+        */
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, null);
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
         Admin.Login_Admin(GSA);
         }
-        else{
-            out.print("entro al else");
-        }
-        
-         
-    }
-   
-    protected void Insertar_Admin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-    }
+    
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        /* String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento");
-        Nombre = request.getParameter("Nombre");
-        Direccion = request.getParameter("Direccion");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
+        String Documento,Nombre,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento_A");
+        Direccion = request.getParameter("Direccion_A");
+        Telefono = request.getParameter("Telefono_A");
+        Correo = request.getParameter("Correo_A");
+        /*
         Part Foto = request.getPart("Foto");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
@@ -121,8 +119,8 @@ public class Servlet_Administrador extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        
-        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
+        */
+        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, null);
         Administrador_M Admin = new Administrador_M();
         int Consulta;
         Consulta=Admin.Act_Administrador(GSA);
@@ -132,16 +130,20 @@ public class Servlet_Administrador extends HttpServlet {
         else{
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
         }
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
-        
-        
-        if (request.getParameter("R_Administrador")!=null) {
-            this.Insertar_Admin(request, response); 
-        }
-        */
-        
-        
     }
+    
+    protected void Eliminar_Administrador (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento;
+        Documento=request.getParameter("Documento_A");
+        GS_Administrador GSA = new GS_Administrador(Documento);
+        Administrador_M Admin = new Administrador_M();
+        Admin.Eli_Administrador(GSA);
+        
+        }
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -32,6 +32,8 @@ public class Cliente_M {
         }
         return Tabla;
     }
+    
+    
     public ArrayList<GS_Cliente> Todo_Cliente() {
         ArrayList<GS_Cliente> Todo_Cliente = new ArrayList<>();
         try {
@@ -69,7 +71,23 @@ public class Cliente_M {
         }
     }
     
-    
+    public int Act_Cliente (GS_Cliente GS){
+         int Actualizar=0;
+        try{
+            PreSta=BaseDatos.prepareStatement("call A_Cliente(?,?,?,?,?)");
+            PreSta.setString(1, GS.getDocumento());
+            PreSta.setString(2, GS.getDireccion());
+            PreSta.setString(3, GS.getTelefono());
+            PreSta.setString(4, GS.getCorreo());
+            PreSta.setString(5, GS.getFoto());
+            Actualizar=PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+        return Actualizar;
+    }
       public void Login_Cliente (GS_Cliente GS){
         try{
             PreSta=BaseDatos.prepareStatement("call In_Login(?,?,?)");
@@ -78,6 +96,18 @@ public class Cliente_M {
             PreSta.setInt(3, 5);
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+      
+    public void Eli_Cliente(GS_Cliente GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("B_Cliente (?)");
+            PreSta.setString(1,GS.getDocumento());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos Borrados");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

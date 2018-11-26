@@ -41,6 +41,14 @@ public class GS_Ambiente_Salud {
         this.Foto = Foto;
     }
 
+    public GS_Ambiente_Salud(String Documento, String Direccion, String Telefono, String Correo,String Foto) {
+        this.Documento = Documento;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Foto = Foto;
+    }
+
     public GS_Ambiente_Salud() {
     }
 

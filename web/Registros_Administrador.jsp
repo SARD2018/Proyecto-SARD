@@ -22,7 +22,9 @@
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
         <script src="Estilos/JS/Filtros_Administrador.js"></script>
-        <script src="Estilos/JS/Ajax_Registro_Admin.js"></script>
+        <script src="Estilos/JS/Administrador.js"></script>
+        <script src="Estilos/JS/Ambiente_Salud.js"></script>
+        <script src="Estilos/JS/Ciudadano.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
         <title>JSP Page</title>
@@ -39,18 +41,18 @@
                 <div class="form_Administrador">
                     <div class="LR_Administrador">
 			<div class="left_Administrador">
-                            <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
+                            <p>Documento: <input type="text" class="Documento" pattern="[0-9]{4,11}" required></p>
                             <p>Tipo de Documento: 
-                                <select name="Tipo_Documento" required>
+                                <select class="Tipo_Documento" required>
                                     <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                     <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select>
                             </p>
-                            <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
-                            <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z ]{1,50}" required></p>
+                            <p>Nombre: <input type="text" class="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
+                            <p>Apellido: <input type="text" class="Apellido" pattern="[A-Z,a-z ]{1,50}" required></p>
                             <p>Genero: 
-                                <select name="Genero" required >
+                                <select class="Genero" required >
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                 </select>
@@ -58,13 +60,13 @@
                         </div>
 
 			<div class="Right_Administrador">
-                            <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
-                            <p>Direccion: <input type="text" name="Direccion" required></p>
-                            <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
-                            <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                            <p>Fecha de Nacimiento: <input type="date" class="Fecha_Nacimiento"  required></p>
+                            <p>Direccion: <input type="text" class="Direccion" required></p>
+                            <p>Telefono: <input type="text" class="Telefono" pattern="[0-9]{5,10}" required></p>
+                            <p>Correo: <input type="email" class="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
                             <p>Foto: <label>
                                     <span class="icon icon-camera"></span>
-                                    <input class="Foto_input" type="file" name="Foto" value="">
+                                    <input class="Foto_input" type="file" class=Foto" value="">
                                     </label></p>
 			</div>
                     </div>
@@ -73,9 +75,6 @@
 			<p><input class="In_Admin" type="submit" value="Registrar"></p>
                     </div>
 		</div>
-           <div class="prueba">
-               <h1>Holaa</h1>   
-           </div>
             
             <div class="Actualizar_A">
 		<P>OBSERVAR</P>
@@ -99,30 +98,30 @@
 
                         %>
                         
-                            <div class="Nombre_A">
-                                <h2><%= GS_A.getNombre()+" "+ GS_A.getApellido()%></h2>
+                            <div class="Nombre_A">  
+                                <h2><%=GS_A.getNombre()+" "+GS_A.getApellido()%></h2>    
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
                                     <label>
                                     <img src="<%= GS_A.getFoto()%>">
-                                    <input class="Foto_input" type="file" name="Foto" value="">
+                                    <input class="Foto_input Foto_A" type="file" value="">
                                     </label>
                                 </div>
                                 <div class="Datos">
-                                    <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_A.getDocumento()%>">
-                                    <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>">
-                                    <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_A.getGenero()%>">
-                                    <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>">
-                                    <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_A.getDireccion()%>">
-                                    <input class="Telefono" type="Text" name="Telefono" value="<%= GS_A.getTelefono()%>">
-                                    <input class="Correo" type="Text" name="Correo" value="<%= GS_A.getCorreo()%>">
+                                    <input class="Documento_A" type="Text" class="Documento" readonly value="<%= GS_A.getDocumento()%>">
+                                    <input class="Tipo_Documento" type="Text" class="Tipo_Documento" readonly value="<%= GS_A.getTipo_Documento()%>">
+                                    <input class="Genero" type="Text" class="Genero" readonly value="<%= GS_A.getGenero()%>">
+                                    <input class="Fecha" type="Text" class="Fecha" readonly value="<%= GS_A.getFecha_Nacimiento()%>">
+                                    <input class="Direccion_A" type="Text" class="Direccion"  value="<%= GS_A.getDireccion()%>">
+                                    <input class="Telefono_A" type="Text" class="Telefono" value="<%= GS_A.getTelefono()%>">
+                                    <input class="Correo_A" type="Text" class="Correo" value="<%= GS_A.getCorreo()%>">
                                 </div>
                                 
                             </div>
                                 <div class="btn_A_E">
-                                    <span class="icon icon-pencil Actualizar"></span>
-                                    <span class="icon icon-trash Eliminar"></span>
+                                    <span class="icon icon-pencil Act_A"></span>
+                                    <span class="icon icon-trash Eli_A"></span>
                                 </div>
                         
                         <%
@@ -136,47 +135,46 @@
 		</div>
                 <div class="Registrar_AmbienteySalud" >
                     <p>REGISTRAR</p>
-		</div>
-		<form action="Servlet_Ambiente_Salud" method="post" enctype="multipart/form-data">						<div class="form_AmbienteySalud">
+                </div>
+                <div class="form_AmbienteySalud">
                     <div class="LR_AmbienteySalud">
         		<div class="left_AmbienteySalud">
-                            <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
+                            <p>Documento: <input type="text" class="Documento_AS" pattern="[0-9]{4,11}" required></p>
                             <p>Tipo de Documento: 
-                                <select name="Tipo_Documento" required>
+                                <select class="Tipo_Documento_AS" required>
                                     <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                     <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select></p>
-                            <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
-                            <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></p>
+                            <p>Nombre: <input type="text" class="Nombre_AS" pattern="[A-Z,a-z]{1,50}" required></p>
+                            <p>Apellido: <input type="text" class="Apellido_AS" pattern="[A-Z,a-z]{1,50}" required></p>
                             <p>Genero: 
-                                <select name="Genero" required >
+                                <select class="Genero_AS" required >
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                 </select></p>
-                            <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
+                            <p>Fecha de Nacimiento: <input type="date" class="Fecha_Nacimiento_AS"  required></p>
 			</div>
                         <div class="right_AmbienteySalud">
-                            <p>Direccion: <input type="text" name="Direccion" required></p>
-                            <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
-                            <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                            <p>Direccion: <input type="text" class="Direccion_AS" required></p>
+                            <p>Telefono: <input type="text" class="Telefono_AS" pattern="[0-9]{5,10}" required></p>
+                            <p>Correo: <input type="email" class="Correo_AS" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
                             <p>Rol:
-                                <select name="Rol" required="">
+                                <select class="Rol_AS" required="">
                                     <option value="2">Ambiente</option>
                                     <option value="3">Salud</option>
                                 </select>
                             </p>
                             <p>Foto: <label>
                                     <span class="icon icon-camera"></span>
-                                    <input class="Foto_input" type="file" name="Foto" value="">
+                                    <input class="Foto_input" type="file" class="Foto_AS" value="">
                                     </label></p>
                         </div>
                     </div>
                     <div class="btn_AmbienteySalud">
-			<p><input class="" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
+			<p><input class="In_Am_Sa" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
                     </div>
                     </div>
-        	</form>
                     <div class="Actualizar_AmbienteySalud" >
                         <p>OBSERVAR</p>
                     </div>
@@ -214,8 +212,8 @@
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Actualizar"></span>
-                                <span class="icon icon-trash Eliminar"></span>
+                                <span class="icon icon-pencil Act_AS"></span>
+                                <span class="icon icon-trash Eli_AS"></span>
                             </div>
                             <%
                             }
@@ -258,8 +256,8 @@
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Actualizar"></span>
-                                <span class="icon icon-trash Eliminar"></span>
+                                <span class="icon icon-pencil Act_Am_Sa"></span>
+                                <span class="icon icon-trash Eli_Am_Sa"></span>
                             </div>
                             <%
                             }
@@ -284,29 +282,29 @@
 
                             %>
                            <div class="Nombre_0">
-                                <h2><%= GS_V0.getNombre()%></h2>
+                               <h2 class="Nombre_V0"> <%= GS_V0.getNombre()%></h2>
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
                                      <label>
                                      <img src="<%= GS_V0.getFoto()%>">
-                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     <input class="Foto_input Foto_V0" type="file" value="">
                                      </label>
                                  </div>
                                  <div class="Datos">
-                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_V0.getNit()%>">
-                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_V0.getTipo_Veterinaria()%>">
-                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_V0.getRepresentante()%>">
-                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_V0.getFecha_Fundacion()%>">
-                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_V0.getDireccion()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getBarrio()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getTelefono()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V0.getCorreo()%>">
-                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_V0.getRol()%>">
+                                     <input class="Documento_V0" type="Text" name="Documento" readonly value="<%= GS_V0.getNit()%>">
+                                     <input class="Tipo_Documento_V0" type="Text" name="Tipo_Documento" readonly value="<%= GS_V0.getTipo_Veterinaria()%>">
+                                     <input class="Genero_V0" type="Text" name="Genero" readonly value="<%= GS_V0.getRepresentante()%>">
+                                     <input class="Fecha_V0" type="Text" name="Fecha" readonly value="<%= GS_V0.getFecha_Fundacion()%>">
+                                     <input class="Direccion_V0" type="Text" name="Direccion"  value="<%= GS_V0.getDireccion()%>">
+                                     <input class="Barrio_V0" type="Text" name="Telefono" value="<%= GS_V0.getBarrio()%>">
+                                     <input class="Telefono_V0" type="Text" name="Telefono" value="<%= GS_V0.getTelefono()%>">
+                                     <input class="Correo_V0" type="Text" name="Telefono" value="<%= GS_V0.getCorreo()%>">
+                                     <input class="Rl_V0" type="Text" name="Correo" value="<%= GS_V0.getRol()%>">
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Actualizar"></span>
+                                <span class="icon icon-pencil Act_V0"></span>
                             </div>
                             <%
                             }
@@ -328,29 +326,29 @@
 
                             %>
                            <div class="Nombre_4">
-                                <h2><%= GS_V.getNombre()%></h2>
+                               <h2 class="Nombre_V4" ><%= GS_V.getNombre()%></h2>
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
                                      <label>
                                      <img src="<%= GS_V.getFoto()%>">
-                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     <input class="Foto_input FotoV4" type="file"  value="">
                                      </label>
                                  </div>
                                  <div class="Datos">
-                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_V.getNit()%>">
-                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_V.getTipo_Veterinaria()%>">
-                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_V.getRepresentante()%>">
-                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_V.getFecha_Fundacion()%>">
-                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_V.getDireccion()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getBarrio()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getTelefono()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_V.getCorreo()%>">
-                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_V.getRol()%>">
+                                     <input class="Documento_V4" type="Text" name="Documento" readonly value="<%= GS_V.getNit()%>">
+                                     <input class="Tipo_Documento_V4" type="Text" name="Tipo_Documento" readonly value="<%= GS_V.getTipo_Veterinaria()%>">
+                                     <input class="Genero_V4" type="Text" name="Genero" readonly value="<%= GS_V.getRepresentante()%>">
+                                     <input class="Fecha_V4" type="Text" name="Fecha" readonly value="<%= GS_V.getFecha_Fundacion()%>">
+                                     <input class="Direccion_V4" type="Text" name="Direccion"  value="<%= GS_V.getDireccion()%>">
+                                     <input class="Telefono_V4" type="Text" name="Telefono" value="<%= GS_V.getBarrio()%>">
+                                     <input class="Telefono_V4" type="Text" name="Telefono" value="<%= GS_V.getTelefono()%>">
+                                     <input class="Telefono_V4" type="Text" name="Telefono" value="<%= GS_V.getCorreo()%>">
+                                     <input class="Correo_V4" type="Text" name="Correo" value="<%= GS_V.getRol()%>">
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Actualizar"></span>
+                                <span class="icon icon-pencil Act_V4"></span>
                             </div>
                             <%
                             }
@@ -364,35 +362,35 @@
                     <div class="Registrar_C" >
                         <p>REGISTRAR</p>
                     </div>
-                    <form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
+                    
                         <div class="form_Ciudadano">
                             <div class="LR_Ciudadano">
                                 <div class="left_Ciudadano">
-                                    <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
+                                    <p>Documento: <input type="text" class="Documento_C" pattern="[0-9]{4,11}" required></p>
                                     <p>Tipo de Documento: 
-                                        <select name="Tipo_Documento" required>
+                                        <select class="Tipo_Documento_C" required>
                                             <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                             <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                             <option value="Pasaporte">Pasaporte</option>
                                         </select></p>
-                                    <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
-                                    <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></p>
+                                    <p>Nombre: <input type="text" class="Nombre_CI" pattern="[A-Z,a-z]{1,50}" required></p>
+                                    <p>Apellido: <input type="text" class="Apellido_C" pattern="[A-Z,a-z]{1,50}" required></p>
                                     <p>Genero: 
-                                        <select name="Genero" required >
+                                        <select class="Genero_C" required >
                                             <option value="Masculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
                                         </select></p>
                                 </div>
                                 <div class="Right_Ciudadano">
-                                    <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
-                                    <p>Direccion: <input type="text" name="Direccion" required></p>
-                                    <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
-                                    <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
-                                    <p>Foto: <input type="file" name="Foto"></p>
+                                    <p>Fecha de Nacimiento: <input type="date" class="Fecha_Nacimiento_C"  required></p>
+                                    <p>Direccion: <input type="text" class="Direccion_C" required></p>
+                                    <p>Telefono: <input type="text" class="Telefono_C" pattern="[0-9]{5,10}" required></p>
+                                    <p>Correo: <input type="email" class="Correo_C" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                                    <p>Foto: <input type="file" class="Foto_C"></p>
                                 </div>
                             </div>
                             <div class="btn_Ciudadano">
-                                <p><input class="" type="submit" name="R_Ciudadano" value="Registrar"></p>
+                                <p><input class="In_Ciudadano" type="submit" name="R_Ciudadano" value="Registrar"></p>
                             </div>
                         </div>
                     </form>
@@ -434,8 +432,8 @@
                                 
                             </div>
                                 <div class="btn_A_E">
-                                    <span class="icon icon-pencil Actualizar"></span>
-                                    <span class="icon icon-trash Eliminar"></span>
+                                    <span class="icon icon-pencil Act_C"></span>
+                                    <span class="icon icon-trash Eli_C"></span>
                                 </div>
                         
                         <%

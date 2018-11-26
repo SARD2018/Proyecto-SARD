@@ -7,8 +7,10 @@ package Controlador;
 
 import Modelo.Administrador_M;
 import Modelo.Ambiente_Salud_M;
+import Modelo.Cliente_M;
 import Modelo.GS_Administrador;
 import Modelo.GS_Ambiente_Salud;
+import Modelo.GS_Cliente;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,9 +46,14 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        if (request.getParameter("R_AmbienteySalud")!=null) {
+        if (request.getParameter("Valor_AS").equalsIgnoreCase("In_Am_Sa")) {
             this.Insertar_Ambiente_Salud(request, response);
+        }
+        if (request.getParameter("Valor_AS").equalsIgnoreCase("Act_Am_Sa")) {
+            this.Actualizar_Ambiente_Salud(request, response);
+        }
+        if (request.getParameter("Valor_AS").equalsIgnoreCase("Eli_Am_Sa")) {
+            this.Eliminar_Ambiente_Salud(request, response);
         }
         
     }
@@ -55,20 +62,19 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         int Rol;
-        Documento = request.getParameter("Documento");
-        Tipo= request.getParameter("Tipo_Documento");
-        Nombre = request.getParameter("Nombre");
-        Apellido = request.getParameter("Apellido");
-        Genero = request.getParameter("Genero");
-        Fecha = request.getParameter("Fecha_Nacimiento");
-        Direccion = request.getParameter("Direccion");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Rol = Integer.parseInt(request.getParameter("Rol"));
-        Part Foto = request.getPart("Foto");
+        Documento = request.getParameter("Documento_AS");
+        Tipo= request.getParameter("Tipo_AS");
+        Nombre = request.getParameter("Nombre_AS");
+        Apellido = request.getParameter("Apellido_AS");
+        Genero = request.getParameter("Genero_AS");
+        Fecha = request.getParameter("Fecha_AS");
+        Direccion = request.getParameter("Direccion_AS");
+        Telefono = request.getParameter("Telefono_AS");
+        Correo = request.getParameter("Correo_AS");
+        Rol = Integer.parseInt(request.getParameter("Rol_AS"));
+        /*Part Foto = request.getPart("Foto_AS");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
@@ -84,8 +90,8 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        
-        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, Rol, url2);
+        */
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, Rol, null);
          Ambiente_Salud_M AS = new Ambiente_Salud_M();
         AS.In_Ambiente_Salud(GSAS);
         if(Rol==2){
@@ -94,8 +100,60 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         else{
             AS.Login_Salud(GSAS);
         }
-        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
-    }
+     }
+     
+     protected void Actualizar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Documento,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento_AS");
+        Direccion = request.getParameter("Direccion_AS");
+        Telefono = request.getParameter("Telefono_AS");
+        Correo = request.getParameter("Correo_AS");
+        /*Part Foto = request.getPart("Foto_AS");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        */
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, null);
+         Ambiente_Salud_M AS = new Ambiente_Salud_M();
+        
+        int Consulta;
+        Consulta=AS.Act_Ambiente_Salud(GSAS);
+        if (Consulta>0) {
+            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+        }
+        
+     }
+     
+     protected void Eliminar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento;
+        Documento=request.getParameter("Documento_AS");
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento);
+         Ambiente_Salud_M Am_Sa = new Ambiente_Salud_M();
+        Am_Sa.Eli_Ambiente_Salud(GSAS);
+        
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

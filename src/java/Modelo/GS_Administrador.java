@@ -50,6 +50,10 @@ public class GS_Administrador {
         this.Correo = Correo;
         this.Foto = Foto;
     }
+
+    public GS_Administrador(String Documento) {
+        this.Documento = Documento;
+    }
     
     public String getDocumento() {
         return Documento;

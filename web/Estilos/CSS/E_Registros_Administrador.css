@@ -122,12 +122,23 @@
     font-size: 20px;
 }
 
-.Nombre_A , .Nombre_AM ,.Nombre_4{
+.Nombre_4{
     background:  lemonchiffon;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
     font-size: 13px;
+}
+
+.Nombre_AM {
+    background:  lemonchiffon;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+    font-size: 13px;
+}
+.Nombre_A{
+    background: red; 
 }
 
 .Nombre_S, .Nombre_0, .Nombre_C {
