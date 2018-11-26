@@ -64,17 +64,25 @@ $(document).ready(function(){
 		$(".Ambiente").slideToggle();
 		$(".Salud").slideToggle();
 		});	
+                
 		$(".Ambiente").click(function(){
-		$(".T_Ambiente").slideToggle();
-                $(".Datos_T").hide();
-                $(".btn_A_E").hide();
+                    $(".T_Ambiente").slideToggle();
 		});
                 
-		$(".Salud").click(function(){
-		$(".T_Salud").slideToggle();
-		$(".Datos_T").hide();
-                $(".btn_A_E").hide();
-                });	
+                $(".Nombre_AM").click(function(){
+                    $(".Datos_T").slideToggle();
+                    $(".btn_A_E").slideToggle();
+		});
+                
+                $(".Salud").click(function(){
+                    $(".T_Salud").slideToggle();
+		});
+                
+                $(".Nombre_S").click(function(){
+                    $(".Datos_T").slideToggle();
+                    $(".btn_A_E").slideToggle();
+		});
+                
 
 	$(".SVeterinaria").click(function(){
 	$(".Registrar_V").slideToggle();

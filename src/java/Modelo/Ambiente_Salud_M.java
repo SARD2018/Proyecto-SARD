@@ -42,14 +42,13 @@ public class Ambiente_Salud_M {
      public int Act_Ambiente_Salud (GS_Ambiente_Salud GS){
          int Actualizar=0;
         try{
-            PreSta=BaseDatos.prepareStatement("call A_Cliente_Admin(?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call A_Cliente_Admin (?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getDireccion());
             PreSta.setString(3, GS.getTelefono());
             PreSta.setString(4, GS.getCorreo());
             PreSta.setString(5, GS.getFoto());
             Actualizar=PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
