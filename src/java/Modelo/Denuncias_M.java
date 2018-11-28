@@ -19,16 +19,15 @@ public class Denuncias_M {
     public void InsertarDenuncias(GS_Denuncia GD){
         
         try {
-            PreSta= BaseDatos.prepareStatement("call In_Denuncia(?,?,?,?,?)");
+            PreSta= BaseDatos.prepareStatement("call In_Denuncia(?,?,?,?)");
             PreSta.setString(1, GD.getDireccion());
             PreSta.setString(2, GD.getDescripcion());
             PreSta.setString(3, GD.getEvidencia());
             PreSta.setString(4, GD.getCorreo());
-            PreSta.setString(5, GD.getFecha());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error en la denuncia1");
+            JOptionPane.showMessageDialog(null, "Error en la denuncia");
         }
     }
     public void InsertarDenunciasC(GS_Denuncia_Cliente GD){

@@ -11,6 +11,14 @@ public class GS_Denuncia {
     private String Correo;
     private String Fecha;
 
+    public GS_Denuncia(int Codigo, String Direccion, String Descripcion, String Evidencia, String Correo) {
+        this.Codigo = Codigo;
+        this.Direccion = Direccion;
+        this.Descripcion = Descripcion;
+        this.Evidencia = Evidencia;
+        this.Correo = Correo;
+    }
+
     public GS_Denuncia(int Codigo, String Direccion, String Descripcion, String Evidencia, String Correo, String Fecha) {
         this.Codigo = Codigo;
         this.Direccion = Direccion;

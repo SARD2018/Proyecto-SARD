@@ -54,7 +54,19 @@ $(".Foto");
           $( "#weather-temp" ).html( result);
         }
       });
+      
+       $(".Documento").val(null);
+        $(".Tipo_Documento").val(null);
+        $(".Nombre").val(null);
+        $(".Apellido").val(null);
+        $(".Genero").val(null);
+        $(".Fecha_Nacimiento").val(null);
+        $(".Direccion").val(null);
+        $(".Telefono").val(null);
+        $(".Correo").val(null);
+        $(".Foto").val(null);
     });
+       
     
     
     //ACTUALIZAR
@@ -100,11 +112,13 @@ $(".Foto");
     $(".Documento_A");
     
     $(".Eli_A").click(function(){
+        alert("entra a eliminar");
         var Index = $(".Eli_A").index(this);
         var Docu = $(".Documento_A").eq(Index);
         
         var Valor="Eli_Admin";
         var Documento =$(Docu).val();
+        alert(Documento);
         
         $.ajax({
         url: "Servlet_Administrador",

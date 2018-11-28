@@ -47,8 +47,11 @@ $(document).ready(function(){
 		});
                 
                 $(".Nombre_A").click(function(){
-                    $(".Datos_T").slideToggle();
-                    $(".btn_A_E").slideToggle();
+                    var Index= $(".Nombre_A").index(this);
+                    var Datos= $(".Datos_T").eq(Index);
+                    var Boton= $(".btn_A_E").eq(Index);
+                    Datos.slideToggle();
+                    Boton.slideToggle(); 
 		});
 
 	$(".SAmbienteySalud").click(function(){
@@ -69,9 +72,13 @@ $(document).ready(function(){
                     $(".T_Ambiente").slideToggle();
 		});
                 
-                $(".Nombre_AM").click(function(){
-                    $(".Datos_T").slideToggle();
-                    $(".btn_A_E").slideToggle();
+                 $(".Nombre_AM").click(function(){
+                     alert("entra al boton");
+                    var Index= $(".Nombre_AM").index(this);
+                    var Datos= $(".Datos_T").eq(Index);
+                    var Boton= $(".btn_A_E").eq(Index);
+                    Datos.slideToggle();
+                    Boton.slideToggle(); 
 		});
                 
                 $(".Salud").click(function(){
@@ -79,8 +86,11 @@ $(document).ready(function(){
 		});
                 
                 $(".Nombre_S").click(function(){
-                    $(".Datos_T").slideToggle();
-                    $(".btn_A_E").slideToggle();
+                    var Index= $(".Nombre_S").index(this);
+                    var Datos= $(".Datos_T").eq(Index);
+                    var Boton= $(".btn_A_E").eq(Index);
+                    Datos.slideToggle();
+                    Boton.slideToggle(); 
 		});
                 
 

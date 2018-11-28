@@ -113,7 +113,7 @@ public class Administrador_M {
      
      public void Eli_Administrador(GS_Administrador GS){
         try{
-            PreSta=BaseDatos.prepareStatement("B_Administrador(?)");
+            PreSta=BaseDatos.prepareStatement("call B_Administrador(?)");
             PreSta.setString(1,GS.getDocumento());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos Borrados");

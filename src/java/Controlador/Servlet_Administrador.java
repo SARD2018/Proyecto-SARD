@@ -44,12 +44,13 @@ public class Servlet_Administrador extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         if(request.getParameter("Valor_A").equalsIgnoreCase("In_Admin")){
-            JOptionPane.showMessageDialog(null,"entra if");
             Insertar_Admin(request, response);
         }
         if(request.getParameter("Valor_A").equalsIgnoreCase("Act_Admin")){
-            JOptionPane.showMessageDialog(null,"entra if");
             Actualizar_Admin(request, response);
+        }
+        if(request.getParameter("Valor_A").equalsIgnoreCase("Eli_Admin")){
+            Eliminar_Administrador(request, response);
         }
     }
    
@@ -57,7 +58,6 @@ public class Servlet_Administrador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        JOptionPane.showMessageDialog(null, "entra metodo");
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         Documento = request.getParameter("Documento_A");
         Tipo= request.getParameter("Tipo_A");
@@ -90,6 +90,7 @@ public class Servlet_Administrador extends HttpServlet {
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
         Admin.Login_Admin(GSA);
+        
         }
     
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)

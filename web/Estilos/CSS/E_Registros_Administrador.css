@@ -16,14 +16,20 @@
     height: 0.1 px;
 }
 .Nombre_A, .Nombre_AM, .Nombre_V4{
-    background:  lemonchiffon;
+    background: #cdffd5 ;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-family: 'Oswald', cursive;
     font-size: 15px;
+    height: 40px;
+    border-bottom: 1px solid black;
+    
+}
+.Nombre_A,.Nombre_AM,.Nombre_S,.Nombre_V0, .Nombre_V4, .Nombre_CI h2{
+    margin-left: 2%;
 }
 .Nombre_S, .Nombre_V0, .Nombre_CI{
-     background:  lightgreen;
+     background: #cdffd5  ;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -65,9 +71,9 @@
     font-family: 'Oswald', cursive;
     font-size: 25px;
     margin-bottom: 0px;
+    text-decoration:underline;
 }
 .Registrar_A{
-    background:  lemonchiffon;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -77,11 +83,9 @@
 	border-radius: 0px 0px 5px 5px;
 	border: 0.1px solid black;
 	border-top: none;
-	box-sizing: border-box;
-	height: 250px;
 }
 .LR_Administrador{
-        padding-top: 2%;
+        margin-top: 3%;
 	font-size: x-large;
 	margin: auto;
 	width: 90%;
@@ -90,10 +94,8 @@
 	align-items: center;
 }
 .left_Administrador{
-	width: 45%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+	width: 35%;
+        display: block;
         text-align: left;
 }
 
@@ -106,10 +108,8 @@
         float: right;
 }
 .Right_Administrador{
-	width: 45%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+	width: 35%;
+        display: block;
         text-align: left;
 }
 .Right_Administrador input{
@@ -122,6 +122,7 @@
 }
 .btn_Administrador{
     margin-top: 2%;
+    margin-bottom: 2%;
     text-align: center;
 }
 .btn_Administrador input{
@@ -131,7 +132,7 @@
     font-size: 18px;
 }
 .Actualizar_A{
-    background:  lightgreen;
+    
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -140,16 +141,16 @@
 
 .SAmbienteySalud{
     margin-top: 2%;
-    background:  lemonchiffon;
+    background: #ffeaa8;
     width: 100%;
     text-align: center;
     border-radius: 10px 10px 0px 0px;
     font-family: 'Oswald', cursive;
     font-size: 25px;
+     text-decoration:underline;
 }
 
-.Registrar_AmbienteySalud{
-    background:  lightgreen;
+.Registrar_AmbienteySalud {
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -160,7 +161,6 @@
 	border: 0.1px solid black;
 	border-top: none;
 	box-sizing: border-box;
-	height: 250px;
 }
 .LR_AmbienteySalud{
         padding-top: 2%;
@@ -172,7 +172,7 @@
 	align-items: center;
 }
 .left_AmbienteySalud{
-	width: 45%;
+	width: 35%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -187,7 +187,7 @@
         float: right;
 }
 .right_AmbienteySalud{
-	width: 40%;
+	width: 30%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -197,13 +197,18 @@
         width: 150px;
         float: right;
 }
-.Right_AmbienteySalud label{
+.right_AmbienteySalud select{
+        width: 150px;
+        float: right;
+}
+.right_AmbienteySalud label{
         width: 150px;
         float: right;
 }
 .btn_AmbienteySalud{
     margin-top: 2%;
     text-align: center;
+    margin-bottom: 2%;
 }
 .btn_AmbienteySalud input{
     background: lightgreen;
@@ -212,21 +217,20 @@
     font-size: 18px;
 }
 .Actualizar_AmbienteySalud{
-    background:  lemonchiffon;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
     font-size: 20px;
 }   
 .Ambiente{
-     background:  lightgreen;
+     background: #ffeaa8;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
     font-size: 20px;
 }
 .Salud{
-    background:  lemonchiffon;
+   background: #ffeaa8;
     width: 100%;
     text-align: center;
     font-family: 'Oswald', cursive;
@@ -241,6 +245,7 @@
     border-radius: 10px 10px 0px 0px;
     font-family: 'Oswald', cursive;
     font-size: 25px;
+     text-decoration:underline;
 }
 .Registrar_V{
     background:  lemonchiffon;
@@ -258,12 +263,13 @@
 }
 .SCiudadano{
     margin-top: 2%;
-    background:  lemonchiffon;
+    background: #ffeaa8;
     width: 100%;
     text-align: center;
     border-radius: 10px 10px 0px 0px;
     font-family: 'Oswald', cursive;
     font-size: 25px;
+     text-decoration:underline;
 }
 .Registrar_C{
     background:  lightgreen;

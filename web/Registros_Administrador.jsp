@@ -36,7 +36,7 @@
 		<p>ADMINISTRADOR</p>
             </div>
             <div class="Registrar_A" >
-		<p>REGISTRAR</p>
+		<p>REGISTRAR</p>                                       
             </div>
             
                 <div class="form_Administrador">
