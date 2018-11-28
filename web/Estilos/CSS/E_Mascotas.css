@@ -222,6 +222,9 @@
 		width: 50%;
 	}
 }
+.Form {
+    width: 100%;
+}
 .Actualizar_M {
 	margin: auto;
 	border-radius: 10px 10px 0px 0px;
@@ -302,6 +305,11 @@
 .CargarImg {
     border-radius: 50%;
     border: 0.5px solid black;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+}
+
+.btn-Insertar {
+    background: none;
+    border: none;
 }

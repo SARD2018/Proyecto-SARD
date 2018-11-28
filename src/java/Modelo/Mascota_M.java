@@ -33,11 +33,18 @@ public class Mascota_M {
     public int A_Mascota (GS_Mascota GSM){
         int x=0;
         try {
-            PreSta = BaseDatos.prepareStatement("call A_Mascota ("+GSM.getCodigo()+",'"+GSM.getTipo_Mascota()+"','"+GSM.getNombre()+"','"
-                    +GSM.getFecha_Nacimiento()+"','"+GSM.getColor()+"','"+GSM.getRaza()+"','"+GSM.getSexo()+"','"+GSM.getFoto()+"')");
+            PreSta = BaseDatos.prepareStatement("call A_Mascota (?,?,?,?,?,?,?)");
+            PreSta.setInt(1, GSM.getCodigo());
+            PreSta.setString(2, GSM.getTipo_Mascota());
+            PreSta.setString(3, GSM.getNombre());
+            PreSta.setString(4, GSM.getFecha_Nacimiento());
+            PreSta.setString(5, GSM.getColor());
+            PreSta.setString(6, GSM.getRaza());
+            PreSta.setString(7, GSM.getSexo());
+            JOptionPane.showMessageDialog(null, GSM.getSexo());
             x = PreSta.executeUpdate();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar los datos");
+            JOptionPane.showMessageDialog(null, e);
         }
         
         return x;
