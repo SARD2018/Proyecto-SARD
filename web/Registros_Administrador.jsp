@@ -22,8 +22,6 @@
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
         <script src="Estilos/JS/Menus.js"></script>
-        <script src="Estilos/JS/Filtros_Administrador.js"></script>
-        <script src="Estilos/JS/Administrador.js"></script>
         <script src="Estilos/JS/Ambiente_Salud.js"></script>
         <script src="Estilos/JS/Ciudadano.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
@@ -44,22 +42,22 @@
             <div class="Registrar_A" >
 		<p>REGISTRAR</p>                                       
             </div>
-            
+           <form action="Servlet_Administrador" method="post" enctype="multipart/form-data">
                 <div class="form_Administrador">
                     <div class="LR_Administrador">
 			<div class="left_Administrador">
-                            <p>Documento: <input type="text" class="Documento" pattern="[0-9]{4,11}" required></p>
+                            <p>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></p>
                             <p>Tipo de Documento: 
-                                <select class="Tipo_Documento" required>
+                                <select name="Tipo_Documento" required>
                                     <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                     <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select>
                             </p>
-                            <p>Nombre: <input type="text" class="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
-                            <p>Apellido: <input type="text" class="Apellido" pattern="[A-Z,a-z ]{1,50}" required></p>
+                            <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
+                            <p>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z ]{1,50}" required></p>
                             <p>Genero: 
-                                <select class="Genero" required >
+                                <select name="Genero" required >
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                 </select>
@@ -67,22 +65,22 @@
                         </div>
 
 			<div class="Right_Administrador">
-                            <p>Fecha de Nacimiento: <input type="date" class="Fecha_Nacimiento"  required></p>
-                            <p>Direccion: <input type="text" class="Direccion" required></p>
-                            <p>Telefono: <input type="text" class="Telefono" pattern="[0-9]{5,10}" required></p>
-                            <p>Correo: <input type="email" class="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                            <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></p>
+                            <p>Direccion: <input type="text" name="Direccion" required></p>
+                            <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
+                            <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
                             <p>Foto: <label>
                                     <span class="icon icon-camera"></span>
-                                    <input class="Foto_input" type="file" class=Foto" value="">
+                                    <input class="Foto_input" type="file" name="Foto"  accept="image/jpg, image/png, image/jpeg">
                                     </label></p>
 			</div>
                     </div>
 
                     <div class="btn_Administrador">
-			<p><input class="In_Admin" type="submit" value="Registrar"></p>
+			<p><input name="In_Admin" type="submit" value="Registrar"></p>
                     </div>
 		</div>
-            
+            </form>
             <div class="Actualizar_A">
 		<P>OBSERVAR</P>
             </div>
@@ -107,7 +105,7 @@
                             <div class="Datos_T">
                                 <div class="Foto">
                                     <label>
-                                    <img src="<%= GS_A.getFoto()%>">
+                                        <img class="Foto_img" src="<%= GS_A.getFoto()%>">
                                     <input class="Foto_input Foto_A" type="file" value="">
                                     </label>
                                 </div>

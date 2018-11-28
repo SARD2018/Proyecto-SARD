@@ -43,7 +43,7 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if(request.getParameter("Valor_A").equalsIgnoreCase("In_Admin")){
+        if(request.getParameter("In_Admin")!=null){
             Insertar_Admin(request, response);
         }
         if(request.getParameter("Valor_A").equalsIgnoreCase("Act_Admin")){
@@ -59,38 +59,40 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento_A");
-        Tipo= request.getParameter("Tipo_A");
-        Nombre = request.getParameter("Nombre_A");
-        Apellido = request.getParameter("Apellido_A");
-        Genero = request.getParameter("Genero_A");
-        Fecha = request.getParameter("Fecha_A");
-        Direccion = request.getParameter("Direccion_A");
-        Telefono = request.getParameter("Telefono_A");
-        Correo = request.getParameter("Correo_A");
-        /*
-        Part Foto = request.getPart("Foto_A");
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        Documento = request.getParameter("Documento");
+        Tipo= request.getParameter("Tipo_Documento");
+        Nombre = request.getParameter("Nombre");
+        Apellido = request.getParameter("Apellido");
+        Genero = request.getParameter("Genero");
+        Fecha = request.getParameter("Fecha_Nacimiento");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String url2;
+       
+            String Nombre_F = Foto.getSubmittedFileName();
+            String Foto_Name = Nombre+"_"+Nombre_F;
+
+            String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
+             url2 = "Uploads\\"+Foto_Name;
+
+            InputStream file= Foto.getInputStream();
+            File img=new File(url);
+            FileOutputStream sal=new FileOutputStream(img);
+            int num= file.read();
+
+            while (num !=-1) {            
+                sal.write(num);
+                num= file.read();
+            }
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
         
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        */
-        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, null);
+        GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
         Admin.Login_Admin(GSA);
-        
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
         }
     
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)

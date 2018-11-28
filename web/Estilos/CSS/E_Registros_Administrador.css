@@ -9,7 +9,18 @@
         font-family: 'Arial', cursive;
 	font-size: 16px;   
 }
-
+.Foto_img{
+    width: 200px;
+    height: 200px;   
+    border-radius:50%;
+}
+.icon-pencil, .icon-trash{
+    font-size: 30px;
+}
+.Foto{
+    padding-top: 5%;
+    text-align: left;
+}
 .Foto_input{
     opacity: 0;
     width: 0.1 px;
@@ -60,7 +71,7 @@
    text-align: center;
     padding-top: 5%;
     width: 10%;
-    margin-left: 40%;
+    margin-left: 45%;
 }
 
 .SAdministrador {
