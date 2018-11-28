@@ -28,7 +28,6 @@
                     <span class="icon-camera"></span>
                 </label>
                 <input type="hidden" name="Documento" value="<%=Documento%>">
-                <label>Fecha: <input type="date" required name="Fecha"></label>
                 <textarea name="Descripcion" placeholder="Escriba el caso ocurrido"></textarea>
                 <input type="submit" class="btnE" name="BotonDenun2" value="Enviar">
             </form>

@@ -33,12 +33,11 @@ public class Denuncias_M {
     public void InsertarDenunciasC(GS_Denuncia_Cliente GD){
         
         try {
-            PreSta= BaseDatos.prepareStatement("call In_DenunciaC(?,?,?,?,?)");
+            PreSta= BaseDatos.prepareStatement("call In_DenunciaC(?,?,?,?)");
             PreSta.setString(1, GD.getDireccion());
             PreSta.setString(2, GD.getDescripcion());
             PreSta.setString(3, GD.getEvidencia());
             PreSta.setString(4, GD.getDocumento());
-            PreSta.setString(5, GD.getFecha());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Sus datos fueron ingresados");
         } catch (Exception e) {

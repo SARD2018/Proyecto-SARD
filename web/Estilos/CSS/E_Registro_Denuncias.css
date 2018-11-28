@@ -5,7 +5,7 @@
 }
 .Caja{
     width: 400px;
-    height: 450px;
+    height: 400px;
     display: block;
     padding-top: 20px;
     background-color: lightyellow;
@@ -14,7 +14,7 @@
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    margin: 10% auto;
+    margin: 40px auto;
 }
 .Caja input{
     margin: auto;

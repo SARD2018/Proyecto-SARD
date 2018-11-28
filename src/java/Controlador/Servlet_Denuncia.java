@@ -63,7 +63,9 @@ public class Servlet_Denuncia extends HttpServlet {
         Part Evidencia= request.getPart("Evidencia");
         Correo= request.getParameter("Correo");
         String NameFoto= Evidencia.getSubmittedFileName();
-        String Name= Direccion+"_"+NameFoto;
+        int i = NameFoto.lastIndexOf("\\");
+        String nuevo_nom = NameFoto.substring(i+1);
+        String Name= Direccion+"_"+nuevo_nom;
         
         String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2= "Uploads/"+Name;
@@ -95,9 +97,10 @@ public class Servlet_Denuncia extends HttpServlet {
         Descripcion= request.getParameter("Descripcion");
         Part Evidencia= request.getPart("Evidencia");
         Documento= request.getParameter("Documento");
-        Fecha= request.getParameter("Fecha");
         String NameFoto= Evidencia.getSubmittedFileName();
-        String Name= Direccion+"_"+Fecha+"_"+NameFoto;
+        int i = NameFoto.lastIndexOf("\\");
+        String nuevo_nom = NameFoto.substring(i+1);
+        String Name= Direccion+"_"+nuevo_nom;
         
         String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2= "Uploads/"+Name;
@@ -111,7 +114,7 @@ public class Servlet_Denuncia extends HttpServlet {
             num= file.read();
         }
         
-        GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento, Fecha);
+        GS_Denuncia_Cliente GSD=new GS_Denuncia_Cliente(0, Direccion, Descripcion, url2, Documento);
         Denuncias_M  Den= new Denuncias_M();
         Den.InsertarDenunciasC(GSD);
         request.getRequestDispatcher("Menu_Cliente.jsp").forward(request, response);
