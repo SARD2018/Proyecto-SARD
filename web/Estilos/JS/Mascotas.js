@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    
+    $(".BarrMenu").ready(function(){
+        $(".BarrMenu").load("Menu_Administrador.jsp .BarraMenuAdmin",function(dato){
+            $(this).jsp(dato);
+        }); 
+    }); 
+    
 	$(".form_Mascota").hide();
 	$(".Registrar_M").click(function(){
 		$(".form_Mascota").slideToggle();  

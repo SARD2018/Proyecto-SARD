@@ -23,7 +23,7 @@
         <script src="Estilos/JS/Menus.js"></script> 
     </head>
     <body>
-        <header>
+        <header class="BarraMenuAdmin">
             <div class="Logo_tipo">
                 <div class="img1">
                     <img src="Imagenes/logo.png">
@@ -44,7 +44,7 @@
                         <li><a class="Denuncia">Denuncias</a></li>
                         <li><a class="Usuarios">Usuarios</a></li>
                         <li><a class="Adopcion">Adopciones</a></li>
-                        <li><a class="Mascotas">Mascotas</a></li>
+                        <li><a href="Mascota.jsp">Mascotas</a></li>
                         <li><a class="Eventos">Eventos</a></li>
                     </ul>
                 </nav>
@@ -64,11 +64,12 @@
 		</div>
                 <% } %>
             </div>
-        </header>
-        <div class="DatosPerfil">
-            <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
-            <a class="btn" href="Login.jsp">Cerrar Session</a>
+            <div class="DatosPerfil">
+                <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
+                <a class="btn" href="Login.jsp">Cerrar Session</a>
         </div>
+        </header>
+        
         <div class="CargarPag">
             <h2>Bienvenido...</h2>
             <img src="Imagenes/Fondo_MC.jpg">

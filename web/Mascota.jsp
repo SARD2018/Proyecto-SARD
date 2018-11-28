@@ -12,13 +12,20 @@
         <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Mascotas.css">
+	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script type="text/javascript" src="Estilos/JS/jquery.js"></script>
+        <script type="text/javascript" src="Estilos/JS/MenuAdministrador.js"></script> 
 	<script type="text/javascript" src="Estilos/JS/Mascotas.js"></script>
+        
 	<title>Gestion Mascotas</title>
     </head>
     <body>
-        <div class="Container">		
+        <div class="BarrMenu">
+            <!--aca debe cargar la barra de menu -->
+        </div>
+        <div class="Container">
+            
             <div class="Actualizar_M">
 		<h2>Modificacion Mascota</h2>
             </div>

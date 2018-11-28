@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="Container">
-            <div class="Respuesta">
+            <div class="Postulaciones">
                 
             </div>
             <div>

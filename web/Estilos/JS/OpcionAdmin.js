@@ -1,9 +1,4 @@
 $(document).ready(function(){
-    $(".Mascotas").click(function(){
-        $(".CargarPag").load("Mascota.jsp",function(dato){
-            $(this).jsp(dato);
-        });
-    });
     $(".Adopcion").click(function(){
         $(".CargarPag").load("Adopcion.jsp",function(dato){
             $(this).jsp(dato);
