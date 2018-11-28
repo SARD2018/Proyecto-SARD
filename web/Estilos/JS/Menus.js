@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	//menu responsive
 	$(".Boton-m span").click(function(e){
 		e.preventDefault();

@@ -15,9 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script type="text/javascript" src="Estilos/JS/jquery.js"></script>
-        <script type="text/javascript" src="Estilos/JS/MenuAdministrador.js"></script> 
 	<script type="text/javascript" src="Estilos/JS/Mascotas.js"></script>
-        
+        <script src="Estilos/JS/Menus.js"></script>
 	<title>Gestion Mascotas</title>
     </head>
     <body>

@@ -15,11 +15,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Mostrar_Denuncia.css">
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
 	<link rel="stylesheet" href="Iconos/css/fontello.css">
 	<script src="Estilos/JS/jquery.js"></script>
-        <script src="Estilos/JS/MenuAdministrador.js"></script>
+        <script src="Estilos/JS/Denuncias.js"></script>
+        <script src="Estilos/JS/Menus.js"></script>
     </head>
     <body>
+        <div class="BarrMenu">
+            <!-- aca carga la barra -->
+        </div>
         <div class="position">
             <div class="Tabla">
                 <label>Denuncias</label>

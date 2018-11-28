@@ -21,17 +21,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
+        <script src="Estilos/JS/Menus.js"></script>
         <script src="Estilos/JS/Filtros_Administrador.js"></script>
         <script src="Estilos/JS/Administrador.js"></script>
         <script src="Estilos/JS/Ambiente_Salud.js"></script>
         <script src="Estilos/JS/Ciudadano.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
-        <link rel="stylesheet" type="text/css" href="Estilos/CSS/MNombres_Registros.css">
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
         <title>JSP Page</title>
     </head>
     <body>
+        
+        <div class="BarrMenu">
+         <!-- aca carga la barra -->
+         </div>
        <div class="Container">
+        
             <div class="SAdministrador">
 		<p>ADMINISTRADOR</p>
             </div>
