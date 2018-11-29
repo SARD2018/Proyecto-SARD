@@ -7,5 +7,15 @@ $(document).ready(function () {
             $(this).jsp(dato);
             $(dato).hide;
         });
-    }); 
+    });
+    $(".TablaDe1").hide();
+    $(".DenAnon").click(function(){
+            $(".TablaDe1").slideToggle();  
+            $(".TablaDe2").slideUp();
+    });
+    $(".TablaDe2").hide();
+    $(".DenCli").click(function(){
+            $(".TablaDe2").slideToggle();  
+            $(".TablaDe1").slideUp();
+    });
 });

@@ -26,8 +26,10 @@
             <!-- aca carga la barra -->
         </div>
         <div class="position">
-            <div class="TablaDe1">
+            <div class="DenAnon">
                 <label class="label1">Denuncias Anonimas</label>
+            </div>
+            <div class="TablaDe1">
                 <table>
                     <tr>
                         <th>ID</th>
@@ -56,8 +58,10 @@
                     <%  } %>
                 </table>
             </div>
-            <div class="TablaDe2">
+            <div class="DenCli">
                 <label class="label1">Denuncias Cliente</label>
+            </div>
+            <div class="TablaDe2">
                 <table>
                     <tr>
                         <th>ID</th>
