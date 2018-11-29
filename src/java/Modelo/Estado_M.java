@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import sun.security.jgss.GSSHeader;
 
 public class Estado_M {
     Conexion Conex = new Conexion();
@@ -13,10 +14,11 @@ public class Estado_M {
     ResultSet Reset = null;
     
     public void In_Estado (GS_Estado GSE){
+        
         try {
             PreSta = BaseDatos.prepareStatement("call In_RegEstado(?,?,?)");
             PreSta.setInt(1, GSE.getEstado());
-            PreSta.setInt(2, GSE.getCodigo());
+            PreSta.setInt(2,GSE.getCodigo());
             PreSta.setString(3, GSE.getDocumento());
             PreSta.executeUpdate();
         } catch (Exception e) {

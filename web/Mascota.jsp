@@ -80,8 +80,7 @@
                     </div>
                     <div class="btns">   
                         <button  class="btn-Actualizar" name="btn-Actualizar"><span class="icon icon-pencil"></span></button>
-
-                        <span name="btn-Eliminar" class="icon icon-trash btn-Eliminar"></span>
+                        <button  class="btn-Eliminar" name="btn-Eliminar"><span name="btn-Eliminar" class="icon icon-trash btn-Eliminar"></span></button>
                     </div>
                 </form>
                 <%
@@ -94,15 +93,6 @@
                 <div class="form_Mascota">
                     <div class="LR_Mascota">
                         <div class="Left_Mascota">
-                            <label>Documento de Mascota:
-                                <%
-                                    int Codigo = 0;
-                                    Codigo = MM.Codigo()+1;
-
-                                %>
-                                <input type="Text" value="000<%=Codigo%>" class="Codigo" name="Codigo" readonly>
-
-                            </label>
                             <label>Tipo Mascota:
                                 <select name="Tipo_Mascota" required>
                                     <option value="Perro">Perro</option>
@@ -123,12 +113,6 @@
                         <div class="Rigth_Mascota">
                             <label>Raza: 
                                 <input type="text" name="Raza_M" placeholder="Indique la raza de la mascota" pattern="[A-Za-z]{3,20}" required>
-                            </label>
-                            <label>Estado:
-                                <select name="Estado_M">
-                                    <option value="1">Sin Propietario</option>
-                                    <option value="2">Con Propietario</option>
-                                </select>
                             </label>
                             <label>Sexo: 
                                 <select name="Sexo_M" required>

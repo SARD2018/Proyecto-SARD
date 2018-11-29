@@ -41,17 +41,23 @@ public class Servlet_Mascota extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String TipoMascota,Nombre,FechaNacimiento,Color,Raza,Sexo,Dueno;
-        int Estado,Codigo;
+        int Estado, Codigo;
 
-        Codigo = Integer.parseInt(request.getParameter("Codigo"));
+        Estado_M EM = new Estado_M();
+        Mascota_M MM = new Mascota_M();
+        
         TipoMascota = request.getParameter("Tipo_Mascota");
         Nombre = request.getParameter("Nombre_M");
         FechaNacimiento = request.getParameter("FechaNacimiento_M");
         Color = request.getParameter("Color_M");
         Raza = request.getParameter("Raza_M");
-        Estado = Integer.parseInt(request.getParameter("Estado_M"));
         Sexo = request.getParameter("Sexo_M");
         Dueno = request.getParameter("Duenno_M");
+        if (Dueno.equalsIgnoreCase("0")){
+            Estado = 1;
+        }else {
+            Estado = 2;
+        }
         Part Foto = request.getPart("Foto_M");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Dueno+"_"+Nombre+"_"+Nombre_F;
@@ -68,16 +74,25 @@ public class Servlet_Mascota extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
+        Codigo = MM.CodigoMascota();
+        GS_Estado GSE = null;
+        if (Codigo != 0){
+            Codigo = Codigo;
+            GSE = new GS_Estado(Estado,Codigo,Dueno);
+        }else {
+            Codigo = Codigo+1;
+            GSE = new GS_Estado(Estado,Codigo,Dueno);
+        }
+        
+        
         GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
-        Estado_M EM = new Estado_M();
-        Mascota_M MM = new Mascota_M();
+        
         int Resultado = EM.Existente(GSE, GSM);
 
         if (Resultado == 1){
             JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
         }else{
-            MM.In_Mascota(GSM); 
+            MM.In_Mascota(GSM);
             EM.In_Estado(GSE);
             request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
         }
@@ -123,7 +138,9 @@ public class Servlet_Mascota extends HttpServlet {
         if (X > 0){
             JOptionPane.showMessageDialog(null, "Datos Eliminados Correctamente");
         }
-    
+        
+        response.sendRedirect("Mascota.jsp");
+        
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

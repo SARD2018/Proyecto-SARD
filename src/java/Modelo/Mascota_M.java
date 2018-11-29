@@ -33,7 +33,7 @@ public class Mascota_M {
     public int A_Mascota (GS_Mascota GSM){
         int x=0;
         try {
-            PreSta = BaseDatos.prepareStatement("call A_Mascota (?,?,?,?,?,?,?)");
+            PreSta = BaseDatos.prepareStatement("call A_Mascota (?,?,?,?,?,?,?,?)");
             PreSta.setInt(1, GSM.getCodigo());
             PreSta.setString(2, GSM.getTipo_Mascota());
             PreSta.setString(3, GSM.getNombre());
@@ -41,6 +41,7 @@ public class Mascota_M {
             PreSta.setString(5, GSM.getColor());
             PreSta.setString(6, GSM.getRaza());
             PreSta.setString(7, GSM.getSexo());
+            PreSta.setString(8, GSM.getFoto());
             JOptionPane.showMessageDialog(null, GSM.getSexo());
             x = PreSta.executeUpdate();
         } catch (Exception e) {
@@ -53,13 +54,28 @@ public class Mascota_M {
     public int B_Mascota (GS_Mascota GSM){
         int x=0;
         try {
-            PreSta = BaseDatos.prepareStatement("call B_Mascota ("+GSM.getCodigo()+")");
+            PreSta = BaseDatos.prepareStatement("call B_Mascota (?)");
+            PreSta.setInt(1, GSM.getCodigo());
             x = PreSta.executeUpdate();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al eliminar los datos");
+            JOptionPane.showMessageDialog(null, e);
         }
         
         return x;
+    }
+    
+    public int CodigoMascota (){
+        int Codigo=0;
+        try {
+            PreSta = BaseDatos.prepareStatement("Select max(Documento) from Mascota");
+            Reset = PreSta.executeQuery();
+            while (Reset.next()) {
+                GS_Estado GSE = new GS_Estado(Reset.getInt(1));
+                Codigo = GSE.getCodigo();
+            }
+        } catch (Exception e) {
+        }
+        return Codigo;
     }
     
     public ArrayList<GS_Mascota> Todo_Mascota() {
