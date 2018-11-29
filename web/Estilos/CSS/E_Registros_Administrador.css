@@ -116,7 +116,7 @@
 	align-items: center;
 }
 .left_Administrador{
-	width: 35%;
+	width: 45%;
         display: block;
         text-align: left;
 }
@@ -130,7 +130,7 @@
         float: right;
 }
 .Right_Administrador{
-	width: 35%;
+	width: 45%;
         display: block;
         text-align: left;
 }
@@ -194,7 +194,7 @@
 	align-items: center;
 }
 .left_AmbienteySalud{
-	width: 35%;
+	width: 45%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -209,7 +209,7 @@
         float: right;
 }
 .right_AmbienteySalud{
-	width: 30%;
+	width: 45%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;

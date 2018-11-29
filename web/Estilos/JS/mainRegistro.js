@@ -82,12 +82,11 @@ $(document).ready(function(){
 		});
                 
                  $(".Nombre_AM").click(function(){
-                     alert("entra al boton");
-                    var Index= $(".Nombre_AM").index(this);
-                    var Datos= $(".Datos_T").eq(Index);
-                    var Boton= $(".btn_A_E").eq(Index);
-                    Datos.slideToggle();
-                    Boton.slideToggle(); 
+                    var Index1= $(".Nombre_AM").index1(this);
+                    var Datos1= $(".Datos_T").eq(Index1);
+                    var Boton1= $(".btn_A_E").eq(Index1);
+                    Datos1.slideToggle();
+                    Boton1.slideToggle(); 
 		});
                 
                 $(".Salud").click(function(){

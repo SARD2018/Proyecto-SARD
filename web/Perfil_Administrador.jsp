@@ -50,7 +50,7 @@
                                     <label>
                                         <img class="Foto_img" src="<%= inggs.getFoto()%>">
                                          <span class="icon icon-camera"></span>
-                                        <input class="Foto_input" name="Foto_A" type="file" value="">
+                                        <input class="Foto_input" name="Foto_A" type="file" >
                                     </label>
                                 </div>
                                 <div class="Datos">
@@ -65,8 +65,7 @@
                                 
                             </div>
                                 <div class="btn_A_E">
-                                    <button name="Act_A"><span class="icon icon-pencil"></span></button>
-                                    <button name="Eli_A"><span class="icon icon-trash"></span></button>
+                                    <button name="Act_A"><span class="icon icon-pencil"></span>ACTUALIZAR</button>    
                                 </div>
                     </form>
                         <%

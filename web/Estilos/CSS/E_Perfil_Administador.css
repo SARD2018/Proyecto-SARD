@@ -2,6 +2,13 @@
     margin: auto;
     padding: 0;
 }
+.icon-camera{
+   position: static;
+   
+}
+.T_Administrador{
+    background-image: url("Imagenes/Fondo.png");
+}
 .Nombre_A{
     text-decoration: underline;   
     text-align: center;
@@ -13,9 +20,7 @@
     text-decoration: none;
     cursor: pointer;
 }
-.icon-camera{
-    cursor: pointer;
-}
+
 
 .Foto_img{
     width: 200px;

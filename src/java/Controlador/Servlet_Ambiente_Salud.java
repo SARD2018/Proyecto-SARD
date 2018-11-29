@@ -46,7 +46,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        if (request.getParameter("Valor_AS").equalsIgnoreCase("In_Am_Sa")) {
+        if (request.getParameter("In_Am_Sa")!=null) {
             this.Insertar_Ambiente_Salud(request, response);
         }
         if (request.getParameter("Valor_AS").equalsIgnoreCase("Act_Am_Sa")) {
@@ -69,12 +69,12 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         Nombre = request.getParameter("Nombre_AS");
         Apellido = request.getParameter("Apellido_AS");
         Genero = request.getParameter("Genero_AS");
-        Fecha = request.getParameter("Fecha_AS");
+        Fecha = request.getParameter("Fecha_Nacimiento_AS");
         Direccion = request.getParameter("Direccion_AS");
         Telefono = request.getParameter("Telefono_AS");
         Correo = request.getParameter("Correo_AS");
         Rol = Integer.parseInt(request.getParameter("Rol_AS"));
-        /*Part Foto = request.getPart("Foto_AS");
+        Part Foto = request.getPart("Foto_AS");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
@@ -90,8 +90,8 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        */
-        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, Rol, null);
+        
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, Rol, url2);
          Ambiente_Salud_M AS = new Ambiente_Salud_M();
         AS.In_Ambiente_Salud(GSAS);
         if(Rol==2){
@@ -100,18 +100,20 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         else{
             AS.Login_Salud(GSAS);
         }
+        request.getRequestDispatcher("Registros_Administrador").forward(request, response);
      }
      
      protected void Actualizar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String Documento,Direccion,Telefono,Correo;
+        String Nombre,Documento,Direccion,Telefono,Correo;
+        Nombre=request.getParameter("Nombre_AS");
         Documento = request.getParameter("Documento_AS");
         Direccion = request.getParameter("Direccion_AS");
         Telefono = request.getParameter("Telefono_AS");
         Correo = request.getParameter("Correo_AS");
-        /*Part Foto = request.getPart("Foto_AS");
+        Part Foto = request.getPart("Foto_AS");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
@@ -127,8 +129,8 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        */
-        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, null);
+        
+        GS_Ambiente_Salud GSAS = new GS_Ambiente_Salud(Documento, Direccion, Telefono, Correo, url2);
          Ambiente_Salud_M AS = new Ambiente_Salud_M();
         
         int Consulta;

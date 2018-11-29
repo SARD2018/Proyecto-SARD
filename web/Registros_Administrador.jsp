@@ -22,8 +22,6 @@
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/mainRegistro.js"></script>
         <script src="Estilos/JS/Menus.js"></script>
-        <script src="Estilos/JS/Ambiente_Salud.js"></script>
-        <script src="Estilos/JS/Ciudadano.js"></script>
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registros_Administrador.css">
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
@@ -107,7 +105,7 @@
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
-                                    <label>
+                                     <label>
                                         <img class="Foto_img" src="<%= GS_A.getFoto()%>">
                                          <span class="icon icon-camera"></span>
                                         <input class="Foto_input" name="Foto_A" type="file" value="">
@@ -141,45 +139,47 @@
                 <div class="Registrar_AmbienteySalud" >
                     <p>REGISTRAR</p>
                 </div>
+                <form action="Servlet_Ambiente_Salud" method="post" enctype="multipart/form-data">
                 <div class="form_AmbienteySalud">
                     <div class="LR_AmbienteySalud">
         		<div class="left_AmbienteySalud">
-                            <p>Documento: <input type="text" class="Documento_AS" pattern="[0-9]{4,11}" required></p>
+                            <p>Documento: <input type="text" name="Documento_AS" pattern="[0-9]{4,11}" required></p>
                             <p>Tipo de Documento: 
-                                <select class="Tipo_Documento_AS" required>
+                                <select name="Tipo_Documento_AS" required>
                                     <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                     <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select></p>
-                            <p>Nombre: <input type="text" class="Nombre_AS" pattern="[A-Z,a-z]{1,50}" required></p>
-                            <p>Apellido: <input type="text" class="Apellido_AS" pattern="[A-Z,a-z]{1,50}" required></p>
+                            <p>Nombre: <input type="text" name="Nombre_AS" pattern="[A-Z,a-z]{1,50}" required></p>
+                            <p>Apellido: <input type="text" name="Apellido_AS" pattern="[A-Z,a-z]{1,50}" required></p>
                             <p>Genero: 
-                                <select class="Genero_AS" required >
+                                <select name="Genero_AS" required >
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
                                 </select></p>
-                            <p>Fecha de Nacimiento: <input type="date" class="Fecha_Nacimiento_AS"  required></p>
+                            <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento_AS"  required></p>
 			</div>
                         <div class="right_AmbienteySalud">
-                            <p>Direccion: <input type="text" class="Direccion_AS" required></p>
-                            <p>Telefono: <input type="text" class="Telefono_AS" pattern="[0-9]{5,10}" required></p>
-                            <p>Correo: <input type="email" class="Correo_AS" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                            <p>Direccion: <input type="text" name="Direccion_AS" required></p>
+                            <p>Telefono: <input type="text" name="Telefono_AS" pattern="[0-9]{5,10}" required></p>
+                            <p>Correo: <input type="email" name="Correo_AS" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
                             <p>Rol:
-                                <select class="Rol_AS" required="">
+                                <select name="Rol_AS" required="">
                                     <option value="2">Ambiente</option>
                                     <option value="3">Salud</option>
                                 </select>
                             </p>
                             <p>Foto: <label>
                                     <span class="icon icon-camera"></span>
-                                    <input class="Foto_input" type="file" class="Foto_AS" value="">
+                                    <input class="Foto_input" type="file" name="Foto_AS" value="">
                                     </label></p>
                         </div>
                     </div>
-                    <div class="btn_AmbienteySalud">
-			<p><input class="In_Am_Sa" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
+                        <div class="btn_AmbienteySalud">
+                            <p><input name="In_Am_Sa" type="submit" name="R_AmbienteySalud" value="Registrar"></p>
+                        </div>
                     </div>
-                    </div>
+                    </form>
                     <div class="Actualizar_AmbienteySalud" >
                         <p>OBSERVAR</p>
                     </div>
@@ -198,27 +198,28 @@
                             %>
                             <div class="Nombre_AM">
                                 <h2><%= GS_AM.getNombre()+" "+GS_AM.getApellido()%></h2>
+                                <input type="hidden" name="Nombre_AS" value="<%= GS_AM.getNombre()%>">
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
                                      <label>
                                      <img src="<%= GS_AM.getFoto()%>">
-                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     <input class="Foto_input" type="file" name="Foto_AS" value="">
                                      </label>
                                  </div>
                                  <div class="Datos">
-                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_AM.getDocumento()%>">
-                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_AM.getTipo_Documento()%>">
-                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_AM.getGenero()%>">
-                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_AM.getFecha_Nacimiento()%>">
-                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_AM.getDireccion()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_AM.getTelefono()%>">
-                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_AM.getCorreo()%>">
+                                     <input class="Documento" type="Text" name="Documento_AS" readonly value="<%= GS_AM.getDocumento()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento_AS" readonly value="<%= GS_AM.getTipo_Documento()%>">
+                                     <input class="Genero" type="Text" name="Genero_AS" readonly value="<%= GS_AM.getGenero()%>">
+                                     <input class="Fecha" type="Text" name="Fecha_Nacimiento_AS" readonly value="<%= GS_AM.getFecha_Nacimiento()%>">
+                                     <input class="Direccion" type="Text" name="Direccion_AS"  value="<%= GS_AM.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono_AS" value="<%= GS_AM.getTelefono()%>">
+                                     <input class="Correo" type="Text" name="Correo_AS" value="<%= GS_AM.getCorreo()%>">
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Act_AS"></span>
-                                <span class="icon icon-trash Eli_AS"></span>
+                                <button name="Act_AS"><span class="icon icon-pencil "></span></button>
+                                <button name="Eli_AS"><span class="icon icon-trash "></span></button>
                             </div>
                             <%
                             }

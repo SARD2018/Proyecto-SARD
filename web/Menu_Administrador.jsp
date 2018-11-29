@@ -64,7 +64,7 @@
                 <% } %>
             </div>
             <div class="DatosPerfil">
-                <a class="btn" href="Perfil_Administrador.jsp">Perfil</a>
+                <a class="btn " href="Perfil_Administrador.jsp">Perfil</a>
                 <a class="btn" href="Login.jsp">Cerrar Session</a>
         </div>
         </header>
