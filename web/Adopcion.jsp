@@ -1,3 +1,4 @@
+<%@page import="Modelo.Mascota_M"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,8 +8,11 @@
     </head>
     <body>
         <div class="Container">
-            <div class="Postulaciones">
+            <div class="Mascotas">
+            <%
+                Mascota_M MM = new Mascota_M();
                 
+            %>
             </div>
             <div>
                 
