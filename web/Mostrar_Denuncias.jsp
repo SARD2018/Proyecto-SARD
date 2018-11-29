@@ -26,8 +26,8 @@
             <!-- aca carga la barra -->
         </div>
         <div class="position">
-            <div class="Tabla">
-                <label>Denuncias</label>
+            <div class="TablaDe1">
+                <label class="label1">Denuncias Anonimas</label>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -56,8 +56,8 @@
                     <%  } %>
                 </table>
             </div>
-            <div class="Tabla2">
-                <label>Denuncias Cliente</label>
+            <div class="TablaDe2">
+                <label class="label1">Denuncias Cliente</label>
                 <table>
                     <tr>
                         <th>ID</th>

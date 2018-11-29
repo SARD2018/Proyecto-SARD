@@ -10,6 +10,7 @@
 <head lang="en">
 	<meta charset="utf-8">
 	<title>SARD</title>
+        <link rel="shortcut icon" href="Imagenes/logo.png">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Principal.css">
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registro_Denuncias.css">

@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
-tr{
-    background-color: #CBF4C7;
-    border-radius: 20px;
+td{
+    text-align: center;
+    padding: 0 5px;
+    background: #d6ffbc;
+    border-bottom: 2px solid #28A745;
+}
+table{
+    background-color: #d6ffbc;
 }
 th{
-    padding: 4px;
+    text-align: center;
+    padding: 3px;
+    background-color: #28A745;
     font-family: 'Courgette' ,cursive;
-    border: 1px lightgreen solid;
 }
-label{
+tr{
+    
+}
+.label1{
+    text-align: center;
     font-size: 25px;
     font-family: 'Courgette' ,cursive; 
 }
@@ -18,18 +28,20 @@ label{
     margin: auto;
     padding-top: 40px;
 }
-.Tabla{
+.TablaDe1{
     float: left;
     top: 0;
     left: 0;
 }
-.Tabla2{
+.TablaDe2{
     float: right;
     top: 0;
-    right: 0;
+    right: 0; 
 }
-.Tabla .imagen, .Tabla2 .imagen{
-    width: 60px;
+.TablaDe1 img,
+.TablaDe2 img{
+    padding: 0;
+    width: 70px;
     height: 60px;
 }
 .icon-pencil{

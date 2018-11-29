@@ -70,8 +70,8 @@
         </header>
         
         <div class="CargarPag">
-            <h2>Bienvenido...</h2>
-            <img src="Imagenes/Fondo_MC.jpg">
+            <h2></h2>
+            <img src="">
             <!--Aca carga la pag -->
         </div>
     </body>
