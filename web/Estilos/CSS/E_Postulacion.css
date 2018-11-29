@@ -5,3 +5,20 @@
     width: 100%;
     
 }
+.Postulaciones {
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.ImgPostulacion {
+    width: 80%;
+    height: 80%;
+}
+
+.H2Postulados {
+    position: relative;
+    top: -30%;
+    
+}

@@ -36,7 +36,7 @@
                 <%
                 Mascota_M MM = new Mascota_M();
                 String Dato = request.getParameter("Dato");
-                ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();
+                ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
                 GS_Mascota GSM = new GS_Mascota();
                 if (Dato != null){
                     Tabla_mascota = MM.FiltroMascota(Dato);

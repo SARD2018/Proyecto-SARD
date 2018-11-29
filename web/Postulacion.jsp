@@ -1,3 +1,8 @@
+<%@page import="Modelo.GS_Mascota"%>
+<%@page import="Modelo.Mascota_M"%>
+<%@page import="Modelo.GS_Postulaciones"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.RegistroEstado_M"%>
 <%@page import="Modelo.Estado_M"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,10 +24,34 @@
                 <!-- Aca carga el menu -->
         </div>
         <div class="Container">
+            <div class="AgregarPostulaciones">
+            <%
+                RegistroEstado_M REM = new RegistroEstado_M();
+                ArrayList<GS_Mascota> Disponibles = new ArrayList<>();
+                GS_Mascota GSM = new GS_Mascota();
+                Disponibles = REM.Disponibles();
+            %>
+            </div>
+            <!-- Esta es la tabla de postulaciones -->
             <div class="Postulaciones">
             <%
-                Estado_M EM = new Estado_M();
-                EM.
+                
+                ArrayList<GS_Postulaciones> MasPostulado = new ArrayList<GS_Postulaciones>();
+                GS_Postulaciones GSP = new GS_Postulaciones();
+                MasPostulado = REM.MascotasPostuladas();
+                
+                for (int i = 0; i< Disponibles.size(); i++) {
+                        GSP = MasPostulado.get(i);
+                        
+                    
+            %>
+                <div class="Postulados">
+                    <img src="<%=GSP.getFotoMascota()%>" class="ImgPostulacion">
+                    <h2 class="H2Postulados"><%=GSP.getNombrePostulado()%> <%=GSP.getApellidoPostulado()%></h2>
+                    <h2 class="H2Postulados"><%=GSP.getTipo_Mascota()%> <%=GSP.getNombreMascota()%></h2>
+                </div>
+            <%
+                }
             %>
             </div>
         </div>
