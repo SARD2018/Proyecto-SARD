@@ -74,7 +74,7 @@ public class Servlet_Mascota extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        Codigo = MM.CodigoMascota()+1;
+        Codigo = MM.CodigoMascota();
         GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
         GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
         
