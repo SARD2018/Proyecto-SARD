@@ -40,7 +40,7 @@
                     <div class="CuadroDisponibles">
                         <img src="<%=GSM.getFoto()%>" class="ImgDisponibles">
                         <div class="H2Disponibles">
-                            <h2><%=GSM.getTipo_Mascota()%> <%=GSM.getNombre()%></h2>
+                            <h2><%=GSM.getNombre()%></h2>
                         </div>
                     </div>
                 </div>

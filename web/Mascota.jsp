@@ -57,7 +57,7 @@
                             <label>
                                 <image  src="<%=GSM.getFoto()%>" class="CargarImg">
                                 <span class="icon icon-camera-outline ModFoto"></span>
-                                <input type="file" name="FotoMascota" class="FotoMascota" accept="image/jpeg, image/png, image/gif">
+                                <input type="file" name="FotoMascota" value="<%=GSM.getFoto()%>" class="FotoMascota" accept="image/jpeg, image/png, image/gif">
                             </label>
                         </div>
                         <div class="InfoMascota">
