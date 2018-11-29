@@ -24,13 +24,30 @@
                 <!-- Aca carga el menu -->
         </div>
         <div class="Container">
+            <h1>Mascotas Disponibles</h1>
             <div class="AgregarPostulaciones">
             <%
                 RegistroEstado_M REM = new RegistroEstado_M();
                 ArrayList<GS_Mascota> Disponibles = new ArrayList<>();
                 GS_Mascota GSM = new GS_Mascota();
                 Disponibles = REM.Disponibles();
+                
+                for (int i = 0; i < Disponibles.size();i++){
+                    GSM = Disponibles.get(i);
+                    
             %>
+                <div class="Disponibles">
+                    <div class="CuadroDisponibles">
+                        <img src="<%=GSM.getFoto()%>" class="ImgDisponibles">
+                        <div class="H2Disponibles">
+                            <h2><%=GSM.getTipo_Mascota()%> <%=GSM.getNombre()%></h2>
+                        </div>
+                    </div>
+                </div>
+            <%
+                } 
+            %>
+                
             </div>
             <!-- Esta es la tabla de postulaciones -->
             <div class="Postulaciones">
@@ -40,7 +57,7 @@
                 GS_Postulaciones GSP = new GS_Postulaciones();
                 MasPostulado = REM.MascotasPostuladas();
                 
-                for (int i = 0; i< Disponibles.size(); i++) {
+                for (int i = 0; i< MasPostulado.size(); i++) {
                         GSP = MasPostulado.get(i);
                         
                     
