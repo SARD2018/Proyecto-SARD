@@ -12,36 +12,23 @@
     width: 100%;
 }
 .Disponibles {
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.3);
     margin-left: 1.5%;
-    padding-top: 1.5%;
+    margin-bottom: 1.5%;
+    border-radius: 10px;
+    border: 1px solid black;
     width: 500px;
     height: 300px;
 }
 .CuadroDisponibles{
+    border-radius: 10px 10px 10px 10px;
     width: 100%;
     height: 100%;
 }
 .ImgDisponibles {
-    position: relative;
-    z-index: -2;
     width: 100%;
     height: 90%;
+    opacity: .7;
     border-radius: 10px 10px 0px 0px;
-}
-
-.H2Disponibles {
-    position: relative;
-    z-index: -1;
-    border-radius: 10px;
-    border: .7px solid black;
-    background: rgba(255,250,205,0.3);
-    top: -91.5%;
-    width: 100%;
-    height: 100%;
-}
-
-.H2Disponibles h2 {
-    position: relative;
-    z-index: -1;
-    top: 90%;
 }
