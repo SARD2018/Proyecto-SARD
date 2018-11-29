@@ -36,11 +36,12 @@ public class Administrador_M {
         return Tabla;
     }
     
-     public ArrayList<GS_Administrador> Tabla_Admin (){
+     public ArrayList<GS_Administrador> Tabla_Admin (GS_Administrador GS){
         ArrayList<GS_Administrador> Tabla=new ArrayList<>();
         
         try {
-            PreSta= BaseDatos.prepareStatement("call Todo_Admin ()");
+            PreSta= BaseDatos.prepareStatement("call Todo_Admin (?)");
+            PreSta.setString(1, GS.getDocumento());
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   

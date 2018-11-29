@@ -42,11 +42,11 @@ public class Servlet_Administrador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+        JOptionPane.showMessageDialog(null, "entra al servlet");
         if(request.getParameter("In_Admin")!=null){
             Insertar_Admin(request, response);
         }
-        if(request.getParameter("Valor_A").equalsIgnoreCase("Act_Admin")){
+        if(request.getParameter("Act_A")!=null){
             Actualizar_Admin(request, response);
         }
         if(request.getParameter("Valor_A").equalsIgnoreCase("Eli_Admin")){
@@ -100,13 +100,14 @@ public class Servlet_Administrador extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        
         String Documento,Nombre,Direccion,Telefono,Correo;
+        Nombre =request.getParameter("Nombre_A");
         Documento = request.getParameter("Documento_A");
         Direccion = request.getParameter("Direccion_A");
         Telefono = request.getParameter("Telefono_A");
         Correo = request.getParameter("Correo_A");
-        /*
-        Part Foto = request.getPart("Foto");
+        Part Foto = request.getPart("Foto_A");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
@@ -122,8 +123,8 @@ public class Servlet_Administrador extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        */
-        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, null);
+        JOptionPane.showMessageDialog(null,Nombre+Documento+Direccion+Telefono+Correo+url2);
+        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         int Consulta;
         Consulta=Admin.Act_Administrador(GSA);
@@ -133,6 +134,7 @@ public class Servlet_Administrador extends HttpServlet {
         else{
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
         }
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
     }
     
     protected void Eliminar_Administrador (HttpServletRequest request, HttpServletResponse response)

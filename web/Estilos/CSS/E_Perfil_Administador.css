@@ -2,50 +2,62 @@
     margin: auto;
     padding: 0;
 }
-.Caja{
-    width: 300px;
-    height: 600px;
-    display: block;
-    padding-top: 20px;
-    background-color: yellow;
-    justify-content: center;
+.Nombre_A{
+    text-decoration: underline;   
     text-align: center;
-    text-decoration: none;
+    width: 100%;
 }
-.Caja input{
-    margin: auto;
-    margin-bottom: 5px;
-    display: block;
-    text-align: center;
+.btn_A_E button{
+    border: transparent;
+    background: transparent;
     text-decoration: none;
-}
-.Caja label{
-    display: block;
-    text-decoration: none;
-}
-.Caja .Img{
-    margin: auto;
-    margin-bottom: 30px;
-    text-align: center;
-    text-decoration: none;
-}
-.Img{
-    padding: 0;
-    border-radius: 50px;
-    width: 90px;
-    height: 90px;
     cursor: pointer;
-    border: 2px solid red;
 }
-.Img img{
-    padding: 0;
-    margin: auto;
-    border-radius: 50px;
-    width: 90px;
-    height: 90px;
+.icon-camera{
+    cursor: pointer;
 }
-.file{
+
+.Foto_img{
+    width: 200px;
+    height: 200px;   
+    border-radius:50%;
+}
+.icon-pencil, .icon-trash{
+    font-size: 30px;
+}
+.Foto{
+    padding-top: 5%;
+    text-align: left;
+}
+.Foto_input{
     opacity: 0;
-    width: 0.1px;
-    height: 0.1px;
+    width: 0.1 px;
+    height: 0.1 px;
+}
+
+
+.Datos_T {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items:  center;
+}
+.Datos{
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+}
+.Datos input{
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border:  transparent;
+    border-bottom: 1px solid black;
+}
+.btn_A_E {
+   text-align: center;
+    padding-top: 5%;
+    width: 10%;
+    margin-left: 45%;
 }

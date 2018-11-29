@@ -42,7 +42,7 @@
                         <li><a href="Menu_Administrador.jsp">Inicio</a></li>
                         <li><a href="Mostrar_Denuncias.jsp">Denuncias</a></li>
                         <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
-                        <li><a class="Adopcion">Adopciones</a></li>
+                        <li><a href="Postulacion.jsp">Adopciones</a></li>
                         <li><a href="Mascota.jsp">Mascotas</a></li>
                         <li><a class="Eventos">Eventos</a></li>
                     </ul>
