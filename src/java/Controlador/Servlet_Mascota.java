@@ -74,17 +74,8 @@ public class Servlet_Mascota extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        Codigo = MM.CodigoMascota();
-        GS_Estado GSE = null;
-        if (Codigo != 0){
-            Codigo = Codigo;
-            GSE = new GS_Estado(Estado,Codigo,Dueno);
-        }else {
-            Codigo = Codigo+1;
-            GSE = new GS_Estado(Estado,Codigo,Dueno);
-        }
-        
-        
+        Codigo = MM.CodigoMascota()+1;
+        GS_Estado GSE = new GS_Estado(Estado,Codigo,Dueno);
         GS_Mascota GSM = new GS_Mascota(TipoMascota, Nombre, FechaNacimiento, Color, Raza, Sexo, url2);
         
         int Resultado = EM.Existente(GSE, GSM);
@@ -93,11 +84,13 @@ public class Servlet_Mascota extends HttpServlet {
             JOptionPane.showMessageDialog(null, "La mascota ya fue registrada");
         }else{
             MM.In_Mascota(GSM);
+            Codigo = MM.CodigoMascota();
+            GSE = new GS_Estado(Estado,Codigo,Dueno);
             EM.In_Estado(GSE);
             request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
         }
         
-        response.sendRedirect("Mascota.jsp");
+        request.getRequestDispatcher("Mascota.jsp").forward(request,response);
         
     }
     
@@ -122,7 +115,7 @@ public class Servlet_Mascota extends HttpServlet {
         if (X > 0){
             JOptionPane.showMessageDialog(null, "Datos Actualizados Correctamente");
         }
-        response.sendRedirect("Mascota.jsp");
+        request.getRequestDispatcher("Mascota.jsp").forward(request,response);
     }
     
     protected void EliminarMascota(HttpServletRequest request, HttpServletResponse response)
@@ -139,7 +132,7 @@ public class Servlet_Mascota extends HttpServlet {
             JOptionPane.showMessageDialog(null, "Datos Eliminados Correctamente");
         }
         
-        response.sendRedirect("Mascota.jsp");
+        request.getRequestDispatcher("Mascota.jsp").forward(request,response);
         
     }
     

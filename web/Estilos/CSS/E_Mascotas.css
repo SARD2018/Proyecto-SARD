@@ -309,7 +309,7 @@
     height: 200px;
 }
 
-.btn-Insertar, .btn-Actualizar, .btn-Eliminar {
+.btn-Actualizar, .btn-Eliminar {
     text-decoration: none;
     background: none;
     border: none;

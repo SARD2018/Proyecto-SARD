@@ -11,9 +11,9 @@ public class GS_Estado {
         this.Codigo = Codigo;
     }
 
-    public GS_Estado(int Codigo, int Estado, String Documento) {
-        this.Codigo = Codigo;
+    public GS_Estado(int Estado, int Codigo, String Documento) {
         this.Estado = Estado;
+        this.Codigo = Codigo;
         this.Documento = Documento;
     }
 

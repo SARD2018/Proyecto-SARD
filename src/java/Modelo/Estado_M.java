@@ -38,7 +38,7 @@ public class Estado_M {
                 res = 1;
             }
         }catch (Exception e){
-            
+            JOptionPane.showMessageDialog(null, e);
         }
         return res;
     }
