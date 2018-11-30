@@ -27,6 +27,11 @@
         <div class="BarrMenu">
                 <!-- Aca carga el menu -->
         </div>
+        <div class="BloqPantalla">
+            <div class="Form-Postulacion">
+                <!-- Aca carga lo que oprima -->
+            </div>
+        </div>
         <div class="Container">
             <h1>Mascotas Disponibles</h1>
             <div class="AgregarPostulaciones">
@@ -47,6 +52,7 @@
                         </div>
                     </div>
                     <div class="Info-Mascota">
+                        <input type="text" value="<%=GSM.getCodigo()%>" class="Cod">
                         <label><%=GSM.getTipo_Mascota()%></label>
                         <label><%= GSM.getSexo()%></label>
                         <label><%=GSM.getFecha_Nacimiento() %></label>
@@ -59,6 +65,7 @@
             %>
             
             </div>
+            
             <!-- Esta es la tabla de postulaciones -->
             <div class="Postulaciones">
             <%

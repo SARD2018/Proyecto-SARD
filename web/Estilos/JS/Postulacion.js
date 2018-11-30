@@ -7,7 +7,37 @@ $(document).ready(function(){
             $(this).jsp(dato);
             $(dato).hide();
         });
-    }); 
+    });
+    $(".BloqPantalla").hide();
+    $(".Form-Postulacion").ready(function(){
+        $(".Form-Postulacion").load("Formulario-Postulacion.jsp",function(dato){
+            $(this).html(dato);
+        });
+    });
+    
+    $(".Cod");
+    $(".Disponibles").click(function(){
+        var Pos = $(".Disponibles").index(this);
+        var Codi = $(".Cod").eq(Pos);
+        $(".BloqPantalla").fadeIn();
+        var Cod = $(Codi).val();
+        alert(Cod);
+        $.ajax({
+            url: "Servlet_Postulacion",
+            data: {
+                codig:Cod                
+        },
+        
+        success: function( result ) {
+            $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+        }
+
+        });
+    });
+    
+    $(".BloqPantalla").click(function(){
+        $(".BloqPantalla").fadeOut();
+    });
    
     $(".Info-Mascota").hide();
     $(".Disponibles").mouseenter(function(){
