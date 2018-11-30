@@ -1,3 +1,7 @@
+<%@page import="java.sql.Date"%>
+<%@page import="java.time.Period"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="Modelo.GS_Mascota"%>
 <%@page import="Modelo.Mascota_M"%>
 <%@page import="Modelo.GS_Postulaciones"%>
@@ -31,7 +35,6 @@
                 ArrayList<GS_Mascota> Disponibles = new ArrayList<>();
                 GS_Mascota GSM = new GS_Mascota();
                 Disponibles = REM.Disponibles();
-                
                 for (int i = 0; i < Disponibles.size();i++){
                     GSM = Disponibles.get(i);
                     
@@ -43,11 +46,25 @@
                             <h2><%=GSM.getNombre()%></h2>
                         </div>
                     </div>
+                    <div class="Info-Mascota">
+                        <label><%=GSM.getTipo_Mascota()%></label>
+                        <label><%= GSM.getSexo()%></label>
+                        <label><%=GSM.getFecha_Nacimiento() %></label>
+                        <label><%= GSM.getRaza()%></label>
+                    </div>
+                    <div class="Postulacion_Mascota">
+                        <label><%=GSM.getTipo_Mascota()%></label>
+                        <label><%= GSM.getSexo()%></label>
+                        <label><%=GSM.getFecha_Nacimiento() %></label>
+                        <label><%= GSM.getRaza()%></label>
+                        <span class="CerrarPost icon icon-cancel"></span>
+                    </div>
                 </div>
+                
             <%
                 } 
             %>
-                
+            
             </div>
             <!-- Esta es la tabla de postulaciones -->
             <div class="Postulaciones">
