@@ -45,14 +45,14 @@ public class Servlet_Cliente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
          
-        if (request.getParameter("Valor_C").equalsIgnoreCase("In_Ciudadano")) {
+        if (request.getParameter("In_Ciudadano")!=null) {
             this.Insertar_Cliente(request, response);
         }
-        if (request.getParameter("Valor_C").equalsIgnoreCase("Act_Ciudadano")) {
-            this.Actualizar_Ciudadano(request, response);
+        if (request.getParameter("Act_Ciudadano")!=null) {
+            this.Actualizar_Cliente(request, response);
         }
-        if (request.getParameter("Valor_C").equalsIgnoreCase("Eli_Ciudadano")) {
-            this.Actualizar_Ciudadano(request, response);
+        if (request.getParameter("Eli_Ciudadano")!=null) {
+            this.Eliminar_Ciudadano(request, response);
         }
         }
     
@@ -64,52 +64,18 @@ public class Servlet_Cliente extends HttpServlet {
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         Documento = request.getParameter("Documento_C");
         Tipo= request.getParameter("Tipo_C");
-        Nombre = request.getParameter("Nombre_CI");
+        Nombre = request.getParameter("Nombre_C");
         Apellido = request.getParameter("Apellido_C");
         Genero = request.getParameter("Genero_C");
-        Fecha = request.getParameter("Fecha_C");
+        Fecha = request.getParameter("Fecha_Nacimiento_C");
         Direccion = request.getParameter("Direccion_C");
         Telefono = request.getParameter("Telefono_C");
         Correo = request.getParameter("Correo_C");
-        /*Part Foto = request.getPart("Foto");
-        String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
-        
-        String url = "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
-        
-        InputStream file= Foto.getInputStream();
-        File img=new File(url);
-        FileOutputStream sal=new FileOutputStream(img);
-        int num= file.read();
-        
-        while (num !=-1) {            
-            sal.write(num);
-            num= file.read();
-        }
-        */
-        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, null);
-        Cliente_M Cliente = new Cliente_M();
-        Cliente.In_Cliente(GSC);
-        Cliente.Login_Cliente(GSC);
-        }
-        
-        protected void Actualizar_Ciudadano(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String Documento,Nombre,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento_C");
-        Direccion = request.getParameter("Direccion_C");
-        Telefono = request.getParameter("Telefono_C");
-        Correo = request.getParameter("Correo_C");
-        /*
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
         
         InputStream file= Foto.getInputStream();
@@ -121,18 +87,49 @@ public class Servlet_Cliente extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        */
-        GS_Cliente GSc = new GS_Cliente(Documento, Direccion, Telefono, Correo, null);
-        Cliente_M  Cliente = new Cliente_M();
-        int Consulta;
-        Consulta=Cliente.Act_Cliente(GSc);
-        if (Consulta>0) {
-            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+        
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, null);
+        Cliente_M Cliente = new Cliente_M();
+        Cliente.In_Cliente(GSC);
+        Cliente.Login_Cliente(GSC);
+        
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
         }
-        else{
-            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+        protected void Actualizar_Cliente (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento_C");
+        Nombre = request.getParameter("Nombre_C");
+        Direccion = request.getParameter("Direccion_C");
+        Telefono = request.getParameter("Telefono_C");
+        Correo = request.getParameter("Correo_C");
+        Part Foto = request.getPart("Foto_C");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
         }
-    }
+        
+        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Telefono, Correo, url2);
+        Cliente_M Cliente = new Cliente_M();
+        Cliente.Act_Cliente(GSC);
+        
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        }
+      
         
         
         protected void Eliminar_Ciudadano (HttpServletRequest request, HttpServletResponse response)

@@ -46,6 +46,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
         if (request.getParameter("In_Am_Sa")!=null) {
             this.Insertar_Ambiente_Salud(request, response);
         }
@@ -61,11 +62,12 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
      protected void Insertar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        JOptionPane.showMessageDialog(null,"entra al metodo");
         PrintWriter out = response.getWriter();
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         int Rol;
         Documento = request.getParameter("Documento_AS");
-        Tipo= request.getParameter("Tipo_AS");
+        Tipo= request.getParameter("Tipo_Documento_AS");
         Nombre = request.getParameter("Nombre_AS");
         Apellido = request.getParameter("Apellido_AS");
         Genero = request.getParameter("Genero_AS");
@@ -78,7 +80,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
         
-        String url = "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
+       String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
         
         InputStream file= Foto.getInputStream();
@@ -100,7 +102,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         else{
             AS.Login_Salud(GSAS);
         }
-        request.getRequestDispatcher("Registros_Administrador").forward(request, response);
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
      }
      
      protected void Actualizar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)

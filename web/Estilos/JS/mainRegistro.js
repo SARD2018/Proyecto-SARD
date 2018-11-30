@@ -31,8 +31,9 @@ $(document).ready(function(){
 	$(".T_Salud").hide();
 	
 	$(".Registrar_V").hide();
+	$(".form_Veterinaria").hide();
 	$(".Actualizar_V").hide();
-	$(".T_Veterinaria_0").hide();
+	$(".T_Veterinaria").hide();
 	$(".T_Veterinaria_4").hide();
 	
 	$(".Registrar_C").hide();
@@ -80,27 +81,17 @@ $(document).ready(function(){
 		$(".Ambiente").click(function(){
                     $(".T_Ambiente").slideToggle();
 		});
-                
-                 $(".Nombre_AM").click(function(){
-                    var Index1= $(".Nombre_AM").index1(this);
-                    var Datos1= $(".Datos_T").eq(Index1);
-                    var Boton1= $(".btn_A_E").eq(Index1);
-                    Datos1.slideToggle();
-                    Boton1.slideToggle(); 
-		});
-                
                 $(".Salud").click(function(){
                     $(".T_Salud").slideToggle();
 		});
                 
-                $(".Nombre_S").click(function(){
-                    var Index= $(".Nombre_S").index(this);
-                    var Datos= $(".Datos_T").eq(Index);
-                    var Boton= $(".btn_A_E").eq(Index);
-                    Datos.slideToggle();
-                    Boton.slideToggle(); 
-		});
-                
+                 $(".Nombre").click(function(){
+                    var Index1= $(".Nombre").index(this);
+                    var Datos1= $(".Datos_T").eq(Index1);
+                    var Boton1= $(".btn_A_E").eq(Index1);
+                    Datos1.slideToggle();
+                    Boton1.slideToggle(); 
+		});           
 
 	$(".SVeterinaria").click(function(){
 	$(".Registrar_V").slideToggle();
@@ -108,16 +99,15 @@ $(document).ready(function(){
 	});
 
 		$(".Registrar_V").click(function(){
-		$(".T_Veterinaria_0").slideToggle();
-		$(".Datos_T").hide();
-                $(".btn_A_E").hide();
+		$(".form_Veterinaria").slideToggle();
                 });
 
 		$(".Actualizar_V").click(function(){
 		$(".T_Veterinaria_4").slideToggle();
 		$(".Datos_T").hide();
                 $(".btn_A_E").hide();
-                });		
+                });	
+                
 
 
 	$(".SCiudadano").click(function(){
@@ -131,12 +121,10 @@ $(document).ready(function(){
 
 		$(".Actualizar_C").click(function(){
                     $(".T_Ciudadano").slideToggle();
+                    $(".Datos_T").hide();
+                    $(".btn_A_E").hide();
 		});
                 
-                $(".Nombre_C").click(function(){
-                    $(".Datos_T").slideToggle();
-                    $(".btn_A_E").slideToggle();
-		});
                 
        
 });

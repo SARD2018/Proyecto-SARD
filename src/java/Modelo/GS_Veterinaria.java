@@ -42,6 +42,17 @@ public class GS_Veterinaria {
         this.Foto = Foto;
     }
 
+    public GS_Veterinaria(String Nit, String Nombre, String Representante, String Direccion, String Barrio, String Telefono, String Correo, String Foto) {
+        this.Nit = Nit;
+        this.Nombre = Nombre;
+        this.Representante = Representante;
+        this.Direccion = Direccion;
+        this.Barrio = Barrio;
+        this.Telefono = Telefono;
+        this.Correo = Correo;
+        this.Foto = Foto;
+    }
+
     public GS_Veterinaria() {
     }
 

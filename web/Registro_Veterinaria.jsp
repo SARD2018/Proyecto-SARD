@@ -21,6 +21,12 @@
                     <p>Nit:<input type="text" name="Nit" pattern="[0-9]{4,15}" required></p>
                     <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
                     <p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z]{1,50}" required></p>
+                    <p>Tipo_Veterinaria 
+                        <select name="Tipo">
+                            <option value="Pet Shop">Pet Shop</option>
+                            <option value="Hospitalizacion">Hospitalizacion</option>
+                        </select>
+                    </p>
                     <p>Fecha de Fundacion: <input type="date" name="Fecha_Fundacion"  required></p>
                     <p>Direccion: <input type="text" name="Direccion" required></p>
                     <p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z]{1,50}" required></p>

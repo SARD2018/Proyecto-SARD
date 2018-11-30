@@ -44,8 +44,12 @@ public class Servlet_Veterinaria extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if (request.getParameter("R_Veterinaria")!=null) {
-            this.Insertar_Veterinaria(request, response);
+        if (request.getParameter("In_Veterinaria")!=null) {
+             Insertar_Veterinaria(request, response);
+        }
+        if (request.getParameter("Act_Veterinaria")!=null) {
+             JOptionPane.showMessageDialog(null,"boton");
+             Actualizar_Veterinaria(request, response);
         }
     }
     
@@ -53,20 +57,21 @@ public class Servlet_Veterinaria extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        String Nit,Nombre,Representante,Fecha,Direccion,Barrio,Telefono,Correo;
+        int Rol;
+        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
         Nit = request.getParameter("Nit");
         Nombre = request.getParameter("Nombre");
         Representante= request.getParameter("Representante");
+        Tipo= request.getParameter("Tipo");
         Fecha = request.getParameter("Fecha_Fundacion");
         Direccion = request.getParameter("Direccion");
         Barrio = request.getParameter("Barrio");
         Telefono = request.getParameter("Telefono");
         Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto");
+        Rol= Integer.parseInt(request.getParameter("Estado"));
+        Part Foto = request.getPart("Foto"); 
         String Nombre_F = Foto.getSubmittedFileName();
         String Foto_Name = Nombre+"_"+Nombre_F;
-        
         String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
         String url2 = "Uploads\\"+Foto_Name;
         
@@ -79,12 +84,47 @@ public class Servlet_Veterinaria extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        
-        //GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Fecha, Direccion, Barrio, Telefono, Correo, url2);
+         JOptionPane.showMessageDialog(null,Nit+ Nombre+ Representante+ Tipo+ Fecha+ Direccion+ Barrio+Telefono+Correo+Rol+url2);
+        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Tipo, Fecha, Direccion, Barrio, Telefono, Correo,Rol, url2);
         Veterinaria_M veterinaria = new Veterinaria_M();
-        //veterinaria.In_Veterinaria(GSC);    ;
+        veterinaria.In_Veterinaria_Admin(GSC);    ;
     
-        request.getRequestDispatcher("Menu_Administrador.jsp").forward(request, response);
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        
+    }
+     
+     protected void Actualizar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
+        Nit = request.getParameter("Nit");
+        Nombre = request.getParameter("Nombre");
+        Representante= request.getParameter("Representante");
+        Direccion = request.getParameter("Direccion");
+        Barrio = request.getParameter("Barrio");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto"); 
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Foto_Name = Nombre+"_"+Nombre_F;
+        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
+        String url2 = "Uploads\\"+Foto_Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Direccion, Barrio, Telefono, Correo, url2);
+        Veterinaria_M veterinaria = new Veterinaria_M();
+        veterinaria.Act_Veterinaria_Cuatro(GSC);
+    
+        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
         
     }
 

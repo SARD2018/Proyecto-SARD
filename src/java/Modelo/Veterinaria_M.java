@@ -71,18 +71,39 @@ public class Veterinaria_M {
         return Tabla;
     }
     
-     public void In_Veterinaria(GS_Veterinaria GS){
+     public void In_Veterinaria_Admin(GS_Veterinaria GS){
         try{
-            PreSta=BaseDatos.prepareStatement("call In_Veterinaria (?,?,?,?,?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call In_Veterinaria_Admin (?,?,?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getNit());
             PreSta.setString(2, GS.getNombre());
             PreSta.setString(3, GS.getRepresentante());
-            PreSta.setString(4, GS.getFecha_Fundacion());
-            PreSta.setString(5, GS.getDireccion());
-            PreSta.setString(6, GS.getBarrio());
-            PreSta.setString(7, GS.getTelefono());
-            PreSta.setString(8, GS.getCorreo());
-            PreSta.setString(9, GS.getFoto());
+            PreSta.setString(4, GS.getTipo_Veterinaria());
+            PreSta.setString(5, GS.getFecha_Fundacion());
+            PreSta.setString(6, GS.getDireccion());
+            PreSta.setString(7, GS.getBarrio());
+            PreSta.setString(8, GS.getTelefono());
+            PreSta.setString(9, GS.getCorreo());
+            PreSta.setInt(10, GS.getRol());
+            PreSta.setString(11, GS.getFoto());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+    }
+    }
+     
+     public void Act_Veterinaria_Cuatro (GS_Veterinaria GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call A_Veterinaria_4 (?,?,?,?,?,?,?,?)");
+            PreSta.setString(1, GS.getNit());   
+            PreSta.setString(2, GS.getNombre());
+            PreSta.setString(3, GS.getRepresentante());
+            PreSta.setString(4, GS.getDireccion());
+            PreSta.setString(5, GS.getBarrio());
+            PreSta.setString(6, GS.getTelefono());
+            PreSta.setString(7, GS.getCorreo());
+            PreSta.setString(8, GS.getFoto());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
