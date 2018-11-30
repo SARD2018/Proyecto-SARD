@@ -52,13 +52,6 @@
                         <label><%=GSM.getFecha_Nacimiento() %></label>
                         <label><%= GSM.getRaza()%></label>
                     </div>
-                    <div class="Postulacion_Mascota">
-                        <label><%=GSM.getTipo_Mascota()%></label>
-                        <label><%= GSM.getSexo()%></label>
-                        <label><%=GSM.getFecha_Nacimiento() %></label>
-                        <label><%= GSM.getRaza()%></label>
-                        <span class="CerrarPost icon icon-cancel"></span>
-                    </div>
                 </div>
                 
             <%
