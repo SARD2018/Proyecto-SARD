@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="Iconos/css/fontello.css">
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
         <script src="Estilos/JS/jquery.js"></script>
+        <script src="Estilos/JS/Eventos.js"></script>
         <script src="Estilos/JS/Menus.js"></script>
     </head>
     <body>

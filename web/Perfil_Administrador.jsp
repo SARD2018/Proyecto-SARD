@@ -62,7 +62,6 @@
                                     <input name="Telefono_A" type="Text" class="Telefono" value="<%= inggs.getTelefono()%>">
                                     <input name="Correo_A" type="Text" class="Correo" value="<%= inggs.getCorreo()%>">
                                 </div>
-                                
                             </div>
                             <div class="btn_A_E">
                                 <button name="Act_Admin"><span class="icon icon-pencil"></span>ACTUALIZAR</button>    

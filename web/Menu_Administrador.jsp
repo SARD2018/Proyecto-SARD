@@ -44,7 +44,7 @@
                         <li><a href="Registros_Administrador.jsp">Usuarios</a></li>
                         <li><a href="Postulacion.jsp">Adopciones</a></li>
                         <li><a href="Mascota.jsp">Mascotas</a></li>
-                        <li><a class="Eventos">Eventos</a></li>
+                        <li><a href="Registro_Eventos.jsp">Eventos</a></li>
                     </ul>
                 </nav>
                 <%
