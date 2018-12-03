@@ -10,7 +10,7 @@
     <body>
         <div class="Container">
             <div>
-                <label>Documento Mascota<input></label>
+                <label>Documento Mascota</label>
             </div>
         </div>
     </body>
