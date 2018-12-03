@@ -4,14 +4,14 @@ package Modelo;
 
 public class GS_Evento {
 
-    private String Codigo;
+    private int Codigo;
     private String Nombre;
     private String Tipo;
     private String Fecha;
     private String Descripcion;
     private String Foto;
 
-    public GS_Evento(String Codigo, String Nombre, String Tipo, String Fecha, String Descripcion, String Foto) {
+    public GS_Evento(int Codigo, String Nombre, String Tipo, String Fecha, String Descripcion, String Foto) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.Tipo = Tipo;
@@ -20,18 +20,18 @@ public class GS_Evento {
         this.Foto = Foto;
     }
 
-    public GS_Evento(String Codigo) {
-        this.Codigo = Codigo;
-    }
-
     public GS_Evento() {
     }
 
-    public String getCodigo() {
+    public GS_Evento(int Codigo) {
+        this.Codigo = Codigo;
+    }
+
+    public int getCodigo() {
         return Codigo;
     }
 
-    public void setCodigo(String Codigo) {
+    public void setCodigo(int Codigo) {
         this.Codigo = Codigo;
     }
 
@@ -73,5 +73,5 @@ public class GS_Evento {
 
     public void setFoto(String Foto) {
         this.Foto = Foto;
-    }    
+    }
 }

@@ -5,7 +5,12 @@
  */
 package Controlador;
 
+import Modelo.Eventos_M;
+import Modelo.GS_Evento;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -13,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
@@ -45,7 +51,34 @@ public class Servlet_Evento extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Nombre,Tipo,Fecha,Descripcion,Foto;
+        String Nombre,Tipo,Fecha,Descripcion;
+        
+        Nombre= request.getParameter("Nombre");
+        Tipo= request.getParameter("Tipo");
+        Fecha= request.getParameter("Fecha");
+        Descripcion= request.getParameter("Descripcion");
+        Part Foto= request.getPart("Foto");       
+        String NameFoto= Foto.getSubmittedFileName();
+        int i = NameFoto.lastIndexOf("\\");
+        String nuevo_nom = NameFoto.substring(i+1);
+        String Name= Fecha+"_"+nuevo_nom;
+ 
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2= "Uploads/"+Name;
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Evento GSE=new GS_Evento( 0, Nombre, Tipo, Fecha, Descripcion, url2);
+        Eventos_M  Eve= new Eventos_M();
+        Eve.In_Evento(GSE);
+        request.getRequestDispatcher("Registro_Eventos.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

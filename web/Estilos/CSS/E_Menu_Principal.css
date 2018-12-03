@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 *{
     margin: 0;
     padding: 0;
@@ -8,12 +9,18 @@
 }
 header{
     width: 100%;
+    height: 675px;
+    background: linear-gradient(to left, rgba(255,244,76,0.7), rgba(95, 255, 76,0.7)), url("../../Imagenes/Fonfo_Registros.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
 }
 .Logo_tipo{
-    width: 90%;
-    max-width: 1200px;
+    background-color: white;
+    width: 100%;
     margin: auto;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 .img2{
     position: absolute;
@@ -38,8 +45,15 @@ header{
 }
 .Logo_tipo h1{
     font-family: 'Ink Free';
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: bold;
     color: green;
+    margin-left: 7%;
+}
+.Imagen{
+    background-color: yellow;
+    width: 100%;
+    height: 505px;
 }
 .Barra-menu{
     width: 100%;
@@ -54,6 +68,7 @@ header{
     max-width: 1200px;
     max-height: 100%;
     margin: auto;
+    z-index: 1001;
 }
 .Boton-m{
     display: none;
@@ -82,16 +97,83 @@ header{
     background: #218838;
     border-color: #1e7e34;
 }
-.Container-1,
-.Container-2,
-.Container-3,
+.Container-1{
+    width: 100%;
+    margin: auto;
+    height: 600px;
+    background-color: rgba( 131, 218, 93 ,0.9);
+    border: 0.5px solid lightgreen;
+    padding: 30px 40px;
+    z-index: 1001;
+}
+.Container-2{
+    width: 100%;
+    margin: auto;
+    height: 600px;
+    background-color: rgba( 131, 218, 93 ,0.77);
+    border: 0.5px solid lightgreen;
+    padding: 30px 40px;
+}
+.Container-3{
+    width: 100%;
+    margin: auto;
+    height: 600px;
+    background-color: rgba( 131, 218, 93 ,0.66);
+    border: 0.5px solid lightgreen;
+    padding: 30px 40px;
+}
 .Container-4{
+    width: 100%;
+    margin: auto;
+    height: 600px;
+    background-color: rgba( 131, 218, 93 ,0.55);
+    border: 0.5px solid lightgreen;
+    padding: 30px 40px;
+}
+.Text-1,
+.Text-2,
+.Text-3,
+.Text-4{
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    background-color: lemonchiffon;
-    border: 0.5px solid lightgreen;
-    padding: 30px 40px;
+    padding: 20px 0;
+}
+.Text-1 h2{
+    text-align: center;
+    font-family: 'Courgette';
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.Text-1 .Parrafo_D{
+    float: right;
+    width: 600px;
+    font-family: 'Oswald';
+    padding: 40px 0;
+    font-size: 17px;
+}
+.Text-1 .Parrafo_D p{
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.Text-1 .Parrafo_D ul{
+    margin-left: 30px;
+}
+.Imagen_D img{
+    width: 95%;
+}
+.Text-1 .Imagen_D{
+    float: left;
+    border-radius: 20px;
+    background-color: white;
+    border: 7px white solid; 
+    width: 520px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 .Text-4{
     display: block;
@@ -222,6 +304,16 @@ header{
     .Menu .Derecha {
         float: left;
         width: 100%;
+    }
+    .Imagen_D img{
+        display: none;
+    }
+    .Text-1 .Parrafo_D{
+        float: none;
+        width: 100%;
+    }
+    .Text-1 .Imagen_D{
+        display: none;
     }
     .img2 .Dos{
         display: none;

@@ -4,6 +4,10 @@
     Author     : Yefrin Pacheco
 --%>
 
+<%@page import="Modelo.GS_Denuncia"%>
+<%@page import="Modelo.Eventos_M"%>
+<%@page import="Modelo.GS_Evento"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -45,11 +49,11 @@
             </nav>
         </div>
     </header>
-    <div class="Imagen">
-    </div>
     <div id="Denuncias" class="Container-1">
         <div class="Text-1">
             <h2>Denuncias</h2>
+            <div class="Imagen_D"><img src="Imagenes/Denuncias.jpg"></div>
+            <div class="Parrafo_D">
                 <p>Para nosotros es muy importante tus denuncias y por este motivo queremos recordarte que se considera como maltrato animal el hecho de vulnerar alguna de las siguientes libertades de las mascotas:</p>
                     <ul>
                         <li>Libre de sed, Hambre y malnutrición.</li>
@@ -59,19 +63,36 @@
                         <li>Libre de miedo y estrés.</li>
                     </ul>
                 <p>Si has evidenciado la falta de alguna de estas libertades realiza tu denuncia haciendo <a href="#Caja-Denuncia">Click aqui..</a></p>
+            </div>
         </div>
     </div>
-    <div id="Eventos" class="Container-3">
+    <div id="Eventos" class="Container-2">
         <div class="Text-3">
             <h2>Eventos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero laboriosam atque doloremque aut repudiandae perspiciatis quos qui saepe itaque nisi voluptates aliquid tenetur nesciunt unde corporis, ratione ab. Asperiores.</p>
+            <div class="Caja-Evento">
+                <%
+                    ArrayList<GS_Evento> datos = new ArrayList<>();
+                    Eventos_M con = new Eventos_M();
+                    datos = con.Todo_Evento();
+                    GS_Evento Dat = new GS_Evento();
+
+                    for(int i=0; i<datos.size(); i++){
+                        Dat = datos.get(i);
+                %>
+                <div class="Mostrar-E">
+                    <h2><%= Dat.getNombre()%></h2>
+                    <img width="90px" height="90px" src="<%= Dat.getFoto()%>">
+                </div>
+                <div class="Informacion-E">
+                    <h3><%= Dat.getTipo()%></h3>
+                    <h4><%= Dat.getFecha()%></h4>
+                    <p><%= Dat.getDescripcion()%></p>
+                </div>
+                <% }%>
+            </div>
         </div>
     </div>
-    <div id="Conocenos" class="Container-2">
+    <div id="Conocenos" class="Container-3">
         <div class="Text-2">
             <h2>Conocenos</h2>
             <p>Inspirados en el bienestar de las mascotas decidimos crear este proyecto con colaboración del SENA, secretaria de ambiente y secretaria de salud de Mosquera, donde quisimos poner información
