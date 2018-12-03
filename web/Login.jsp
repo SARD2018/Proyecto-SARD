@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Login.css">
+	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registro_Cliente.css">
+	<link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registro_Veterinaria.css">
         <link rel="stylesheet" href="Iconos/css/fontello.css">
 	<title>Login</title>
     </head>
@@ -40,7 +42,7 @@
                             </div>
                         </form>
                         <div class="Opciones">
-                            <a href="#Registros" class="Registrarme">
+                            <a href="#Registro_Cliente" class="Registrarme">
                                 Registrarme
                             </a>
                             <br>
@@ -100,7 +102,7 @@
                 </div>
             </div>
         </section>
-        <div id="Registros">
+        <div id="Registro_Cliente">
         <a href="Login.jsp">volver</a>
         <div class="form_Ciudadano">
             <h1>REGISTRO</h1>
@@ -113,8 +115,8 @@
                         <option value="Pasaporte">Pasaporte</option>
                     </select>
                 </label>
-                <label>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></label>
-                <label>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z]{1,50}" required></label>
+                <label>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></label>
+                <label>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z ]{1,50}" required></label>
                 <label>Genero:
                     <select name="Genero" required >
                         <option value="Masculino">Masculino</option>
@@ -126,15 +128,41 @@
                 <label>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></label>
                 <label>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></label>
                 <label>Foto: 
-                    <input type="file" name="FotoCliente" class="FotoCliente"> 
+                    <input type="file" name="Foto" class="FotoCliente"> 
                     <span class="icon icon-camera-outline"></span>
                 </label>
                 <input class="btn" type="submit" name="R_Ciudadano" value="Registrar">
             </form>
+            <div class="link_Veterinaria">
+            <label>Si quieres registrar tu veterinaria has click  <a href="#Registro_Veterinaria">aqui</a></label>
+        </div>	
         </div>
-        <div class="link_Veterinaria">
-            <label>Si quieres registrar tu veterinaria has click  <a href="Registro_Veterinaria.jsp">aqui</a></label>
-        </div>		
+        </div>
+        <div id="Registro_Veterinaria">
+        <div class="form_Veterinaria">
+                
+                <form action="Servlet_Veterinaria" method="post" enctype="multipart/form-data">
+                    <p>Nit:<input type="text" name="Nit" pattern="[0-9]{4,15}" required></p>
+                    <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
+                    <p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z ]{1,50}" required></p>
+                    <p>Tipo_Veterinaria 
+                        <select name="Tipo">
+                            <option value="Pet Shop">Pet Shop</option>
+                            <option value="Hospitalizacion">Hospitalizacion</option>
+                        </select>
+                    </p>
+                    <p>Fecha de Fundacion: <input type="date" name="Fecha_Fundacion"  required></p>
+                    <p>Direccion: <input type="text" name="Direccion" required></p>
+                    <p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z ]{1,50}" required></p>
+                    <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
+                    <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                    <p><label>Foto: 
+                        <input type="file" name="Foto" class="FotoVeterinaria"> 
+                        <span class="icon icon-camera-outline"></span>
+                    </label></p>
+                    <p><input class="btn" type="submit" name="R_Veterinaria" value="Registrar"></p>
+                </form>
+            </div>	
 	</div>
         <script src="Estilos/JS/jquery.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

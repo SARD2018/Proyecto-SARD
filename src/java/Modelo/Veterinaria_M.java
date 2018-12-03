@@ -127,7 +127,17 @@ public class Veterinaria_M {
         }
     }
      
-     
+     public void Eli_Veterinaria(GS_Veterinaria GS){
+        try{
+            PreSta=BaseDatos.prepareStatement("call B_Veterinaria(?)");
+            PreSta.setString(1,GS.getNit());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos Borrados");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
     
     
 }

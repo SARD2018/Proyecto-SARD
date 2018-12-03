@@ -48,8 +48,14 @@ public class Servlet_Cliente extends HttpServlet {
         if (request.getParameter("In_Ciudadano")!=null) {
             this.Insertar_Cliente(request, response);
         }
+        if (request.getParameter("R_Ciudadano")!=null) {
+            this.Insertar_Cliente_Login(request, response);
+        }
         if (request.getParameter("Act_Ciudadano")!=null) {
             this.Actualizar_Cliente(request, response);
+        }
+        if (request.getParameter("Act_C")!=null) {
+            this.Actualizar_Cliente_Perfil(request, response);
         }
         if (request.getParameter("Eli_Ciudadano")!=null) {
             this.Eliminar_Ciudadano(request, response);
@@ -73,10 +79,10 @@ public class Servlet_Cliente extends HttpServlet {
         Correo = request.getParameter("Correo_C");
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -88,12 +94,52 @@ public class Servlet_Cliente extends HttpServlet {
             num= file.read();
         }
         
-        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, null);
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, url2);
         Cliente_M Cliente = new Cliente_M();
         Cliente.In_Cliente(GSC);
         Cliente.Login_Cliente(GSC);
         
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+         response.sendRedirect("Registros_Administrador.jsp");
+        }
+        
+        protected void Insertar_Cliente_Login(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento");
+        Tipo= request.getParameter("Tipo_Documento");
+        Nombre = request.getParameter("Nombre");
+        Apellido = request.getParameter("Apellido");
+        Genero = request.getParameter("Genero");
+        Fecha = request.getParameter("Fecha_Nacimiento");
+        Direccion = request.getParameter("Direccion");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, url2);
+        Cliente_M Cliente = new Cliente_M();
+        Cliente.In_Cliente(GSC);
+        Cliente.Login_Cliente(GSC);
+        
+         response.sendRedirect("Login.jsp");
         }
         protected void Actualizar_Cliente (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -108,10 +154,10 @@ public class Servlet_Cliente extends HttpServlet {
         Correo = request.getParameter("Correo_C");
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -122,14 +168,57 @@ public class Servlet_Cliente extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        
         GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Telefono, Correo, url2);
         Cliente_M Cliente = new Cliente_M();
-        Cliente.Act_Cliente(GSC);
-        
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        int Consulta =Cliente.Act_Cliente(GSC);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+            }
+            else{
+            JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+            }
+            
+        response.sendRedirect("Registros_Administrador.jsp");
         }
-      
+      protected void Actualizar_Cliente_Perfil (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        Documento = request.getParameter("Documento_C");
+        Nombre = request.getParameter("Nombre_C");
+        Direccion = request.getParameter("Direccion_C");
+        Telefono = request.getParameter("Telefono_C");
+        Correo = request.getParameter("Correo_C");
+        Part Foto = request.getPart("Foto_C");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Telefono, Correo, url2);
+        Cliente_M Cliente = new Cliente_M();
+        int Consulta =Cliente.Act_Cliente(GSC);
+            if (Consulta>0) {
+                JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS");
+            }
+            else{
+            JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+            }
+            
+        response.sendRedirect("Perfil_Ciudadano.jsp");
+        }
         
         
         protected void Eliminar_Ciudadano (HttpServletRequest request, HttpServletResponse response)
@@ -143,6 +232,7 @@ public class Servlet_Cliente extends HttpServlet {
         Cliente_M Cliente = new Cliente_M();
         Cliente.Eli_Cliente(GSC);
         
+        response.sendRedirect("Registros_Administrador.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

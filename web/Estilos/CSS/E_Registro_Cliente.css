@@ -1,10 +1,51 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 22/11/2018, 10:27:14 AM
-    Author     : Christian
-*/
 
+#Registro_Cliente {
+    display: none;
+}
+
+#Registro_Cliente:target {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_Ciudadano {
+    font-size: 13px;
+    margin: auto;
+    width: 30%;
+    height: 80%;
+    border: 3px solid lightgreen;
+    background: beige;
+    display: block;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+.form_Ciudadano h1{
+    text-align: center;
+}
+.form_Ciudadano label{
+    text-align: left;
+}
+
+
+.form_Ciudadano input {
+    float: right;
+}
+
+.form_Ciudadano select {
+    float: right;
+}
+
+.FotoCliente {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+}

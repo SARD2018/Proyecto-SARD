@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Modelo.Administrador_M;
+import Modelo.GS_Administrador;
 import Modelo.GS_Veterinaria;
 import Modelo.Veterinaria_M;
 import java.io.File;
@@ -47,9 +49,14 @@ public class Servlet_Veterinaria extends HttpServlet {
         if (request.getParameter("In_Veterinaria")!=null) {
              Insertar_Veterinaria(request, response);
         }
+        if (request.getParameter("R_Veterinaria")!=null) {
+             Insertar_Veterinaria_Login(request, response);
+        }
         if (request.getParameter("Act_Veterinaria")!=null) {
-             JOptionPane.showMessageDialog(null,"boton");
              Actualizar_Veterinaria(request, response);
+        }
+        if (request.getParameter("Eli_Veterinaria")!=null) {
+             Eliminar_Veterinaria(request, response);
         }
     }
     
@@ -71,9 +78,10 @@ public class Servlet_Veterinaria extends HttpServlet {
         Rol= Integer.parseInt(request.getParameter("Estado"));
         Part Foto = request.getPart("Foto"); 
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -84,15 +92,50 @@ public class Servlet_Veterinaria extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-         JOptionPane.showMessageDialog(null,Nit+ Nombre+ Representante+ Tipo+ Fecha+ Direccion+ Barrio+Telefono+Correo+Rol+url2);
         GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Tipo, Fecha, Direccion, Barrio, Telefono, Correo,Rol, url2);
         Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.In_Veterinaria_Admin(GSC);    ;
-    
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
         
+        response.sendRedirect("Registros_Administrador.jsp");
     }
      
+    protected void Insertar_Veterinaria_Login (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int Rol;
+        String Nit,Nombre,Representante,Tipo,Fecha,Direccion,Barrio,Telefono,Correo;
+        Nit = request.getParameter("Nit");
+        Nombre = request.getParameter("Nombre");
+        Representante= request.getParameter("Representante");
+        Tipo= request.getParameter("Tipo");
+        Fecha = request.getParameter("Fecha_Fundacion");
+        Direccion = request.getParameter("Direccion");
+        Barrio = request.getParameter("Barrio");
+        Telefono = request.getParameter("Telefono");
+        Correo = request.getParameter("Correo");
+        Part Foto = request.getPart("Foto"); 
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Veterinaria GSC = new GS_Veterinaria(Nit, Nombre, Representante, Tipo, Fecha, Direccion, Barrio, Telefono, Correo, url2);
+        Veterinaria_M veterinaria = new Veterinaria_M();
+        veterinaria.In_Veterinaria_Admin(GSC);    ;
+        
+        response.sendRedirect("Login.jsp");
+    }
      protected void Actualizar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -107,9 +150,10 @@ public class Servlet_Veterinaria extends HttpServlet {
         Correo = request.getParameter("Correo");
         Part Foto = request.getPart("Foto"); 
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -124,9 +168,22 @@ public class Servlet_Veterinaria extends HttpServlet {
         Veterinaria_M veterinaria = new Veterinaria_M();
         veterinaria.Act_Veterinaria_Cuatro(GSC);
     
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        response.sendRedirect("Registros_Administrador.jsp");
         
     }
+     
+     protected void Eliminar_Veterinaria (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String Documento;
+        Documento=request.getParameter("Nit");
+        GS_Veterinaria GSA = new GS_Veterinaria(Documento);
+        Veterinaria_M Vete = new Veterinaria_M();
+        Vete.Eli_Veterinaria(GSA);
+        response.sendRedirect("Registros_Administrador.jsp");
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

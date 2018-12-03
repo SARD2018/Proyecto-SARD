@@ -50,10 +50,10 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         if (request.getParameter("In_Am_Sa")!=null) {
             this.Insertar_Ambiente_Salud(request, response);
         }
-        if (request.getParameter("Valor_AS").equalsIgnoreCase("Act_Am_Sa")) {
+        if (request.getParameter("Act_AS")!=null) {
             this.Actualizar_Ambiente_Salud(request, response);
         }
-        if (request.getParameter("Valor_AS").equalsIgnoreCase("Eli_Am_Sa")) {
+        if (request.getParameter("Eli_AS")!=null) {
             this.Eliminar_Ambiente_Salud(request, response);
         }
         
@@ -62,7 +62,6 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
      protected void Insertar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        JOptionPane.showMessageDialog(null,"entra al metodo");
         PrintWriter out = response.getWriter();
         String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
         int Rol;
@@ -78,10 +77,10 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         Rol = Integer.parseInt(request.getParameter("Rol_AS"));
         Part Foto = request.getPart("Foto_AS");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-       String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -102,7 +101,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         else{
             AS.Login_Salud(GSAS);
         }
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        response.sendRedirect("Registros_Administrador.jsp");
      }
      
      protected void Actualizar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
@@ -117,10 +116,10 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         Correo = request.getParameter("Correo_AS");
         Part Foto = request.getPart("Foto_AS");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-        String url = "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -144,6 +143,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
         }
         
+        response.sendRedirect("Registros_Administrador.jsp");
      }
      
      protected void Eliminar_Ambiente_Salud (HttpServletRequest request, HttpServletResponse response)
@@ -157,6 +157,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
          Ambiente_Salud_M Am_Sa = new Ambiente_Salud_M();
         Am_Sa.Eli_Ambiente_Salud(GSAS);
         
+        response.sendRedirect("Registros_Administrador.jsp");
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

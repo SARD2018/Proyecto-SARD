@@ -53,6 +53,11 @@ public class GS_Veterinaria {
         this.Foto = Foto;
     }
 
+    public GS_Veterinaria(String Nit) {
+        this.Nit = Nit;
+    }
+    
+
     public GS_Veterinaria() {
     }
 

@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,7 @@ import javax.swing.JOptionPane;
  *
  * @author SENA
  */
+@MultipartConfig
 @WebServlet(name = "Servlet_Perfil", urlPatterns = {"/Servlet_Perfil"})
 public class Servlet_Perfil extends HttpServlet {
 
@@ -51,6 +53,7 @@ public class Servlet_Perfil extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         
+        JOptionPane.showMessageDialog(null, "entra metodo");
         String Documento,Nombre,Direccion,Telefono,Correo;
         Nombre =request.getParameter("Nombre_A");
         Documento = request.getParameter("Documento_A");
@@ -59,10 +62,10 @@ public class Servlet_Perfil extends HttpServlet {
         Correo = request.getParameter("Correo_A");
         Part Foto = request.getPart("Foto_A");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -73,7 +76,6 @@ public class Servlet_Perfil extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        JOptionPane.showMessageDialog(null,Nombre+Documento+Direccion+Telefono+Correo+url2);
         GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         int Consulta;
@@ -83,8 +85,9 @@ public class Servlet_Perfil extends HttpServlet {
         }
         else{
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
-        }
-        request.getRequestDispatcher("Perfil_Administrador.jsp").forward(request, response);
+        }       
+        response.sendRedirect("Perfil_Administrador.jsp");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

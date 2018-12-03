@@ -64,13 +64,13 @@
                                 </div>
                                 
                             </div>
-                                <div class="btn_A_E">
-                                    <button name="Act_A"><span class="icon icon-pencil"></span>ACTUALIZAR</button>    
-                                </div>
-                    </form>
+                            <div class="btn_A_E">
+                                <button name="Act_Admin"><span class="icon icon-pencil"></span>ACTUALIZAR</button>    
+                            </div>
                         <%
                         }
                         %>
+                    </form>
                 </div>
     </body>
 </html>

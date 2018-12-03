@@ -81,7 +81,6 @@ public class Cliente_M {
             PreSta.setString(4, GS.getCorreo());
             PreSta.setString(5, GS.getFoto());
             Actualizar=PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
@@ -95,7 +94,6 @@ public class Cliente_M {
             PreSta.setString(2, GS.getDocumento());
             PreSta.setInt(3, 5);
             PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
@@ -104,7 +102,7 @@ public class Cliente_M {
       
     public void Eli_Cliente(GS_Cliente GS){
         try{
-            PreSta=BaseDatos.prepareStatement("B_Cliente (?)");
+            PreSta=BaseDatos.prepareStatement(" call B_Cliente (?)");
             PreSta.setString(1,GS.getDocumento());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos Borrados");

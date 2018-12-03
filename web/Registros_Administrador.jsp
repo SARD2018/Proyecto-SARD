@@ -151,8 +151,8 @@
                                     <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                     <option value="Pasaporte">Pasaporte</option>
                                 </select></p>
-                            <p>Nombre: <input type="text" name="Nombre_AS" pattern="[A-Z,a-z]{1,50}" required></p>
-                            <p>Apellido: <input type="text" name="Apellido_AS" pattern="[A-Z,a-z]{1,50}" required></p>
+                            <p>Nombre: <input type="text" name="Nombre_AS" pattern="[A-Z,a-z ]{1,50}" required></p>
+                            <p>Apellido: <input type="text" name="Apellido_AS" pattern="[A-Z,a-z ]{1,50}" required></p>
                             <p>Genero: 
                                 <select name="Genero_AS" required >
                                     <option value="Masculino">Masculino</option>
@@ -187,7 +187,8 @@
                     <div class="Ambiente" >
                         <p>AMBIENTE</p>
                     </div>
-                        <div class="T_Ambiente">  
+                        <div class="T_Ambiente"> 
+                            <form action="Servlet_Ambiente_Salud" method="POST" enctype="multipart/form-data">
                             <%
                                 ArrayList<GS_Ambiente_Salud> Tabla_A = new ArrayList<>();
                                 Ambiente_Salud_M Ambiente =new Ambiente_Salud_M();
@@ -229,12 +230,13 @@
                             %>
                
                     </div>
+                </form>
                 <div class="Salud" >
                         <p>Salud</p>
                     </div>
                         <div class="T_Salud">  
                        
-
+                            <form action="Servlet_Ambiente_Salud" method="POST" enctype="multipart/form-data">
                             <%
                                 ArrayList<GS_Ambiente_Salud> Tabla_S = new ArrayList<>();
                                 Ambiente_Salud_M Salud =new Ambiente_Salud_M();
@@ -247,34 +249,37 @@
                             <div class="Nombre">
                                 <div class="Nombre_S">
                                     <h2><%= GS_S.getNombre()+" "+GS_S.getApellido()%></h2>
-                                    <input type="hidden" name="Nombre_S" value="<%= GS_AM.getNombre()%>">
+                                    <input type="hidden" name="Nombre_AS" value="<%= GS_AM.getNombre()%>">
                                 </div>
                             </div>
                             <div class="Datos_T">
                                 <div class="Foto">
                                      <label>
                                          <img class="Foto_img" src="<%= GS_S.getFoto()%>">
-                                     <input class="Foto_input" type="file" name="Foto" value="">
+                                     <input class="Foto_input" type="file" name="Foto_AS" value="">
                                      </label>
                                  </div>
                                  <div class="Datos">
-                                     <input class="Documento" type="Text" name="Documento" readonly value="<%= GS_S.getDocumento()%>">
-                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento" readonly value="<%= GS_S.getTipo_Documento()%>">
-                                     <input class="Genero" type="Text" name="Genero" readonly value="<%= GS_S.getGenero()%>">
-                                     <input class="Fecha" type="Text" name="Fecha" readonly value="<%= GS_S.getFecha_Nacimiento()%>">
-                                     <input class="Direccion" type="Text" name="Direccion"  value="<%= GS_S.getDireccion()%>">
-                                     <input class="Telefono" type="Text" name="Telefono" value="<%= GS_S.getTelefono()%>">
-                                     <input class="Correo" type="Text" name="Correo" value="<%= GS_S.getCorreo()%>">
+                                     <input class="Documento" type="Text" name="Documento_AS" readonly value="<%= GS_S.getDocumento()%>">
+                                     <input class="Tipo_Documento" type="Text" name="Tipo_Documento_AS" readonly value="<%= GS_S.getTipo_Documento()%>">
+                                     <input class="Genero" type="Text" name="Genero_AS" readonly value="<%= GS_S.getGenero()%>">
+                                     <input class="Fecha" type="Text" name="Fecha_Nacimiento_AS" readonly value="<%= GS_S.getFecha_Nacimiento()%>">
+                                     <input class="Direccion" type="Text" name="Direccion_AS"  value="<%= GS_S.getDireccion()%>">
+                                     <input class="Telefono" type="Text" name="Telefono_AS" value="<%= GS_S.getTelefono()%>">
+                                     <input class="Correo" type="Text" name="Correo_AS" value="<%= GS_S.getCorreo()%>">
                                  </div>
                             </div>
                             <div class="btn_A_E">
-                                <span class="icon icon-pencil Act_Am_Sa"></span>
-                                <span class="icon icon-trash Eli_Am_Sa"></span>
+                                <button name="Act_AS"><span class="icon icon-pencil "></span></button>
+                                <button name="Eli_AS"><span class="icon icon-trash "></span></button>
                             </div>
                             <%
                             }
                             %>
+                            
+                        </form>
                     </div>
+                    
 		<div class="SVeterinaria">
                     <p>VETERINARIA</p>
 		</div>
@@ -286,8 +291,8 @@
                                 <div class="LR_Veterinaria">
                                     <div class="left_Veterinaria">
                                         <p>Nit:<input type="text" name="Nit" pattern="[0-9]{4,15}" required></p>
-                                        <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z]{1,50}" required></p>
-                                        <p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z]{1,50}" required></p>
+                                        <p>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></p>
+                                        <p>Representante: <input type="text" name="Representante" pattern="[A-Z,a-z ]{1,50}" required></p>
                                         <p>Tipo_Veterinaria 
                                             <select name="Tipo">
                                                 <option value="Pet Shop">Pet Shop</option>
@@ -298,7 +303,7 @@
                                         <p>Direccion: <input type="text" name="Direccion" required></p>
                                     </div>
                                     <div class="Right_Veterinaria">
-                                        <p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z]{1,50}" required></p>
+                                        <p>Barrio: <input type="text" name="Barrio" pattern="[A-Z,a-z ]{1,50}" required></p>
                                         <p>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></p>
                                         <p>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>                
                                         <p>Estado: 
@@ -387,8 +392,8 @@
                                             <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                             <option value="Pasaporte">Pasaporte</option>
                                         </select></p>
-                                    <p>Nombre: <input type="text" name="Nombre_C" pattern="[A-Z,a-z]{1,50}" required></p>
-                                    <p>Apellido: <input type="text" name="Apellido_C" pattern="[A-Z,a-z]{1,50}" required></p>
+                                    <p>Nombre: <input type="text" name="Nombre_C" pattern="[A-Z,a-z ]{1,50}" required></p>
+                                    <p>Apellido: <input type="text" name="Apellido_C" pattern="[A-Z,a-z ]{1,50}" required></p>
                                     <p>Genero: 
                                         <select name="Genero_C" required >
                                             <option value="Masculino">Masculino</option>
@@ -429,9 +434,9 @@
 
                         %>
                         <div class="Nombre">
-                            <div class="Nombre_C">
+                            <div class="Nombre_CI">
                                 <h2><%= GS_C.getNombre()+" "+ GS_C.getApellido()%></h2>
-                                <input type="hidden" name="Nombre_C" value="<%= GS_V.getNombre()%>">
+                                <input type="hidden" name="Nombre_C" value="<%= GS_C.getNombre()%>">
                             </div>
                         </div>
                             <div class="Datos_T">
@@ -460,8 +465,9 @@
                         <%
                         }
                         %>
-                        </form>
+                        
                 </div>
+                  </form>
 	</div>
     </body>
 </html>

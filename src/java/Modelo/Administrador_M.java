@@ -104,7 +104,6 @@ public class Administrador_M {
             PreSta.setString(4, GS.getCorreo());
             PreSta.setString(5, GS.getFoto());
             Actualizar=PreSta.executeUpdate();
-            JOptionPane.showMessageDialog(null, "ENTRA CONSULTA");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);

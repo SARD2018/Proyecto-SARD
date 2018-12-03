@@ -48,15 +48,14 @@
     border-bottom: 1px solid black;
     
 }
-.Nombre_A,.Nombre_AM,.Nombre_S,.Nombre_V0, .Nombre_V4, .Nombre_CI h2{
-    margin-left: 2%;
-}
+
 .Nombre_S, .Nombre_V0, .Nombre_CI{
      background: #cdffd5  ;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-family: 'Oswald', cursive;
     font-size: 15px;
+    border-bottom: 1px solid black; 
 }
 
 
@@ -153,6 +152,7 @@
     padding: 2px 5px;
     font-family: 'Oswald', cursive;
     font-size: 18px;
+    cursor: pointer;
 }
 .Actualizar_A{
     
@@ -238,6 +238,7 @@
     padding: 2px 5px;
     font-family: 'Oswald', cursive;
     font-size: 18px;
+    cursor: pointer;    
 }
 .Actualizar_AmbienteySalud{
     width: 100%;
@@ -330,6 +331,7 @@
     padding: 2px 5px;
     font-family: 'Oswald', cursive;
     font-size: 18px;
+    cursor: pointer;
 }
 .Actualizar_V{
     background:  lightgreen;
@@ -410,6 +412,7 @@
     padding: 2px 5px;
     font-family: 'Oswald', cursive;
     font-size: 18px;
+    cursor: pointer;
 }
 .Actualizar_C{
     background:  lemonchiffon;

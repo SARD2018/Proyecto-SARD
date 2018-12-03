@@ -1,0 +1,46 @@
+
+#Registro_Veterinaria{
+    display: none;
+}
+
+#Registro_Veterinaria:target {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_Veterinaria{
+    font-size: 13px;
+    margin: auto;
+    width: 30%;
+    height: 80%;
+    border: 3px solid lightgreen;
+    background: beige;
+    display: block;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+.form_Veterinaria h1{
+    text-align: center;
+}
+.form_Veterinaria input {
+    float: right;
+}
+
+.form_Veterinaria select {
+    float: right;
+}
+
+.FotoVeterinaria{
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+}

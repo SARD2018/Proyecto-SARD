@@ -17,7 +17,6 @@ public class Ambiente_Salud_M {
     
     public void In_Ambiente_Salud (GS_Ambiente_Salud GS){
         try{
-            JOptionPane.showMessageDialog(null, "entra modelo");
             PreSta=BaseDatos.prepareStatement("call In_Cliente_Admin(?,?,?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getTipo_Documento());
@@ -58,7 +57,7 @@ public class Ambiente_Salud_M {
    
      public void Eli_Ambiente_Salud(GS_Ambiente_Salud GS){
         try{
-            PreSta=BaseDatos.prepareStatement("B_Cliente(?)");
+            PreSta=BaseDatos.prepareStatement(" call B_Cliente(?)");
             PreSta.setString(1,GS.getDocumento());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos Borrados");

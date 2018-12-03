@@ -41,15 +41,17 @@ public class Servlet_Administrador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        JOptionPane.showMessageDialog(null, "entra al servlet");
+        PrintWriter out = response.getWriter(); 
         if(request.getParameter("In_Admin")!=null){
             Insertar_Admin(request, response);
         }
         if(request.getParameter("Act_A")!=null){
             Actualizar_Admin(request, response);
         }
-        if(request.getParameter("Valor_A").equalsIgnoreCase("Eli_Admin")){
+        if(request.getParameter("Act_Admin")!=null){
+            Actualizar_Admin_Perfil(request, response);
+        }
+        if(request.getParameter("Eli_A")!=null){
             Eliminar_Administrador(request, response);
         }
     }
@@ -72,10 +74,10 @@ public class Servlet_Administrador extends HttpServlet {
         String url2;
        
             String Nombre_F = Foto.getSubmittedFileName();
-            String Foto_Name = Nombre+"_"+Nombre_F;
+            String Name = Nombre+"_"+Nombre_F;
 
-            String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\Web\\Uploads\\"+Foto_Name;
-             url2 = "Uploads/"+Foto_Name;
+            String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+             url2 = "Uploads/"+Name;
 
             InputStream file= Foto.getInputStream();
             File img=new File(url);
@@ -91,8 +93,9 @@ public class Servlet_Administrador extends HttpServlet {
         GS_Administrador GSA = new GS_Administrador(Documento,Tipo, Nombre, Apellido, Genero,Fecha, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         Admin.In_Administrador(GSA);
-        Admin.Login_Admin(GSA);
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        Admin.Login_Admin(GSA);        
+        response.sendRedirect("Registros_Administrador.jsp");
+
         }
     
     protected void Actualizar_Admin(HttpServletRequest request, HttpServletResponse response)
@@ -109,10 +112,10 @@ public class Servlet_Administrador extends HttpServlet {
         Correo = request.getParameter("Correo_A");
         Part Foto = request.getPart("Foto_A");
         String Nombre_F = Foto.getSubmittedFileName();
-        String Foto_Name = Nombre+"_"+Nombre_F;
+        String Name = Nombre+"_"+Nombre_F;
         
-        String url = "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Foto_Name;
-        String url2 = "Uploads\\"+Foto_Name;
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
         File img=new File(url);
@@ -123,7 +126,6 @@ public class Servlet_Administrador extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        JOptionPane.showMessageDialog(null,Nombre+Documento+Direccion+Telefono+Correo+url2);
         GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
         Administrador_M Admin = new Administrador_M();
         int Consulta;
@@ -133,10 +135,51 @@ public class Servlet_Administrador extends HttpServlet {
         }
         else{
             JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
-        }
-        request.getRequestDispatcher("Registros_Administrador.jsp").forward(request, response);
+        }       
+        response.sendRedirect("Registros_Administrador.jsp");
+
     }
-    
+    protected void Actualizar_Admin_Perfil(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        
+        String Documento,Nombre,Direccion,Telefono,Correo;
+        Nombre =request.getParameter("Nombre_A");
+        Documento = request.getParameter("Documento_A");
+        Direccion = request.getParameter("Direccion_A");
+        Telefono = request.getParameter("Telefono_A");
+        Correo = request.getParameter("Correo_A");
+        Part Foto = request.getPart("Foto_A");
+        String Nombre_F = Foto.getSubmittedFileName();
+        String Name = Nombre+"_"+Nombre_F;
+        
+        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url2 = "Uploads\\"+Name;
+        
+        InputStream file= Foto.getInputStream();
+        File img=new File(url);
+        FileOutputStream sal=new FileOutputStream(img);
+        int num= file.read();
+        
+        while (num !=-1) {            
+            sal.write(num);
+            num= file.read();
+        }
+        GS_Administrador GSA = new GS_Administrador(Documento, Direccion, Telefono, Correo, url2);
+        Administrador_M Admin = new Administrador_M();
+        int Consulta;
+        Consulta=Admin.Act_Administrador(GSA);
+        if (Consulta>0) {
+            JOptionPane.showMessageDialog(null,"DATOS ACTUALIZADOS");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"ERROR AL ACTUALIZAR");
+        }       
+        response.sendRedirect("Perfil_Administrador.jsp");
+
+    }
     protected void Eliminar_Administrador (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -147,7 +190,7 @@ public class Servlet_Administrador extends HttpServlet {
         GS_Administrador GSA = new GS_Administrador(Documento);
         Administrador_M Admin = new Administrador_M();
         Admin.Eli_Administrador(GSA);
-        
+        response.sendRedirect("Registros_Administrador.jsp");
         }
 
 
