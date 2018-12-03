@@ -16,31 +16,47 @@
     align-items: center;
 }
 
-.form_Ciudadano {
+#Registro_Cliente h1 {
+    text-align: center;
+}
+
+.Contenido_C {
+    box-sizing: border-box;
     font-size: 13px;
     margin: auto;
-    width: 30%;
-    height: 80%;
+    width: 400px;
+    height: 500px;
     border: 3px solid lightgreen;
     background: beige;
-    display: block;
     padding: 2%;
     border-radius: 5%;
 }
 
-.form_Ciudadano h1{
-    text-align: center;
+.form_Ciudadano {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
-.form_Ciudadano label{
-    text-align: left;
-}
-
 
 .form_Ciudadano input {
     float: right;
+    width: 40%;
+    border-radius: 5%;
 }
 
-.form_Ciudadano select {
+.form_Ciudadano Select {
+    float: right;
+    width: 40%;
+    border-radius: 5%;
+}
+
+.form_Ciudadano .link_Veterinaria {
+    display: flex;
+    align-items: flex-end;
+}
+
+.form_Ciudadano .Image {
+    font-size: 30px;
     float: right;
 }
 
@@ -48,4 +64,30 @@
     opacity: 0;
     width: 0.1px;
     height: 0.1px;
+}
+
+@media screen and (max-width: 400px){
+    .Contenido_C {
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 13px;
+        margin: auto;
+        width: 90%;
+        height: 100%;
+        border: 3px solid lightgreen;
+        background: beige;
+        padding: 2%;
+        border-radius: 5%;
+    }
+    .form_Ciudadano input {
+        float: left;
+        width: 98%;
+        border-radius: 5%;
+    }
+
+    .form_Ciudadano Select {
+        float: left;
+        width: 98%;
+        border-radius: 5%;
+    }
 }
