@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 @WebServlet(name = "Servlet_Postulacion", urlPatterns = {"/Servlet_Postulacion"})
 public class Servlet_Postulacion extends HttpServlet {
 
@@ -15,13 +16,23 @@ public class Servlet_Postulacion extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        if (request.getParameter("Codig")!=null) {
+        if (request.getParameter("codig")!=null) {
            int Codigo;
-           Codigo=Integer.parseInt(request.getParameter("Codig"));
+           Codigo=Integer.parseInt(request.getParameter("codig"));
              HttpSession datt = request.getSession();
              datt.setAttribute("CodigoM",Codigo);
         }
+        if (request.getParameter("In_POstulacion")!=null) {
+            
+        }
+        
+    }
+    
+    protected void Insertar_Postulacion (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
         
     }
 

@@ -23,7 +23,6 @@ $(document).ready(function(){
         
         $(".BloqPantalla").fadeIn();
         var Cod = $(Codi).val();
-        alert(Cod);
         $.ajax({
             url: "Servlet_Postulacion",
             data: {

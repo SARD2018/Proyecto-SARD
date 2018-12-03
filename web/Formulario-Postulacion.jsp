@@ -1,3 +1,6 @@
+<%@page import="Modelo.Cliente_M"%>
+<%@page import="Modelo.GS_Cliente"%>
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="Modelo.Mascota_M"%>
 <%@page import="Modelo.GS_Mascota"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,31 +16,51 @@
     <body>
         <div class="Container">
             <div>
-                <%
-                 HttpSession dato=request.getSession();
-                 int Codigo=(Integer)dato.getAttribute("CodigoM");
-                 ArrayList<GS_Mascota> datos = new ArrayList<>();
-                 Mascota_M con = new Mascota_M();
-                 datos = con.Uno_Mascota(Codigo);
-                 GS_Mascota GS = new GS_Mascota();
+                <form action="Servlet_Postulacion" method="POST" enctype="multipart/form-data">
+                    <%
+                     HttpSession dato=request.getSession();
+                     Integer Codigo=(Integer)dato.getAttribute("CodigoM");
+                     ArrayList<GS_Mascota> datos = new ArrayList<>();
+                     Mascota_M con = new Mascota_M();
+                     datos = con.Uno_Mascota(Codigo);
+                     GS_Mascota GS = new GS_Mascota();
 
-                for(int i=0; i<datos.size(); i++){
-                    GS = datos.get(i);
-                %>
-                <select name="Tipo">
-                    <option value="<%=GS.getTipo_Mascota()%>"></option>
-                </select>
-                <input type="text" name="Nombre" value="<%=GS.getNombre()%>">
-                <input type="date" name="Fecha" value="<%=GS.getFecha_Nacimiento()%>">
-                <input type="text" name="Color" value="<%=GS.getColor()%>">
-                <input type="text" name="Raza" value="<%=GS.getRaza()%>">
-                <select name="Genero">
-                    <option value="<%=GS.getTipo_Mascota()%>"></option>
-                </select>
-                
-                <%
-                }
-                %>
+                        for(int i=0; i<datos.size(); i++){
+                        GS = datos.get(i);
+                    %>
+                    <select name="Tipo">
+                        <option value="<%=GS.getTipo_Mascota()%>"><%=GS.getTipo_Mascota()%></option>
+                    </select>
+                    <input type="text" name="Nombre" value="<%=GS.getNombre()%>">
+                    <input type="date" name="Fecha" value="<%=GS.getFecha_Nacimiento()%>">
+                    <input type="text" name="Color" value="<%=GS.getColor()%>">
+                    <input type="text" name="Raza" value="<%=GS.getRaza()%>">
+                    <select name="Genero">
+                        <option value="<%=GS.getTipo_Mascota()%>"><%=GS.getTipo_Mascota()%></option>
+                    </select>
+                    <%
+                    }
+                    %>
+
+                    <%
+
+                     ArrayList<GS_Cliente> Clientes = new ArrayList<>();
+                     Cliente_M Cli = new Cliente_M();
+                     Clientes = Cli.Todo_Cliente();
+                     GS_Cliente GS_C = new GS_Cliente();
+
+                    for(int i=0; i<Clientes.size(); i++){
+                        GS_C = Clientes.get(i);
+                    %>
+
+                    <select name="Documento">
+                        <option value="<%=GS_C.getDocumento()%>"><%=GS_C.getDocumento()%></option>
+                    </select>
+                    <%
+                    }
+                    %>
+                    <button name="In_Postulacion">POSTULARSE</button>
+                </form>
             </div>
         </div>
     </body>

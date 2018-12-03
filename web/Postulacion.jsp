@@ -54,7 +54,7 @@
                     <div class="Info-Mascota">
                         <input type="text" value="<%=GSM.getCodigo()%>" class="Cod">
                         <label><%=GSM.getTipo_Mascota()%></label>
-                        <label><%= GSM  .getSexo()%></label>
+                        <label><%= GSM.getSexo()%></label>
                         <label><%=GSM.getFecha_Nacimiento() %></label>
                         <label><%= GSM.getRaza()%></label>
                     </div>
@@ -65,7 +65,7 @@
             %>
             
             </div>
-            
+          
             <!-- Esta es la tabla de postulaciones -->
             <div class="Postulaciones">
             <%

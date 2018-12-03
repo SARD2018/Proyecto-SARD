@@ -93,7 +93,7 @@ public class Mascota_M {
         return Todo_Mascota;
     }
     
-     public ArrayList<GS_Mascota> Uno_Mascota(int Codigo) {
+     public ArrayList<GS_Mascota> Uno_Mascota(Integer Codigo) {
         ArrayList<GS_Mascota> Mascota = new ArrayList<>();
         try {
             PreSta = BaseDatos.prepareStatement("Call Uno_Mascota("+Codigo+")");
