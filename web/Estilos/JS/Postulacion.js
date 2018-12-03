@@ -16,9 +16,11 @@ $(document).ready(function(){
     });
     
     $(".Cod");
+    
     $(".Disponibles").click(function(){
         var Pos = $(".Disponibles").index(this);
         var Codi = $(".Cod").eq(Pos);
+        
         $(".BloqPantalla").fadeIn();
         var Cod = $(Codi).val();
         alert(Cod);
@@ -29,12 +31,13 @@ $(document).ready(function(){
         },
         
         success: function( result ) {
-            $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+            $( "Formulario-Postulacion.jsp" ).html( "<strong>" + result + "</strong> degrees" );
         }
 
         });
     });
-    
+   
+   
     $(".BloqPantalla").click(function(){
         $(".BloqPantalla").fadeOut();
     });

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 @WebServlet(name = "Servlet_Postulacion", urlPatterns = {"/Servlet_Postulacion"})
 public class Servlet_Postulacion extends HttpServlet {
 
@@ -15,6 +16,12 @@ public class Servlet_Postulacion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        if (request.getParameter("Codig")!=null) {
+           int Codigo;
+           Codigo=Integer.parseInt(request.getParameter("Codig"));
+             HttpSession datt = request.getSession();
+             datt.setAttribute("CodigoM",Codigo);
+        }
         
     }
 

@@ -93,19 +93,19 @@ public class Mascota_M {
         return Todo_Mascota;
     }
     
-     public ArrayList<GS_Mascota> FiltroMascota(String Dato) {
-        ArrayList<GS_Mascota> Filtro_Mascota = new ArrayList<>();
+     public ArrayList<GS_Mascota> Uno_Mascota(int Codigo) {
+        ArrayList<GS_Mascota> Mascota = new ArrayList<>();
         try {
-            PreSta = BaseDatos.prepareStatement("Call Uno_Mascota("+Dato+")");
+            PreSta = BaseDatos.prepareStatement("Call Uno_Mascota("+Codigo+")");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
                 GS_Mascota GSM = new GS_Mascota(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7));
-                Filtro_Mascota.add(GSM);
+                Mascota.add(GSM);
             }
             
         } catch (Exception e) {
         }
-        return Filtro_Mascota;
+        return Mascota;
     }
     
     public int Codigo() {
