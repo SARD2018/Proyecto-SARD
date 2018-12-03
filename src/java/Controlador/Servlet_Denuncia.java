@@ -67,7 +67,7 @@ public class Servlet_Denuncia extends HttpServlet {
         String nuevo_nom = NameFoto.substring(i+1);
         String Name= Direccion+"_"+nuevo_nom;
         
-        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2= "Uploads/"+Name;
         
         InputStream file= Evidencia.getInputStream();
@@ -102,7 +102,7 @@ public class Servlet_Denuncia extends HttpServlet {
         String nuevo_nom = NameFoto.substring(i+1);
         String Name= Direccion+"_"+nuevo_nom;
         
-        String url= "C:\\Users\\Yefrin Pacheco\\Documents\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2= "Uploads/"+Name;
         InputStream file= Evidencia.getInputStream();
         File img=new File(url);
