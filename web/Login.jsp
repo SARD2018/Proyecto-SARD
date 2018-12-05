@@ -108,29 +108,33 @@
                 <h1>REGISTRO</h1>
                 <form action="Servlet_Cliente" method="post" enctype="multipart/form-data">
                     <div class="form_Ciudadano">
-                        <label>Documento: <input type="text" name="Documento" pattern="[0-9]{4,11}" required></label>
+                        <label>Documento: <input type="text" name="Documento_C" pattern="[0-9]{4,11}" required></label>
                     
                         <label>Tipo de Documento:
-                            <select name="Tipo_Documento" required>
+                            <select name="Tipo_C" required>
                                 <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                 <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                 <option value="Pasaporte">Pasaporte</option>
                             </select>
                         </label>
-                        <label>Nombre: <input type="text" name="Nombre" pattern="[A-Z,a-z ]{1,50}" required></label>
-                        <label>Apellido: <input type="text" name="Apellido" pattern="[A-Z,a-z ]{1,50}" required></label>
+                        <label>Lugar de Expedicion: <input type="text" name="Lugar_C" pattern="[A-Z,a-z ]{1,50}" required> </label>
+                        <label>Nombre: <input type="text" name="Nombre_C" pattern="[A-Z,a-z ]{1,50}" required></label>
+                        <label>Apellido: <input type="text" name="Apellido_C" pattern="[A-Z,a-z ]{1,50}" required></label>
                         <label>Genero:
-                            <select name="Genero" required >
+                            <select name="Genero_C" required >
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
                             </select>
                         </label>
-                        <label>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento"  required></label>
-                        <label>Direccion: <input type="text" name="Direccion" required></label>
-                        <label>Telefono: <input type="text" name="Telefono" pattern="[0-9]{5,10}" required></label>
-                        <label>Correo: <input type="email" name="Correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></label>
+                        <label>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento_C"  required></label>
+                        <label>Direccion: <input type="text" name="Direccion_C" required></label>
+                        <label>Barrio: <input type="text" name="Barrio_C" pattern="[A-Z,a-z ]{1,50}" required></label>
+                        <label>Telefono1: <input type="text" name="Telefono1_C" pattern="[0-9]{5,10}" required></label>
+                        <label>Telefono2: <input type="text" name="Telefono2_C" pattern="[0-9]{5,10}" required></label>
+                        <label>Correo: <input type="email" name="Correo_C" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></label>
+                        <label>Ocupacion: <input type="text" name="Ocupacion_C" pattern="[A-Z,a-z ]{1,50}" required></label>
                         <label>Foto: 
-                            <input type="file" name="Foto" class="FotoCliente"> 
+                            <input type="file" name="Foto_C" class="FotoCliente"> 
                             <span class="icon icon-camera-outline Image"></span>
                         </label>
                         <input class="btn btn-success" type="submit" name="R_Ciudadano" value="Registrar">

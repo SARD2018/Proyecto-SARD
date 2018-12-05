@@ -57,7 +57,7 @@ public class Ambiente_Salud_M {
    
      public void Eli_Ambiente_Salud(GS_Ambiente_Salud GS){
         try{
-            PreSta=BaseDatos.prepareStatement(" call B_Cliente(?)");
+            PreSta=BaseDatos.prepareStatement(" call B_Ambiente_Salud (?)");
             PreSta.setString(1,GS.getDocumento());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos Borrados");

@@ -79,7 +79,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -118,7 +118,7 @@ public class Servlet_Ambiente_Salud extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();

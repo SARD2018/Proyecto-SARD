@@ -23,7 +23,7 @@ public class Cliente_M {
             Reset= PreSta.executeQuery();
             
             while (Reset.next()) {   
-                GS_Cliente ing=new GS_Cliente(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10));
+                GS_Cliente ing=new GS_Cliente(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8), Reset.getString(9), Reset.getString(10),Reset.getString(11),Reset.getString(12),Reset.getString(13),Reset.getString(14));
                 Tabla.add(ing);
             }
             
@@ -37,10 +37,10 @@ public class Cliente_M {
     public ArrayList<GS_Cliente> Todo_Cliente() {
         ArrayList<GS_Cliente> Todo_Cliente = new ArrayList<>();
         try {
-            PreSta = BaseDatos.prepareStatement("call Todo_Cliente");
+            PreSta = BaseDatos.prepareStatement("call Todo_Cliente()");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
-                GS_Cliente GSS = new GS_Cliente(Reset.getString(1),Reset.getString(2),Reset.getString(3),Reset.getString(4),Reset.getString(5),Reset.getString(6),Reset.getString(7),Reset.getString(8),Reset.getString(9),Reset.getInt(10),Reset.getString(11));
+                GS_Cliente GSS = new GS_Cliente(Reset.getString(1),Reset.getString(2),Reset.getString(3),Reset.getString(4),Reset.getString(5),Reset.getString(6),Reset.getString(7),Reset.getString(8),Reset.getString(9),Reset.getString(10),Reset.getString(11),Reset.getString(12),Reset.getString(13),Reset.getInt(14),Reset.getString(15));
                 Todo_Cliente.add(GSS);
             }
             
@@ -52,17 +52,21 @@ public class Cliente_M {
     }
     public void In_Cliente (GS_Cliente GS){
         try{
-            PreSta=BaseDatos.prepareStatement("call In_Cliente (?,?,?,?,?,?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call In_Cliente (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getTipo_Documento());
-            PreSta.setString(3, GS.getNombre());
-            PreSta.setString(4, GS.getApellido());
-            PreSta.setString(5, GS.getGenero());
-            PreSta.setString(6, GS.getFecha_Nacimiento());
-            PreSta.setString(7, GS.getDireccion());
-            PreSta.setString(8, GS.getTelefono());
-            PreSta.setString(9, GS.getCorreo());
-            PreSta.setString(10, GS.getFoto());
+            PreSta.setString(3, GS.getLugar_Expedicion());
+            PreSta.setString(4, GS.getNombre());
+            PreSta.setString(5, GS.getApellido());
+            PreSta.setString(6, GS.getGenero());
+            PreSta.setString(7, GS.getFecha_Nacimiento());
+            PreSta.setString(8, GS.getDireccion());
+            PreSta.setString(9, GS.getBarrio());
+            PreSta.setString(10, GS.getTelefono1());
+            PreSta.setString(11, GS.getTelefono2());
+            PreSta.setString(12, GS.getCorreo());
+            PreSta.setString(13, GS.getOcupacion());
+            PreSta.setString(14, GS.getFoto());
             PreSta.executeUpdate();
             JOptionPane.showMessageDialog(null,"DATOS INGRESADOS");
         }
@@ -74,12 +78,15 @@ public class Cliente_M {
     public int Act_Cliente (GS_Cliente GS){
          int Actualizar=0;
         try{
-            PreSta=BaseDatos.prepareStatement("call A_Cliente(?,?,?,?,?)");
+            PreSta=BaseDatos.prepareStatement("call A_Cliente(?,?,?,?,?,?,?,?)");
             PreSta.setString(1, GS.getDocumento());
             PreSta.setString(2, GS.getDireccion());
-            PreSta.setString(3, GS.getTelefono());
-            PreSta.setString(4, GS.getCorreo());
-            PreSta.setString(5, GS.getFoto());
+            PreSta.setString(3, GS.getBarrio());
+            PreSta.setString(4, GS.getTelefono1());
+            PreSta.setString(5, GS.getTelefono2());
+            PreSta.setString(6, GS.getCorreo());
+            PreSta.setString(7, GS.getOcupacion());
+            PreSta.setString(8, GS.getFoto());
             Actualizar=PreSta.executeUpdate();
         }
         catch(Exception e){

@@ -67,21 +67,25 @@ public class Servlet_Cliente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        String Documento,Tipo,Lugar,Nombre,Apellido,Genero,Fecha,Direccion,Barrio,Telefono1,Telefono2,Correo,Ocupacion;
         Documento = request.getParameter("Documento_C");
         Tipo= request.getParameter("Tipo_C");
+        Lugar= request.getParameter("Lugar_C");
         Nombre = request.getParameter("Nombre_C");
         Apellido = request.getParameter("Apellido_C");
         Genero = request.getParameter("Genero_C");
         Fecha = request.getParameter("Fecha_Nacimiento_C");
         Direccion = request.getParameter("Direccion_C");
-        Telefono = request.getParameter("Telefono_C");
+        Barrio = request.getParameter("Barrio_C");
+        Telefono1 = request.getParameter("Telefono1_C");
+        Telefono2 = request.getParameter("Telefono2_C");
         Correo = request.getParameter("Correo_C");
+        Ocupacion = request.getParameter("Ocupacion_C");
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -94,7 +98,7 @@ public class Servlet_Cliente extends HttpServlet {
             num= file.read();
         }
         
-        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, url2);
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Lugar, Nombre, Apellido, Genero, Fecha, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
         Cliente_M Cliente = new Cliente_M();
         Cliente.In_Cliente(GSC);
         Cliente.Login_Cliente(GSC);
@@ -107,21 +111,25 @@ public class Servlet_Cliente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
-        Documento = request.getParameter("Documento");
-        Tipo= request.getParameter("Tipo_Documento");
-        Nombre = request.getParameter("Nombre");
-        Apellido = request.getParameter("Apellido");
-        Genero = request.getParameter("Genero");
-        Fecha = request.getParameter("Fecha_Nacimiento");
-        Direccion = request.getParameter("Direccion");
-        Telefono = request.getParameter("Telefono");
-        Correo = request.getParameter("Correo");
-        Part Foto = request.getPart("Foto");
+         String Documento,Tipo,Lugar,Nombre,Apellido,Genero,Fecha,Direccion,Barrio,Telefono1,Telefono2,Correo,Ocupacion;
+        Documento = request.getParameter("Documento_C");
+        Tipo= request.getParameter("Tipo_C");
+        Lugar= request.getParameter("Lugar_C");
+        Nombre = request.getParameter("Nombre_C");
+        Apellido = request.getParameter("Apellido_C");
+        Genero = request.getParameter("Genero_C");
+        Fecha = request.getParameter("Fecha_Nacimiento_C");
+        Direccion = request.getParameter("Direccion_C");
+        Barrio = request.getParameter("Barrio_C");
+        Telefono1 = request.getParameter("Telefono1_C");
+        Telefono2 = request.getParameter("Telefono2_C");
+        Correo = request.getParameter("Correo_C");
+        Ocupacion = request.getParameter("Ocupacion_C");
+        Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -134,29 +142,33 @@ public class Servlet_Cliente extends HttpServlet {
             num= file.read();
         }
         
-        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Nombre, Apellido, Genero, Fecha, Direccion, Telefono, Correo, url2);
+        GS_Cliente GSC = new GS_Cliente(Documento, Tipo, Lugar, Nombre, Apellido, Genero, Fecha, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
         Cliente_M Cliente = new Cliente_M();
         Cliente.In_Cliente(GSC);
         Cliente.Login_Cliente(GSC);
         
          response.sendRedirect("Login.jsp");
         }
+        
         protected void Actualizar_Cliente (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        String Documento,Tipo,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion;
         Documento = request.getParameter("Documento_C");
         Nombre = request.getParameter("Nombre_C");
         Direccion = request.getParameter("Direccion_C");
-        Telefono = request.getParameter("Telefono_C");
+        Barrio = request.getParameter("Barrio_C");
+        Telefono1 = request.getParameter("Telefono1_C");
+        Telefono2 = request.getParameter("Telefono2_C");
         Correo = request.getParameter("Correo_C");
+        Ocupacion = request.getParameter("Ocupacion_C");
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -168,7 +180,7 @@ public class Servlet_Cliente extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Telefono, Correo, url2);
+        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
         Cliente_M Cliente = new Cliente_M();
         int Consulta =Cliente.Act_Cliente(GSC);
             if (Consulta>0) {
@@ -180,22 +192,27 @@ public class Servlet_Cliente extends HttpServlet {
             
         response.sendRedirect("Registros_Administrador.jsp");
         }
+        
+        
       protected void Actualizar_Cliente_Perfil (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        String Documento,Tipo,Nombre,Apellido,Genero,Fecha,Direccion,Telefono,Correo;
+        String Documento,Tipo,Nombre,Direccion,Barrio,Telefono1,Telefono2,Correo, Ocupacion;
         Documento = request.getParameter("Documento_C");
         Nombre = request.getParameter("Nombre_C");
         Direccion = request.getParameter("Direccion_C");
-        Telefono = request.getParameter("Telefono_C");
+        Barrio = request.getParameter("Barrio_C");
+        Telefono1 = request.getParameter("Telefono1_C");
+        Telefono2 = request.getParameter("Telefono2_C");
         Correo = request.getParameter("Correo_C");
+        Ocupacion = request.getParameter("Ocupacion_C");
         Part Foto = request.getPart("Foto_C");
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
+        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -207,7 +224,7 @@ public class Servlet_Cliente extends HttpServlet {
             sal.write(num);
             num= file.read();
         }
-        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Telefono, Correo, url2);
+        GS_Cliente GSC = new GS_Cliente(Documento, Direccion, Barrio, Telefono1, Telefono2, Correo, Ocupacion, url2);
         Cliente_M Cliente = new Cliente_M();
         int Consulta =Cliente.Act_Cliente(GSC);
             if (Consulta>0) {
@@ -216,6 +233,7 @@ public class Servlet_Cliente extends HttpServlet {
             else{
             JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
             }
+        
             
         response.sendRedirect("Perfil_Ciudadano.jsp");
         }

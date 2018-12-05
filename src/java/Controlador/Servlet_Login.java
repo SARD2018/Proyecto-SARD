@@ -77,14 +77,14 @@ public class Servlet_Login extends HttpServlet {
                 break;
                 case 2:
                      String Documento_Ambiente=Usuario1;
-                     String Nombre_Ambiente=log.Nombre_Cliente_Salud_Ambiente();
+                     String Nombre_Ambiente=log.Nombre_Ambiente_Salud();
                      datt.setAttribute("NomSession", Nombre_Ambiente);
                      datt.setAttribute("DocSession", Documento_Ambiente);
                     response.sendRedirect("Menu_Ambiente.jsp");
                  break;
                  case 3:
                       String Documento_Salud=Usuario1;
-                    String Nombre_Salud=log.Nombre_Cliente_Salud_Ambiente();
+                    String Nombre_Salud=log.Nombre_Ambiente_Salud();
                     datt.setAttribute("NomSession", Nombre_Salud);
                     datt.setAttribute("DocSession", Documento_Salud);
                     response.sendRedirect("Menu_Salud.jsp");
@@ -98,7 +98,7 @@ public class Servlet_Login extends HttpServlet {
                  break;
                  case 5:
                      String Documento_Ciudadano=Usuario1;
-                    String Nombre_Usuario=log.Nombre_Cliente_Salud_Ambiente();
+                    String Nombre_Usuario=log.Nombre_Cliente();
                     datt.setAttribute("NomSession", Nombre_Usuario);
                     datt.setAttribute("DocSession", Documento_Ciudadano);
                     response.sendRedirect("Menu_Cliente.jsp");

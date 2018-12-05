@@ -53,10 +53,27 @@ public class Login_M {
         }
         return Nombre;
     }
-      public String Nombre_Cliente_Salud_Ambiente(){
+      public String Nombre_Cliente(){
            String Nombre=null;
         try{
         PreSta=BaseDatos.prepareStatement("call  C_Nombre_Usu(?)");
+        PreSta.setString(1,Documento);
+        Reset=PreSta.executeQuery();
+        while (Reset.next()){
+            Nombre=Reset.getString(1)+" "+Reset.getString(2);
+        }
+        }
+        catch (Exception e){
+          JOptionPane.showMessageDialog(null,e);
+        }
+        return Nombre;
+        }
+      
+      
+       public String Nombre_Ambiente_Salud(){
+           String Nombre=null;
+        try{
+        PreSta=BaseDatos.prepareStatement("call  C_Nombre_AS (?)");
         PreSta.setString(1,Documento);
         Reset=PreSta.executeQuery();
         while (Reset.next()){

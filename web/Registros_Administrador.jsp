@@ -385,26 +385,31 @@
                         <div class="form_Ciudadano">
                             <div class="LR_Ciudadano">
                                 <div class="left_Ciudadano">
-                                    <p>Documento: <input type="text" name="Documento_C" pattern="[0-9]{4,11}" required></p>
                                     <p>Tipo de Documento: 
                                         <select name="Tipo_C" required>
                                             <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                                             <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
                                             <option value="Pasaporte">Pasaporte</option>
-                                        </select></p>
-                                    <p>Nombre: <input type="text" name="Nombre_C" pattern="[A-Z,a-z ]{1,50}" required></p>
+                                        </select>
+                                    </p>
+                                    <p>Documento: <input type="text" name="Documento_C" pattern="[0-9]{4,11}" required></p>
+                                    <p>Lugar de Expedicion: <input type="text" name="Lugar_C" pattern="[A-Z,a-z ]{1,50}" required> </p>
+                                    <p>Nombre:<input type="text" name="Nombre_C" pattern="[A-Z,a-z ]{1,50}" required> </p>
                                     <p>Apellido: <input type="text" name="Apellido_C" pattern="[A-Z,a-z ]{1,50}" required></p>
                                     <p>Genero: 
                                         <select name="Genero_C" required >
                                             <option value="Masculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
                                         </select></p>
+                                    <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento_C"  required></p>
                                 </div>
                                 <div class="Right_Ciudadano">
-                                    <p>Fecha de Nacimiento: <input type="date" name="Fecha_Nacimiento_C"  required></p>
                                     <p>Direccion: <input type="text" name="Direccion_C" required></p>
-                                    <p>Telefono: <input type="text" name="Telefono_C" pattern="[0-9]{5,10}" required></p>
+                                    <p>Barrio: <input type="text" name="Barrio_C" pattern="[A-Z,a-z ]{1,50}" required> </p>
+                                    <p>Telefono1: <input type="text" name="Telefono1_C" pattern="[0-9]{5,10}" required></p>
+                                    <p>Telefono2: <input type="text" name="Telefono2_C" pattern="[0-9]{5,10}" ></p>
                                     <p>Correo: <input type="email" name="Correo_C" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required></p>
+                                    <p>Ocupacion: <input type="text" name="Ocupacion_C" pattern="[A-Z,a-z ]{1,50}" required></p>
                                     <p>Foto: <label>
                                         <span class="icon icon-camera"></span>
                                         <input class="Foto_input" type="file" name="Foto_C" value="">
@@ -442,7 +447,7 @@
                             <div class="Datos_T">
                                 <div class="Foto">
                                     <label>
-                                    <img src="<%= GS_C.getFoto()%>">
+                                        <img class="Foto_img" src="<%= GS_C.getFoto()%>">
                                     <input class="Foto_input" type="file" name="Foto_C" value="">
                                     </label>
                                 </div>
@@ -452,8 +457,11 @@
                                     <input class="Genero" type="Text" name="Genero_C" readonly value="<%= GS_C.getGenero()%>">
                                     <input class="Fecha" type="Text" name="Fecha_Nacimiento_C" readonly value="<%= GS_C.getFecha_Nacimiento()%>">
                                     <input class="Direccion" type="Text" name="Direccion_C"  value="<%= GS_C.getDireccion()%>">
-                                    <input class="Telefono" type="Text" name="Telefono_C" value="<%= GS_C.getTelefono()%>">
+                                    <input class="Barrio" type="Text" name="Barrio_C"  value="<%= GS_C.getBarrio()%>">
+                                    <input class="Telefono1" type="Text" name="Telefono1_C" value="<%= GS_C.getTelefono1()%>">
+                                    <input class="Telefono2" type="Text" name="Telefono2_C" value="<%= GS_C.getTelefono2()%>">
                                     <input class="Correo" type="Text" name="Correo_C" value="<%= GS_C.getCorreo()%>">
+                                    <input class="Ocupacion" type="Text" name="Ocupacion_C" value="<%= GS_C.getOcupacion()%>">
                                 </div>
                                 
                             </div>
