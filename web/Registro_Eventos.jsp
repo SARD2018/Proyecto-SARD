@@ -27,8 +27,8 @@
                 <label>Tipo</label>
                     <select name="Tipo">
                         <option>Elije una Opcion</option>
-                        <option value="Vacunacion">Vacunacion</option>
-                        <option value="Adopcion">Adopcion</option>
+                        <option value="Vacunación">Vacunacion</option>
+                        <option value="Adopción">Adopcion</option>
                     </select>
                 <label>Fecha</label><input type="date" name="Fecha" required>
                 <textarea name="Descripcion" placeholder="Descripcion del evento"></textarea>

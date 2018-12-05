@@ -31,20 +31,36 @@ public class Eventos_M {
             JOptionPane.showMessageDialog(null, e+"Error En Eventos");
         }
     }
-    public ArrayList<GS_Evento> Todo_Evento() {
-        ArrayList<GS_Evento> Todo_Evento = new ArrayList<>();
+    public ArrayList<GS_Evento> Unos_Evento() {
+        ArrayList<GS_Evento> Unos_Evento = new ArrayList<>();
         try {
-            PreSta = BaseDatos.prepareStatement("call Todo_Eventos()");
+            PreSta = BaseDatos.prepareStatement("call Unos_Eventos()");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
                 GS_Evento GSS = new GS_Evento(Reset.getInt(1),Reset.getString(2),Reset.getString(3),Reset.getString(4),Reset.getString(5),Reset.getString(6));
-                Todo_Evento.add(GSS);
+                Unos_Evento.add(GSS);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en todo eventos");
         }
         
-        return Todo_Evento;
+        return Unos_Evento;
+    
+    }
+    public ArrayList<GS_Evento> Todos_Evento() {
+        ArrayList<GS_Evento> Unos_Evento = new ArrayList<>();
+        try {
+            PreSta = BaseDatos.prepareStatement("call Todo_Eventos()");
+            Reset = PreSta.executeQuery();
+            while (Reset.next()){
+                GS_Evento GSS = new GS_Evento(Reset.getInt(1),Reset.getString(2),Reset.getString(3),Reset.getString(4),Reset.getString(5),Reset.getString(6));
+                Unos_Evento.add(GSS);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en todo eventos");
+        }
+        
+        return Unos_Evento;
     
     }
 }

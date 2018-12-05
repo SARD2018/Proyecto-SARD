@@ -7,5 +7,17 @@ $(document).ready(function (){
             $(this).jsp(dato);
             $(dato).hide;
         });
-        });
+    });
+    $(".Informacion-E").hide();
+    $(".Mostrar-E").mouseenter(function (){
+       var Pos= $(".Mostrar-E").index(this);
+       var Asi= $(".Informacion-E").eq(Pos);
+       $(Asi).fadeIn();
+    });
+    $(".Informacion-E").hide();
+    $(".Mostrar-E").mouseleave(function (){
+       var Pos= $(".Mostrar-E").index(this);
+       var Asi= $(".Informacion-E").eq(Pos);
+       $(Asi).fadeOut();
+    });
 });

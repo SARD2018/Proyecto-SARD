@@ -67,33 +67,33 @@
         </div>
     </div>
     <div id="Eventos" class="Container-2">
-        <div class="Text-3">
+        <div class="Text-2">
             <h2>Eventos</h2>
-            <div class="Caja-Evento">
                 <%
                     ArrayList<GS_Evento> datos = new ArrayList<>();
                     Eventos_M con = new Eventos_M();
-                    datos = con.Todo_Evento();
+                    datos = con.Unos_Evento();
                     GS_Evento Dat = new GS_Evento();
 
                     for(int i=0; i<datos.size(); i++){
                         Dat = datos.get(i);
                 %>
+            <div class="Caja-Evento">
                 <div class="Mostrar-E">
-                    <h2><%= Dat.getNombre()%></h2>
-                    <img width="90px" height="90px" src="<%= Dat.getFoto()%>">
+                    <h3><%= Dat.getNombre()%></h3>
+                    <img src="<%= Dat.getFoto()%>">
                 </div>
                 <div class="Informacion-E">
                     <h3><%= Dat.getTipo()%></h3>
-                    <h4><%= Dat.getFecha()%></h4>
+                    <h3><%= Dat.getFecha()%></h3>
                     <p><%= Dat.getDescripcion()%></p>
                 </div>
-                <% }%>
             </div>
+              <% }%>
         </div>
     </div>
     <div id="Conocenos" class="Container-3">
-        <div class="Text-2">
+        <div class="Text-3">
             <h2>Conocenos</h2>
             <p>Inspirados en el bienestar de las mascotas decidimos crear este proyecto con colaboración del SENA, secretaria de ambiente y secretaria de salud de Mosquera, donde quisimos poner información
                y diferentes opciones pensando en mejorar la vida de nuestras mascotas en tus manos realizando este aplicativo y web..</p>

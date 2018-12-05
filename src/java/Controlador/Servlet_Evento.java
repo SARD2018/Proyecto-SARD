@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,6 +56,7 @@ public class Servlet_Evento extends HttpServlet {
         
         Nombre= request.getParameter("Nombre");
         Tipo= request.getParameter("Tipo");
+        JOptionPane.showMessageDialog(null, Tipo);
         Fecha= request.getParameter("Fecha");
         Descripcion= request.getParameter("Descripcion");
         Part Foto= request.getPart("Foto");       
