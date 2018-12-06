@@ -12,7 +12,6 @@
 }
 .Datos_Postulante{
     padding: 2%;
-    border: 2px solid red;
     width: 70%;
     height: 130px;
 }
@@ -21,8 +20,7 @@
 }
 
 .Left_Datos{
-    background: yellow;
-    width: 400px;
+    width: 300px;
     float: left;
     justify-content: center;
     
@@ -33,15 +31,22 @@
     display: block;
 }
 .Left_Datos input{
-    text-decoration: none;
+    float: right;
+    display: block;
     text-align: center;
 }
-
-
 .Right_Datos{
-    background: lightcyan;
-    width: 400px;
+    width: 300px;
     float: right;
+}
+.Right_Datos input{
+    float: right;
+    display: block;
+    text-align: center;
+}
+.Right_Datos label{
+    text-align: left;
+    display: block;
 }
 .Otros_Datos{
     border: 2px solid blue;
@@ -75,7 +80,6 @@
 .Text{
     width: 400px;
     text-align: left;
-    border: 2px solid purple;
 }
 
 .Opcion{

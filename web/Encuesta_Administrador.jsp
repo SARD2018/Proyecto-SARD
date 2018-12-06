@@ -39,18 +39,18 @@
             %>
             <div class="Datos_Postulante"> 
                 <div class="Left_Datos"> 
-                    <label>Nombre y Apellido: <input type="text" name="_C" value="<%=Dat.getNombre()+" "+Dat.getApellido()%>"></label>
-                    <label>Documento: <input type="text" name="_C" value="<%=Dat.getDocumento()%>"></label>
-                    <label>Lugar de Expedicion: <input type="text" name="_C" value="<%=Dat.getLugar_Expedicion()%>"></label>
-                    <label>Edad: <input type="text" name="_C" value="<%=Dat.getFecha_Nacimiento()%>"></label>
-                    <label>Barrio: <input type="text" name="_C" value="<%=Dat.getBarrio()%>"></label>
+                    <label>Nombre y Apellido: </label><input type="text" name="_C" value="<%=Dat.getNombre()+" "+Dat.getApellido()%>">
+                    <label>Documento: </label><input type="text" name="_C" value="<%=Dat.getDocumento()%>">
+                    <label>Lugar de Expedicion: </label><input type="text" name="_C" value="<%=Dat.getLugar_Expedicion()%>">
+                    <label>Edad: </label><input type="text" name="_C" value="<%=Dat.getFecha_Nacimiento()%>">
+                    <label>Barrio: </label><input type="text" name="_C" value="<%=Dat.getBarrio()%>">
                 </div>
                 <div class="Right_Datos">
-                    <label>Direccion: <input type="text" name="_C" value="<%=Dat.getDireccion()%>"></label>
-                    <label>Telefono 1: <input type="text" name="_C" value="<%=Dat.getTelefono1()%>"></label>
-                    <label>Telefono 2: <input type="text" name="_C" value="<%=Dat.getTelefono2()%>"></label>
-                    <label>E-mail: <input type="text" name="_C" value="<%=Dat.getCorreo()%>"></label>
-                    <label>Ocupacion: <input type="text" name="_C" value="<%=Dat.getOcupacion()%>"></label>
+                    <label>Direccion: </label><input type="text" name="_C" value="<%=Dat.getDireccion()%>">
+                    <label>Telefono 1: </label><input type="text" name="_C" value="<%=Dat.getTelefono1()%>">
+                    <label>Telefono 2: </label><input type="text" name="_C" value="<%=Dat.getTelefono2()%>">
+                    <label>E-mail: </label><input type="text" name="_C" value="<%=Dat.getCorreo()%>">
+                    <label>Ocupacion: </label><input type="text" name="_C" value="<%=Dat.getOcupacion()%>">
                 </div>
             </div>
             <%
@@ -76,8 +76,8 @@
                     <label><%=GS_E.getPregunta()%></label>
                 </div>
                 <div class="Opcion">
-                    <label>SI<input type="checkbox" value="Si"></label>
-                    <label>NO<input type="checkbox" value="No"></label>
+                    <label>Si<input type="checkbox" value="Si"></label>
+                    <label>No<input type="checkbox" value="No"></label>
                 </div>
             </div>
             <%
