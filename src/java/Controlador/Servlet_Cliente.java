@@ -85,7 +85,7 @@ public class Servlet_Cliente extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -129,7 +129,7 @@ public class Servlet_Cliente extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -168,7 +168,7 @@ public class Servlet_Cliente extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
@@ -212,7 +212,7 @@ public class Servlet_Cliente extends HttpServlet {
         String Nombre_F = Foto.getSubmittedFileName();
         String Name = Nombre+"_"+Nombre_F;
         
-        String url= "G:\\Nueva Carpeta (3)\\SARD\\Proyecto-SARD\\web\\Uploads\\"+Name;
+        String url= "C:\\xampp\\htdocs\\Java\\NetBeansProjects\\SARD\\web\\Uploads\\"+Name;
         String url2 = "Uploads\\"+Name;
         
         InputStream file= Foto.getInputStream();
