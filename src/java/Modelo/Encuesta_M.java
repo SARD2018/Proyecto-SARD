@@ -6,4 +6,5 @@ import javax.swing.JOptionPane;
 
 
 public class Encuesta_M {
+    
 }

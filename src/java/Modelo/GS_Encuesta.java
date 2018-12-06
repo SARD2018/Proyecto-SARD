@@ -2,24 +2,24 @@
 package Modelo;
 
 
-public class GS_Encuesta_Cliente {
+public class GS_Encuesta {
 
 private int Codigo;
 private String Pregunta;
 private String Respuesta;
 private String Cliente;
 
-    public GS_Encuesta_Cliente(int Codigo, String Pregunta, String Respuesta, String Cliente) {
+    public GS_Encuesta(int Codigo, String Pregunta, String Respuesta, String Cliente) {
         this.Codigo = Codigo;
         this.Pregunta = Pregunta;
         this.Respuesta = Respuesta;
         this.Cliente = Cliente;
     }
 
-    public GS_Encuesta_Cliente() {
+    public GS_Encuesta() {
     }
 
-    public GS_Encuesta_Cliente(int Codigo) {
+    public GS_Encuesta(int Codigo) {
         this.Codigo = Codigo;
     }
 

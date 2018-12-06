@@ -1,0 +1,33 @@
+.Datos_Postulante input {
+   border: transparent;
+   background: transparent;
+   border-bottom: 1px solid black;
+   text-align: center;
+}
+.Encabezado{
+    text-align: center;
+}
+
+.Left_Datos{
+    background: yellow;
+    width: 400px;
+    float: left;
+    justify-content: center;
+    
+}
+.Left_Datos label{
+    text-decoration: none;
+    text-align: left;
+    display: block;
+}
+.Left_Datos input{
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.Right_Datos{
+    background: lightcyan;
+    width: 400px;
+    float: right;
+}
