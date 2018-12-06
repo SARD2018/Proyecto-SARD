@@ -1,8 +1,20 @@
+.Container{
+	padding: 20px 40px;
+        margin: auto;
+        font-family: 'Arial', cursive;
+	font-size: 16px;   
+}
 .Datos_Postulante input {
    border: transparent;
    background: transparent;
    border-bottom: 1px solid black;
    text-align: center;
+}
+.Datos_Postulante{
+    padding: 2%;
+    border: 2px solid red;
+    width: 70%;
+    height: 130px;
 }
 .Encabezado{
     text-align: center;
@@ -30,4 +42,43 @@
     background: lightcyan;
     width: 400px;
     float: right;
+}
+.Otros_Datos{
+    border: 2px solid blue;
+    margin-top: 2%;
+    width: 600px;
+}
+.Otros_Datos input{
+    background: transparent;
+    border: transparent;
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 80px;
+}
+.Otros_Datos label{
+    display: block;
+}
+
+.Preguntas{
+    background: #cdffd5;
+    border-radius: 10%;
+    border: transparent;
+    border-bottom: 2px solid black;
+    margin-top: 1%;
+    padding: 4px;
+    width: 70%;
+}
+.Preguntas input{
+    float: right;
+    margin-right: 2%;
+}
+.Text{
+    width: 400px;
+    text-align: left;
+    border: 2px solid purple;
+}
+
+.Opcion{
+    width: 50px;
+    text-align: right;
 }

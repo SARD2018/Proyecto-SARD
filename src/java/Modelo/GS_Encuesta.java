@@ -19,6 +19,10 @@ private String Cliente;
     public GS_Encuesta() {
     }
 
+    public GS_Encuesta(String Pregunta) {
+        this.Pregunta = Pregunta;
+    }
+
     public GS_Encuesta(int Codigo) {
         this.Codigo = Codigo;
     }

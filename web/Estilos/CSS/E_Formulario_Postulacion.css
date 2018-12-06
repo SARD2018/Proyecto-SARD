@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.Container{
+	padding: 20px 40px;
+        margin: auto;
+        font-family: 'Arial', cursive;
+	font-size: 16px;   
+}
+    
+.Datos_Mascota input{
+  border: transparent;
+  margin-top: 4%;
+  width: 150px;
+  background: transparent;
+  border-bottom: 1px solid black;
+  text-align:  center;
+  font-family: 'Valera Round', cursive;
+  font-size: 17px;
+}
+
+.Datos_Mascota select{
+  margin-top: 4%;
+  font-family: 'Valera Round', cursive;
+  font-size: 17px;
+}
+.Datos_Mascota label{
+  margin-top: 9%;
+  display: block;
+  font-family: 'Valera Round', cursive;
+  font-size: 17px;
+}
+
+.Datos_Mascota button{
+    display: block;
+    margin-top: 20%;
+    margin-left: 35%;
+    border: transparent;
+    background:lightgreen;
+    font-size: 15px;
+    padding: 2%;
+    border-radius: 5%;
+    cursor: pointer;
+}
+.Datos_Mascota .Nombre{
+  border: transparent;
+  font-size: 35px;
+  margin-bottom: 5%;
+  font-family: 'Courgette', cursive; 
+}
+.Datos_Mascota{
+    display: block;
+    width: 300px;
+    text-align: center;
+}

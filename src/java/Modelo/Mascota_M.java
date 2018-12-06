@@ -99,7 +99,7 @@ public class Mascota_M {
             PreSta = BaseDatos.prepareStatement("Call Uno_Mascota("+Codigo+")");
             Reset = PreSta.executeQuery();
             while (Reset.next()){
-                GS_Mascota GSM = new GS_Mascota(Reset.getString(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7));
+                GS_Mascota GSM = new GS_Mascota(Reset.getInt(1),Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6), Reset.getString(7), Reset.getString(8));
                 Mascota.add(GSM);
             }
             

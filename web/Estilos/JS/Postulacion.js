@@ -37,9 +37,9 @@ $(document).ready(function(){
     });
    
    
-    $(".BloqPantalla").click(function(){
+    /*$(".BloqPantalla").click(function(){
         $(".BloqPantalla").fadeOut();
-    });
+    });*/
    
     $(".Info-Mascota").hide();
     $(".Disponibles").mouseenter(function(){

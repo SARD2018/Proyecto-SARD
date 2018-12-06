@@ -55,9 +55,11 @@
     display: none;
 }
 .Form-Postulacion {
-    width: 500px;
+    width: 380px;
     height: 500px;
-    background: white;
+    background: lemonchiffon;
+    border: 2px solid #ffeaa8;
+    border-radius: 10%;
 }
 .CuadroDisponibles{
     border-radius: 10px 10px 10px 10px;

@@ -11,12 +11,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="Estilos/JS/jquery.js"></script>
         <script type="text/javascript" src="Estilos/JS/Form-Postulacion.js"></script>
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Formulario_Postulacion.css">
         <title></title>
     </head>
     <body>
         <div class="Container">
-            <div>
-                <form action="Servlet_Postulacion" method="POST" enctype="multipart/form-data">
+            <div class="Datos_Mascota">
+                <form action="Encuesta_Administrador.jsp" method="POST" enctype="multipart/form-data">
                     <%
                      HttpSession dato=request.getSession();
                      Integer Codigo=(Integer)dato.getAttribute("CodigoM");
@@ -28,20 +29,18 @@
                         for(int i=0; i<datos.size(); i++){
                         GS = datos.get(i);
                     %>
-                    <select name="Tipo">
-                        <option value="<%=GS.getTipo_Mascota()%>"><%=GS.getTipo_Mascota()%></option>
-                    </select>
-                    <input type="text" name="Nombre" value="<%=GS.getNombre()%>">
-                    <input type="date" name="Fecha" value="<%=GS.getFecha_Nacimiento()%>">
+                    
+                    <input class="Nombre" type="text" name="Nombre" value="<%=GS.getNombre()%>">
+                    <input type="text" name="Tipo" value="<%=GS.getTipo_Mascota()%>">
+                    <input type="text" name="Fecha" value="<%=GS.getFecha_Nacimiento()%>">
                     <input type="text" name="Color" value="<%=GS.getColor()%>">
                     <input type="text" name="Raza" value="<%=GS.getRaza()%>">
-                    <select name="Genero">
-                        <option value="<%=GS.getTipo_Mascota()%>"><%=GS.getTipo_Mascota()%></option>
-                    </select>
+                    <input type="text" name="Sexo" value="<%=GS.getSexo()%>">
+                    
                     <%
                     }
                     %>
-
+                    <label>Selecciona La Persona que quiere adoptar a <%=GS.getNombre()%></label>
                     <%
 
                      ArrayList<GS_Cliente> Clientes = new ArrayList<>();
@@ -54,12 +53,17 @@
                     %>
 
                     <select name="Documento">
-                        <option value="<%=GS_C.getDocumento()%>"><%=GS_C.getDocumento()%></option>
+                        <option value="<%=GS_C.getDocumento()%>"><%=GS_C.getNombre()+" "+GS_C.getApellido()%></option>
                     </select>
+                 
                     <%
                     }
-                    %>
-                    <button name="In_Postulacion">POSTULARSE</button>
+                    
+                        HttpSession datt = request.getSession();
+                        datt.setAttribute("Documento_C", GS_C.getDocumento());
+                        datt.setAttribute("Mascota", GS.getNombre());
+                     %>
+                    <button class="Boton" name="In_Postulacion">POSTULARSE</button>
                 </form>
             </div>
         </div>
