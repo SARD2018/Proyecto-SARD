@@ -38,12 +38,8 @@
                 String Dato = request.getParameter("Dato");
                 ArrayList<GS_Mascota> Tabla_mascota = new ArrayList<>();    
                 GS_Mascota GSM = new GS_Mascota();
-                if (Dato != null){
-                    Tabla_mascota = MM.FiltroMascota(Dato);
-                }else {
-                    Tabla_mascota = MM.Todo_Mascota();
-                }
-
+                Tabla_mascota = MM.Todo_Mascota();
+                    
                 for (int i = 0; i < Tabla_mascota.size();i++){
                     GSM = Tabla_mascota.get(i);
 
