@@ -12,6 +12,7 @@
         <title>SARD</title>
         <link rel="stylesheet" type="text/css" href="Iconos/css/fontello.css">
         <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Menu_Administrador.css">
+        <link rel="stylesheet" type="text/css" href="Estilos/CSS/E_Registro_Evento.css">
         <script src="Estilos/JS/jquery.js"></script>
         <script src="Estilos/JS/Eventos.js"></script>
         <script src="Estilos/JS/Menus.js"></script>
@@ -20,24 +21,27 @@
         <div class="BarrMenu">
          <!-- aca carga la barra -->
         </div>
-        <div class="Caja-Eventos">
-            <form action="Servlet_Evento" method="post" enctype="multipart/form-data">
-                <label>Evento</label>
-                <label>Nombre</label><input type="text" name="Nombre" required>
-                <label>Tipo</label>
-                    <select name="Tipo">
-                        <option>Elije una Opcion</option>
-                        <option value="Vacunación">Vacunacion</option>
-                        <option value="Adopción">Adopcion</option>
-                    </select>
-                <label>Fecha</label><input type="date" name="Fecha" required>
-                <textarea name="Descripcion" placeholder="Descripcion del evento"></textarea>
-                <label>
-                    <input type="file" name="Foto" required>
-                    <span class="icon-camera-outline"></span>
-                </label>
-                <input type="submit" name="BtnEv" value="Ingresar">
-            </form>
+        <div class="Container">
+            <div class="Caja-Eventos">
+                <form action="Servlet_Evento" method="post" enctype="multipart/form-data">
+                    <h1>Evento</h1>
+                    <label>Nombre</label><input type="text" name="Nombre" required>
+                    <label>Tipo</label>
+                        <select name="Tipo">
+                            <option class="Vacunacion" value="Vacunacion">Vacunación</option>
+                            <option class="Adopcion" value="Adopcion">Adopción</option>
+                            <option class="Otro" value="Otro">Otro</option>
+                        </select>
+                    <label></label><input class="Tipo2" type="text" name="Tipo2" placeholder="Digite el Tipo de Evento" >
+                    <label>Fecha</label><input type="date" name="Fecha" required>
+                    <label>Descripcion</label><textarea name="Descripcion" placeholder="Descripcion del evento"></textarea>
+                    <label>
+                        <input class="Foto" type="file" name="Foto" required>
+                        <span class="icon-camera-outline"></span>
+                    </label>
+                    <input class="Boton_Ingresar" type="submit" name="BtnEv" value="Ingresar">
+                </form>
+            </div>
         </div>
     </body>
 </html>

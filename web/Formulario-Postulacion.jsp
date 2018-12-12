@@ -41,6 +41,7 @@
                     }
                     %>
                     <label>Selecciona La Persona que quiere adoptar a <%=GS.getNombre()%></label>
+                    <select name="Documento">
                     <%
 
                      ArrayList<GS_Cliente> Clientes = new ArrayList<>();
@@ -50,19 +51,15 @@
 
                     for(int i=0; i<Clientes.size(); i++){
                         GS_C = Clientes.get(i);
-                    %>
-
-                    <select name="Documento">
-                        <option value="<%=GS_C.getDocumento()%>"><%=GS_C.getNombre()+" "+GS_C.getApellido()%></option>
+                    %>                    
+                       <option value="<%=GS_C.getDocumento()%>"><%=GS_C.getNombre()+" "+GS_C.getApellido()%></option>
+                    <% } %>
                     </select>
-                 
                     <%
-                    }
-                    
                         HttpSession datt = request.getSession();
                         datt.setAttribute("Documento_C", GS_C.getDocumento());
                         datt.setAttribute("Mascota", GS.getNombre());
-                     %>
+                    %>
                     <button class="Boton" name="In_Postulacion">POSTULARSE</button>
                 </form>
             </div>

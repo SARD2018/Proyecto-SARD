@@ -87,7 +87,7 @@
                     <input class="Filtro" type="text" name="Filtro" >
                 </div>
 		<div class="T_Administrador">  
-                    <form action="Servlet_Administrador" method="post" enctype="multipart/form-data">
+                   
                         <%
                             HttpSession Doc=request.getSession();
                             String Documento=(String)Doc.getAttribute("DocSession");
@@ -98,7 +98,7 @@
                             for(int i=0; i<Tabla.size(); i++){
                                 GS_A =Tabla.get(i);
                         %>
-                        
+                         <form action="Servlet_Administrador" method="post" enctype="multipart/form-data">
                             <div class="Nombre_A" > 
                                 <h2><%=GS_A.getNombre()+" "+GS_A.getApellido()%></h2>
                                 <input type="hidden" value="<%=GS_A.getNombre()%>" name="Nombre_A">
@@ -126,11 +126,11 @@
                                     <button name="Act_A"><span class="icon icon-pencil"></span></button>
                                     <button name="Eli_A"><span class="icon icon-trash"></span></button>
                                 </div>
-                   
+                                </form>
                         <%
                         }
                         %>
-                         </form>
+                         
                 </div>
             </div>
 		

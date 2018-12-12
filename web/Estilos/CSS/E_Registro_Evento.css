@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.Container{
+    padding: 20px 40px;
+    margin: auto;
+    font-family: 'Arial', cursive;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+}
+
+.Caja-Eventos{
+    background: #F0E68C;
+    border-radius: 10px;
+    padding: 2%;
+    width: 30%;
+    text-align: center;
+    font-family: 'Oswald', cursive;
+}
+.Caja-Eventos label{
+    width: 20%;
+    margin-top: 3%;
+    display: flex;
+}
+.Caja-Eventos input{
+    float: right;
+    margin-top: -18px;
+    background: transparent;
+    border: transparent;
+    border-bottom: 1px solid black;
+}
+.Caja-Eventos select{
+    float: right;
+    margin-top: -18px; 
+}
+textarea{
+    width: 300px;
+    height: 100px;
+}
+.Foto{
+    opacity: 0;
+    width: 0.1 px;
+    height: 0.1 px;
+}
+.icon-camera-outline{
+    cursor: pointer;
+    width: 30px;
+}
+.Caja-Eventos .Boton_Ingresar{
+    background: lightgreen;
+    font-size: 17px;
+    font-family: 'Lobster', cursive;
+    border-radius: 5px;
+    cursor: pointer;
+}

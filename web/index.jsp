@@ -74,7 +74,9 @@
                     Eventos_M con = new Eventos_M();
                     datos = con.Unos_Evento();
                     GS_Evento Dat = new GS_Evento();
-
+                    if (datos.size()==0) {        
+                    }
+                    else{
                     for(int i=0; i<datos.size(); i++){
                         Dat = datos.get(i);
                 %>
@@ -89,7 +91,8 @@
                     <p><%= Dat.getDescripcion()%></p>
                 </div>
             </div>
-              <% }%>
+              <% }
+              }%>
         </div>
     </div>
     <div id="Conocenos" class="Container-3">

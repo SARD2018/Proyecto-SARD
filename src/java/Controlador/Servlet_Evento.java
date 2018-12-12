@@ -56,6 +56,9 @@ public class Servlet_Evento extends HttpServlet {
         
         Nombre= request.getParameter("Nombre");
         Tipo= request.getParameter("Tipo");
+        if (Tipo.equalsIgnoreCase("Otro")) {
+            Tipo=request.getParameter("Tipo2");
+        }
         JOptionPane.showMessageDialog(null, Tipo);
         Fecha= request.getParameter("Fecha");
         Descripcion= request.getParameter("Descripcion");
@@ -80,7 +83,7 @@ public class Servlet_Evento extends HttpServlet {
         GS_Evento GSE=new GS_Evento( 0, Nombre, Tipo, Fecha, Descripcion, url2);
         Eventos_M  Eve= new Eventos_M();
         Eve.In_Evento(GSE);
-        request.getRequestDispatcher("Registro_Eventos.jsp").forward(request, response);
+        response.sendRedirect("Registro_Eventos.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

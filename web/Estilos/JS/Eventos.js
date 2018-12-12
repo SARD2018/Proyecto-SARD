@@ -5,7 +5,7 @@ $(document).ready(function (){
         }); 
         $(".BarrMenu").load("Menu_Administrador.jsp .BarraMenuAdmin",function(dato){
             $(this).jsp(dato);
-            $(dato).hide;
+            $(dato).hide();
         });
     });
     $(".Informacion-E").hide();
@@ -14,10 +14,23 @@ $(document).ready(function (){
        var Asi= $(".Informacion-E").eq(Pos);
        $(Asi).fadeIn();
     });
-    $(".Informacion-E").hide();
     $(".Mostrar-E").mouseleave(function (){
        var Pos= $(".Mostrar-E").index(this);
        var Asi= $(".Informacion-E").eq(Pos);
        $(Asi).fadeOut();
+    });
+    
+    // REGISTRO_EVENTO
+    $(".Tipo2").hide();
+    
+    $(".Otro").click(function (){
+        $(".Tipo2").slideToggle();
+        $(".Tipo2").css("margin-top","20px");
+    });
+    $(".Vacunacion").click(function (){
+        $(".Tipo2").hide();
+    });
+    $(".Adopcion").click(function (){
+        $(".Tipo2").hide();
     });
 });

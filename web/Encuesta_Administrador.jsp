@@ -24,6 +24,7 @@
             <!-- aca carga la barra -->
         </div>
         <div class="Container">
+            <div class="Encuesta-F">
             <h1 class="Encabezado">FORMATO DE SOLICITUD DE MASCOTA EN ADOPCION </h1>
             <%
                 HttpSession Nom=request.getSession();
@@ -84,5 +85,6 @@
             }
             %>
         </div>
+    </div>
     </body>
 </html>

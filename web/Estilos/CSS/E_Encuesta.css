@@ -1,8 +1,18 @@
 .Container{
-	padding: 20px 40px;
-        margin: auto;
-        font-family: 'Arial', cursive;
-	font-size: 16px;   
+    padding: 20px 40px;
+    margin: auto;
+    font-family: 'Arial', cursive;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Encuesta-F{
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .Datos_Postulante input {
    border: transparent;
@@ -11,9 +21,14 @@
    text-align: center;
 }
 .Datos_Postulante{
-    padding: 2%;
-    width: 70%;
-    height: 130px;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-color: #F0E68C;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .Encabezado{
     text-align: center;
@@ -21,9 +36,8 @@
 
 .Left_Datos{
     width: 300px;
-    float: left;
+    background-color: blue;
     justify-content: center;
-    
 }
 .Left_Datos label{
     text-decoration: none;
@@ -32,15 +46,17 @@
 }
 .Left_Datos input{
     float: right;
+    margin-top: -17px;
     display: block;
     text-align: center;
 }
 .Right_Datos{
+    background-color: red;
     width: 300px;
-    float: right;
 }
 .Right_Datos input{
     float: right;
+    margin-top: -17px;
     display: block;
     text-align: center;
 }
@@ -65,24 +81,30 @@
 }
 
 .Preguntas{
-    background: #cdffd5;
-    border-radius: 10%;
-    border: transparent;
-    border-bottom: 2px solid black;
-    margin-top: 1%;
-    padding: 4px;
-    width: 70%;
-}
-.Preguntas input{
-    float: right;
-    margin-right: 2%;
+    display: flex;
+    border: 1px solid black;
+    border-bottom: 0;
+    width: 75%;
 }
 .Text{
-    width: 400px;
+    width: 80%;
+    padding: 5px 6px;
+    border-right: 1px solid black;
     text-align: left;
 }
-
 .Opcion{
-    width: 50px;
-    text-align: right;
+    float: right;
+    right: 10px;
+    width: 20%;
+    height: 100%;
+    padding: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.Opcion label{
+    margin-left: 10px;
+    margin-right: 10px;
 }
