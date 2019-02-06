@@ -1,13 +1,12 @@
 $(document).ready(function(){
     $(".Informacion-E").hide();
-    $(".Mostrar-E").mouseenter(function (){
-       var Pos= $(".Mostrar-E").index(this);
+    $(".Caja-Evento").mouseenter(function (){
+       var Pos= $(".Caja-Evento").index(this);
        var Asi= $(".Informacion-E").eq(Pos);
        $(Asi).fadeIn();
     });
-    $(".Informacion-E").hide();
-    $(".Mostrar-E").mouseleave(function (){
-       var Pos= $(".Mostrar-E").index(this);
+    $(".Caja-Evento").mouseleave(function (){
+       var Pos= $(".Caja-Evento").index(this);
        var Asi= $(".Informacion-E").eq(Pos);
        $(Asi).fadeOut();
     });
