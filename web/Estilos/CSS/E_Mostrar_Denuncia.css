@@ -59,11 +59,7 @@ th{
     border-radius: 0 0 10px 10px;
     border: 1px solid lightgreen;
 }
-.TablaDe1{
-    overflow: auto;
-    width: 90%;
-    height: 400px;
-}
+
 .TablaDe2{
     overflow: auto;
     width: 90%;
@@ -83,4 +79,58 @@ th{
 .icon-pencil:hover{
     cursor: pointer;
     color: yellowgreen;
+}
+.Datos_DAnonima{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.Datos_DAnonima2{
+    width: 400px;
+    height: 450px;
+    display: block;
+    padding-top: 20px;
+    background-color: lightyellow;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    margin: 10% auto;
+}
+.Datos{
+    font-family: "Acme";
+    font-size: 120%;
+    border-bottom: 2px solid green;
+    background: rgb( 225, 255, 206  );
+}
+.Datos div{
+    padding: 10PX;
+    display: inline-block;
+}
+.Fecha{
+    width: 100px;
+    text-align: left;
+}
+.Direccion{
+    width: 200px;
+    text-align: left;
+}
+Evidencia{
+    width: 100px;
+    text-align: left;
+}
+.correo{
+    width: 100px;
+    text-align: left;
+}
+.icon-eye{
+    cursor: pointer;
 }

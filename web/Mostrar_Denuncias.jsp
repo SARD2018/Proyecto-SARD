@@ -30,14 +30,7 @@
                 <label class="label1">Denuncias Anonimas</label>
             </div>
             <div class="TablaDe1">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Direccion</th>
-                        <th>Evidencia</th>
-                        <th>Correo</th>
-                        <th>Fecha</th>
-                    </tr>
+                
                     <%
                         ArrayList<GS_Denuncia> datos = new ArrayList<>();
                         Denuncias_M con = new Denuncias_M();
@@ -47,18 +40,44 @@
                         for(int i=0; i<datos.size(); i++){
                             Dat = datos.get(i);
                     %>
-                    <tr>
-                        <td><%= Dat.getCodigo()%></td>
-                        <td><%= Dat.getDireccion()%></td>
-                        <td class="imagen"><img src="<%= Dat.getEvidencia()%>"></td>
-                        <td><%= Dat.getCorreo()%></td>
-                        <td><%= Dat.getFecha()%></td>
-                        <td><span class="icon-pencil"></span></td>
-                    </tr>
+                    <div class="Datos">
+                        <div class="Fecha">
+                                <label><%=Dat.getFecha()%></label>
+                        </div>
+                        <div class="Direccion">
+                                <label><%=Dat.getDireccion()%></label>
+                        </div>
+                        <div class="Evidencia">
+                            <img src="<%=Dat.getEvidencia()%>">
+                        </div>
+                        <div class="Correo">
+                                <label><%=Dat.getCorreo()%></label>
+                        </div>
+                        <div class="">
+                                <label class="icon-eye Prueba-Anonima"></label>
+                        </div>
+                    </div>
+                    <div class="Datos_DAnonima">
+                        <div class="Datos_DAnonima2">
+                            
+                            <label class="icon-cancel cerrar_anonima"></label>
+                            <input type="hidden" class="Codigo_D" value="<%=Dat.getCodigo()%>">
+                            <img src="<%=Dat.getEvidencia()%>">
+                            <label><%=Dat.getFecha()%></label>
+                            <label><%=Dat.getDireccion()%></label>
+                            <label><%=Dat.getCorreo()%></label>
+                            <label><%=Dat.getDescripcion()%></label>
+                            
+                            <input type="textarea" class="Respuesta" name="Respuesta" >
+                            <input class="Res_Anonima" type="submit" name="Res_Anonima" value="Enviar">
+                           
+                        </div>
+                    </div>
                     <%  } %>
-                </table>
+                
             </div>
-            <div class="DenCli">
+                
+             <div class="DenCli">
                 <label class="label1">Denuncias Cliente</label>
             </div>
             <div class="TablaDe2">
@@ -81,15 +100,17 @@
                     %>
                     <tr>
                         <td><%= Dat2.getCodigo()%></td>
+                        <input  class="Denuncia_Cliente" type="hidden" value="<%= Dat2.getCodigo()%>" name="Denuncia_Cliente">
                         <td><%= Dat2.getDireccion()%></td>
                         <td class="imagen"><img src="<%= Dat2.getEvidencia()%>"></td>
                         <td><%= Dat2.getDocumento()%></td>
                         <td><%= Dat2.getFecha()%></td>
-                        <td><span class="icon-pencil"></span></td>
+                        <td><span class="icon-eye Prueba-Denuncia"></span></td>
                     </tr>
                     <%  } %>
                 </table>
             </div>
+           
         </div>
     </body>
 </html>

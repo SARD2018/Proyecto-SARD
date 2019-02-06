@@ -8,6 +8,7 @@ package Controlador;
 import Modelo.Denuncias_M;
 import Modelo.GS_Denuncia;
 import Modelo.GS_Denuncia_Cliente;
+import Modelo.GS_Respuesta;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
@@ -44,6 +46,10 @@ public class Servlet_Denuncia extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
+        if (request.getParameter("Boton").equalsIgnoreCase("Anonima")) {
+            JOptionPane.showConfirmDialog(null, "Entra bton");
+            this.Respuesta_Anonima(request, response);
+        }
         if (request.getParameter("BotonDenun")!=null) {
             this.Ingreso_Denuncias(request, response);
         }
@@ -51,6 +57,28 @@ public class Servlet_Denuncia extends HttpServlet {
             this.Ingreso_Denuncias2(request, response);
         }
     }
+     protected void Respuesta_Anonima(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        JOptionPane.showConfirmDialog(null, "Entra funcion");
+        HttpSession datt = request.getSession();
+        
+        String Descripcion;
+        int Codigo ;
+        
+        Descripcion= request.getParameter("Descripcion_RA");
+        Codigo = Integer.parseInt(request.getParameter("Codigo_RA"));
+        JOptionPane.showMessageDialog(null,Descripcion+Codigo);
+         GS_Respuesta GS_R =new GS_Respuesta(Descripcion, Codigo);
+        Denuncias_M  Den= new Denuncias_M();
+        Den.Respuesta_Denuncia(GS_R);
+        JOptionPane.showMessageDialog(null, "ENTRA METODO");
+        request.getRequestDispatcher("Mostrar_Denuncias.jsp").forward(request, response);
+        
+        
+                
+     }
     protected void Ingreso_Denuncias(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

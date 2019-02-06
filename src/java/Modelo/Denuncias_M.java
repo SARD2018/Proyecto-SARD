@@ -44,6 +44,18 @@ public class Denuncias_M {
             JOptionPane.showMessageDialog(null, "Error Denuncias cliente");
         }
     }
+    public void Respuesta_Denuncia (GS_Respuesta GS_R){
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Respuesta_Denuncia(?,?)");
+            PreSta.setString(1, GS_R.getDescripcion());
+            PreSta.setInt(2, GS_R.getCod_Denuncia());
+            PreSta.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Respuesta Enviada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al enviar denuncia");
+        }
+    }
     public ArrayList<GS_Denuncia> Tabla_Denuncias (){
         ArrayList<GS_Denuncia> Tabla=new ArrayList<>();
         
@@ -60,6 +72,23 @@ public class Denuncias_M {
             JOptionPane.showMessageDialog(null, e+" Error en Todo Denuncia");
         }
         return Tabla;
+    }
+     public ArrayList<GS_Denuncia> Uno_Anonima(int Codigo){
+        ArrayList<GS_Denuncia> Uno_Anoninma=new ArrayList<>();
+        
+        try {
+            PreSta= BaseDatos.prepareStatement("call Uno_Denuncia_Anonima ("+Codigo+")");
+            Reset= PreSta.executeQuery();
+            
+            while (Reset.next()) {   
+                GS_Denuncia ing=new GS_Denuncia(Reset.getInt(1), Reset.getString(2), Reset.getString(3), Reset.getString(4), Reset.getString(5), Reset.getString(6));
+                Uno_Anoninma.add(ing);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e+" Error en Uno Anonima ");
+        }
+        return Uno_Anoninma;
     }
     public ArrayList<GS_Denuncia_Cliente> Tabla_Denuncias2 (){
         ArrayList<GS_Denuncia_Cliente> Tabla2=new ArrayList<>();
