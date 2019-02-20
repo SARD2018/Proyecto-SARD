@@ -35,7 +35,7 @@
         </div>
         <div class="Barra-menu">
             <div class="Boton-m">
-                <a href="#"><span class="icon icon-menu"></span></a>
+                <a href="#"><span class="icon icon-menu-outline"></span></a>
             </div>
             <nav>
                 <ul class="Menu">
